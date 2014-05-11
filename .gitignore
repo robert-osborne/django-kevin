@@ -1,3 +1,9 @@
+# Foreman
+.env
+
+# Django
+staticfiles
+
 # Python bytecode:
 *.py[co]
 
@@ -37,4 +43,3 @@ tramp
 # Windows
 Thumbs.db
 Desktop.ini
-
