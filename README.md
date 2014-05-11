@@ -1,7 +1,7 @@
 django-twoscoops-project
 ========================
 
-A customized project template for Django 1.6 using postgres for development and production. Ready to deploy on Heroku.
+A personalized project template for Django 1.6 using postgres for development and production. Ready to deploy on Heroku.
 
 To use this project follow these steps:
 
