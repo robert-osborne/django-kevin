@@ -24,7 +24,7 @@ Create your project
 
 To create a new Django project called '**icecream**' using django-twoscoops-project, run the following command:
 
-    $ django-admin.py startproject --template=https://github.com/imkevinxu/django-twoscoops-project/archive/master.zip --extension=py,md,bat,html  --name=Procfile,Makefile icecream
+    $ django-admin.py startproject --template=https://github.com/imkevinxu/django-twoscoops-project/archive/master.zip --extension=py,md,bat,html --name=Procfile,Makefile icecream
 
 Virtual Environments
 ====================
