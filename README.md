@@ -74,7 +74,7 @@ Run project in dev
 
 Be in the same directory as `manage.py`.
 
-    $ deactive && workon icecream-dev
+    $ deactivate && workon icecream-dev
     $ python manage.py runserver
 
 Run project in prod
