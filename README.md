@@ -85,7 +85,7 @@ Run project in prod
 Be in the same directory as `Procfile`.
 
     $ deactivate && workon icecream-prod
-    $ cd icecream && python manage.py collectstatic && cd ..
+    $ cd icecream && python manage.py collectstatic --noinput && cd ..
     $ foreman start
 
 Deploy to Heroku
