@@ -38,14 +38,14 @@ Virtual Environments
 Install Dependencies
 ====================
 
-Depending on where you are installing dependencies:
+For development:
 
-In development:
-
+    $ deactivate && workon icecream-dev
     $ pip install -r requirements/local.txt
 
 For production:
 
+    $ deactivate && workon icecream-prod
     $ pip install -r requirements.txt
 
 *note: We install production requirements this way because many Platforms as a
