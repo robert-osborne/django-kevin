@@ -5,8 +5,8 @@ A personalized project template for Django 1.6 using postgres for development an
 
 Forked from the original [django-two-scoops-project](https://github.com/twoscoops/django-twoscoops-project).
 
-Create your project
--------------------
+Creating your Project
+=====================
 
 *Prerequisites: python, pip, django*
 
@@ -14,8 +14,8 @@ To create a new Django project, run the following command replacing `{{ project_
 
     $ django-admin.py startproject --template=https://github.com/imkevinxu/django-twoscoops-project/archive/master.zip --extension=py,md,bat,html --name=Procfile,Makefile {{ project_name }}
 
-Virtual Environments
---------------------
+Make virtual environments
+-------------------------
 
 *Prerequisites: virtualenv, virtualenvwrapper*
 
@@ -23,8 +23,8 @@ Virtual Environments
     $ mkvirtualenv {{ project_name }}-dev && add2virtualenv `pwd` && deactivate
     $ mkvirtualenv {{ project_name }}-prod && add2virtualenv `pwd` && deactivate
 
-Install Dependencies
---------------------
+Install python packages
+-----------------------
 
 For development:
 
@@ -36,14 +36,26 @@ For production:
     $ deactivate && workon {{ project_name }}-prod
     $ pip install -r requirements.txt
 
-Local Postgres Database
------------------------
+Development Mode
+================
+
+Create local postgres database for dev
+--------------------------------------
 
 *Prerequisites: Postgres*
 
 Install Postgres for your OS [here](http://www.postgresql.org/download/). For Max OSX the easiest option is to download and run [Postgres.app](http://postgresapp.com/).
 
     $ createdb {{ project_name }}
+
+Run project locally in dev environment
+--------------------------------------
+
+    $ deactivate && workon {{ project_name }}-dev
+    $ python {{ project_name }}/manage.py runserver
+
+Production Mode
+===============
 
 Set .env variable for prod
 --------------------------
@@ -55,12 +67,6 @@ The environment variables for production must contain a separate SECRET_KEY for 
     $ echo "SECRET_KEY=`date | md5`" >> .env
     $ echo "DJANGO_SETTINGS_MODULE=config.settings.production" >> .env
     $ echo "PYTHONPATH={{ project_name }}" >> .env
-
-Run project in dev
-------------------
-
-    $ deactivate && workon {{ project_name }}-dev
-    $ python {{ project_name }}/manage.py runserver
 
 Deploy to Heroku
 ----------------
@@ -77,10 +83,12 @@ Deploy to Heroku
     $ heroku ps:scale web=1
     $ heroku open
 
-Run project in prod
--------------------
+Run project locally in prod environment
+---------------------------------------
 
 *Prerequisites: Heroku Toolbelt*
+
+This is meant to mimic production as close as possible using both the production database and environment settings so proceed with caution.
 
     $ deactivate && workon {{ project_name }}-prod
     $ foreman run django-admin.py collectstatic --noinput
