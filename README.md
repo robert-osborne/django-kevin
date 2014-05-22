@@ -14,7 +14,7 @@ To use this project follow these steps:
 7. Run the project in prod
 8. Deploy to Heroku
 
-*note: these instructions show creation of a project called "icecream". You
+*Note: these instructions show creation of a project called "icecream". You
 should replace this name with the actual name of your project.*
 
 Create your project
@@ -22,7 +22,7 @@ Create your project
 
 *Prerequisites: python, pip, django*
 
-To create a new Django project called '**icecream**' using django-twoscoops-project, run the following command:
+To create a new Django project called **'icecream'** using django-twoscoops-project, run the following command:
 
     $ django-admin.py startproject --template=https://github.com/imkevinxu/django-twoscoops-project/archive/master.zip --extension=py,md,bat,html --name=Procfile,Makefile icecream
 
@@ -48,7 +48,7 @@ For production:
     $ deactivate && workon icecream-prod
     $ pip install -r requirements.txt
 
-*note: We install production requirements this way because many Platforms as a
+*Note: We install production requirements this way because many Platforms as a
 Services expect a requirements.txt file in the root of projects.*
 
 Local Postgres Database
@@ -63,29 +63,27 @@ Install Postgres for your OS [here](http://www.postgresql.org/download/). For Ma
 Set .env variable for prod
 ==========================
 
-The SECRET_KEY for production is not version controlled so the first person to create this project needs to create a .env file for Foreman and Heroku to read into the environment. Hacky use of `date | md5` to generate a pseudo-random string.
+The environment variables for production must contain a separate SECRET_KEY for security and the appropriate DJANGO_SETTINGS_MODULE and PYTHONPATH in order to use django-admin.py seemlessly. Hacky use of `date | md5` to generate a pseudo-random string.
 
-.env is not version controlled so future collaboraters need to email the creator for it.
+*.env is not version controlled so the first person to create this project needs to create a .env file for Foreman and Heroku to read into the environment. Future collaboraters need to email the creator for it.*
 
     $ echo "SECRET_KEY=`date | md5`" >> .env
+    $ echo "DJANGO_SETTINGS_MODULE=config.settings.production" >> .env
+    $ echo "PYTHONPATH=icecream" >> .env
 
 Run project in dev
 ==================
 
-Be in the same directory as `manage.py`.
-
     $ deactivate && workon icecream-dev
-    $ python manage.py runserver
+    $ python icecream/manage.py runserver
 
 Run project in prod
 ===================
 
 *Prerequisites: Heroku Toolbelt*
 
-Be in the same directory as `Procfile`.
-
     $ deactivate && workon icecream-prod
-    $ cd icecream && python manage.py collectstatic --noinput && cd ..
+    $ python icecream/manage.py collectstatic --noinput
     $ foreman start
 
 Deploy to Heroku
