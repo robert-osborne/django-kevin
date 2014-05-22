@@ -52,7 +52,7 @@ Run project locally in dev environment
 --------------------------------------
 
     $ workon {{ project_name }}-dev
-    $ python {{ project_name }}/manage.py syncdb
+    $ python {{ project_name }}/manage.py syncdb --noinput
     $ python {{ project_name }}/manage.py runserver
 
 Production Mode
@@ -80,7 +80,7 @@ Deploy to Heroku
     $ heroku create
     $ heroku config:push
     $ git push heroku master
-    $ heroku run django-admin.py syncdb
+    $ heroku run django-admin.py syncdb --noinput
     $ heroku run django-admin.py migrate
     $ heroku open
 
