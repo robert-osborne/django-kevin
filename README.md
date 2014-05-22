@@ -5,7 +5,7 @@ A personalized project template for Django 1.6 using postgres for development an
 
 Forked from the original [django-two-scoops-project](https://github.com/twoscoops/django-twoscoops-project).
 
-Creating your Project
+Creating Your Project
 =====================
 
 *Prerequisites: python, pip, django*
@@ -20,20 +20,20 @@ Make virtual environments
 *Prerequisites: virtualenv, virtualenvwrapper*
 
     $ cd {{ project_name }}
-    $ mkvirtualenv {{ project_name }}-dev && add2virtualenv `pwd` && deactivate
-    $ mkvirtualenv {{ project_name }}-prod && add2virtualenv `pwd` && deactivate
+    $ mkvirtualenv {{ project_name }}-dev && add2virtualenv `pwd`
+    $ mkvirtualenv {{ project_name }}-prod && add2virtualenv `pwd`
 
 Install python packages
 -----------------------
 
 For development:
 
-    $ deactivate && workon {{ project_name }}-dev
+    $ workon {{ project_name }}-dev
     $ pip install -r requirements/local.txt
 
 For production:
 
-    $ deactivate && workon {{ project_name }}-prod
+    $ workon {{ project_name }}-prod
     $ pip install -r requirements.txt
 
 Development Mode
@@ -51,7 +51,8 @@ Install Postgres for your OS [here](http://www.postgresql.org/download/). For Ma
 Run project locally in dev environment
 --------------------------------------
 
-    $ deactivate && workon {{ project_name }}-dev
+    $ workon {{ project_name }}-dev
+    $ python {{ project_name }}/manage.py syncdb
     $ python {{ project_name }}/manage.py runserver
 
 Production Mode
@@ -78,9 +79,9 @@ Deploy to Heroku
     $ git commit -m "ready for heroku deploy"
     $ heroku create
     $ heroku config:push
-    $ heroku config:pull
     $ git push heroku master
-    $ heroku ps:scale web=1
+    $ heroku run django-admin.py syncdb
+    $ heroku run django-admin.py migrate
     $ heroku open
 
 Run project locally in prod environment
@@ -90,15 +91,10 @@ Run project locally in prod environment
 
 This is meant to mimic production as close as possible using both the production database and environment settings so proceed with caution.
 
-    $ deactivate && workon {{ project_name }}-prod
+    $ workon {{ project_name }}-prod
+    $ heroku config:pull
     $ foreman run django-admin.py collectstatic --noinput
     $ foreman start
-
-TODO
-----
-
-- Syncdb instructions
-- Database migration instructions
 
 Acknowledgements
 ================
