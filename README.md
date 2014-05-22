@@ -46,6 +46,7 @@ Create local postgres database for dev
 
 Install Postgres for your OS [here](http://www.postgresql.org/download/). For Max OSX the easiest option is to download and run [Postgres.app](http://postgresapp.com/).
 
+    # Make sure Postgres.app is running
     $ createdb {{ project_name }}
 
 Run project locally in dev environment
