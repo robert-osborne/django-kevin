@@ -109,6 +109,9 @@ Third-party plugins
 - [Memcached](http://memcached.org/) for caching
 - [Varnish](https://www.varnish-cache.org/) for HTTP caching
 - [Fabric](http://www.fabfile.org/) for deployment scripts
+- [New Relic](http://newrelic.com/) for application monitoring
+- [Sentry](https://getsentry.com/welcome/) for exception handling
+- [PG Backups](https://addons.heroku.com/pgbackups) for PostgreSQL backups
 - [django-storages](http://django-storages.readthedocs.org/en/latest/) for CDN static storage
 
 Django core functions
