@@ -98,6 +98,25 @@ This is meant to mimic production as close as possible using both the production
     $ foreman run django-admin.py collectstatic --noinput
     $ foreman start
 
+Suggestions
+===========
+
+Third-party plugins
+-------------------
+
+- [Celery](http://www.celeryproject.org/) for asynchronous tasks and cron jobs
+- [Redis](http://redis.io/) as a backend for Celery and for caching, auto-completion, sessions, etc.
+- [Memcached](http://memcached.org/) for caching
+- [Varnish](https://www.varnish-cache.org/) for HTTP caching
+- [Fabric](http://www.fabfile.org/) for deployment scripts
+- [django-storages](http://django-storages.readthedocs.org/en/latest/) for CDN static storage
+
+Django core functions
+---------------------
+
+- Use named URLs, reverse, and the url template tag
+- Use django management commands for scripting
+
 Acknowledgements
 ================
 
