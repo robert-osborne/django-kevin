@@ -196,8 +196,12 @@ DJANGO_APPS = (
 LOCAL_APPS = (
 )
 
+THIRD_PARTY_APPS = (
+    'django_extensions',
+)
+
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
-INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
+INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 ########## END APP CONFIGURATION
 
 
