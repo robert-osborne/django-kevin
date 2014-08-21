@@ -5,6 +5,7 @@ dj-static==0.0.6
 django-braces==1.4.0
 django-debug-toolbar==1.2.1
 django-extensions==1.3.9
+django-floppyforms==1.2.0
 django-model-utils==2.2
 logutils==0.3.3
 psycopg2==2.5.3
