@@ -39,6 +39,17 @@ For production:
 Development Mode
 ================
 
+Set .env.dev variable for dev
+--------------------------
+
+The environment variables for development sets the appropriate DJANGO_SETTINGS_MODULE and PYTHONPATH in order to use django-admin.py seemlessly. Necessary for Foreman and other worker processes
+
+*.env.dev is not version controlled so the first person to create this project needs to create a .env.dev file for Foreman to read into the environment. Future collaboraters need to email the creator for it.*
+
+    $ export DJANGO_SETTINGS_MODULE=config.settings.local >> .env.dev
+    $ export PYTHONPATH={{ project_name }} >> .env.dev
+    $ export PYTHONUNBUFFERED=True >> .env.dev
+
 Create local postgres database for dev
 --------------------------------------
 
@@ -47,14 +58,24 @@ Create local postgres database for dev
 Install Postgres for your OS [here](http://www.postgresql.org/download/). For Max OSX the easiest option is to download and run [Postgres.app](http://postgresapp.com/).
 
     # Make sure Postgres.app is running
+    $ workon {{ project_name }}-dev
     $ createdb {{ project_name }}
+    $ python {{ project_name }}/manage.py syncdb --noinput
 
 Run project locally in dev environment
 --------------------------------------
 
-    $ workon {{ project_name }}-dev
-    $ python {{ project_name }}/manage.py syncdb --noinput
-    $ python {{ project_name }}/manage.py runserver
+Recommended to use foreman to start processes:
+
+    $ foreman start --env .env.dev --procfile Procfile.dev 
+
+To run one-off commands use:
+
+    $ foreman run django-admin.py COMMAND --env .env.dev --procfile Procfile.dev 
+
+Of course you can always use the standard `python manage.py` but keep in mind it's nested within a folder so use:
+
+    $ python {{ project_name }}/manage.py COMMAND
 
 Production Mode
 ===============
