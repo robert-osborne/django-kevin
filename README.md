@@ -70,6 +70,7 @@ The environment variables for production must contain a separate SECRET_KEY for 
     $ echo "DJANGO_SETTINGS_MODULE=config.settings.production" >> .env
     $ echo "PYTHONPATH={{ project_name }}" >> .env
     $ echo "WEB_CONCURRENCY=3" >> .env
+    $ echo "PYTHONUNBUFFERED=True" >> .env
 
 Deploy to Heroku
 ----------------
