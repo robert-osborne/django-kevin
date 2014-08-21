@@ -67,11 +67,13 @@ Run project locally in dev environment
 
 Recommended to use foreman to start processes:
 
-    $ foreman start --env .env.dev --procfile Procfile.dev 
+*By default, .foreman uses the development versions of .env and Procfile*
+
+    $ foreman start
 
 To run one-off commands use:
 
-    $ foreman run django-admin.py COMMAND --env .env.dev --procfile Procfile.dev 
+    $ foreman run django-admin.py COMMAND
 
 Of course you can always use the standard `python manage.py` but keep in mind it's nested within a folder so use:
 
@@ -114,6 +116,8 @@ Run project locally in prod environment
 *Prerequisites: Heroku Toolbelt*
 
 This is meant to mimic production as close as possible using both the production database and environment settings so proceed with caution.
+
+*Make sure to edit the .foreman file to use production versions of .env and Procfile*
 
     $ workon {{ project_name }}-prod
     $ heroku config:pull
