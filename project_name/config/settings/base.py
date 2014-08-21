@@ -198,7 +198,7 @@ LOCAL_APPS = (
 
 THIRD_PARTY_APPS = (
     'django_extensions',
-    'django-floppyforms'
+    'floppyforms'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
