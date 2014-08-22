@@ -12,7 +12,7 @@ Creating Your Project
 
 To create a new Django project, run the following command replacing `{{ project_name }}` with your actual project name:
 
-    $ django-admin.py startproject --template=https://github.com/imkevinxu/django-twoscoops-project/archive/master.zip --extension=py,md,bat,html --name=Procfile,Makefile {{ project_name }}
+    $ django-admin.py startproject --template=https://github.com/imkevinxu/django-twoscoops-project/archive/master.zip --extension=py,md,html --name=Procfile,Makefile {{ project_name }}
 
 Make virtual environments
 -------------------------
