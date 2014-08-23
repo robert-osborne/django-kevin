@@ -11,7 +11,7 @@ Instructions to get your development environment set up and to start coding!
 
 Instructions to deploy to production.
 
-[Architecture](architecture)
+[Architecture](architecture.md)
 ----------------------------
 
 High-level overview of how this app is structured and what tools it uses to do what.
