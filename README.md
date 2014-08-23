@@ -46,9 +46,9 @@ The environment variables for development sets the appropriate DJANGO_SETTINGS_M
 
 *.env.dev is not version controlled so the first person to create this project needs to create a .env.dev file for Foreman to read into the environment. Future collaboraters need to email the creator for it.*
 
-    $ export DJANGO_SETTINGS_MODULE=config.settings.local >> .env.dev
-    $ export PYTHONPATH={{ project_name }} >> .env.dev
-    $ export PYTHONUNBUFFERED=True >> .env.dev
+    $ echo DJANGO_SETTINGS_MODULE=config.settings.local >> .env.dev
+    $ echo PYTHONPATH={{ project_name }} >> .env.dev
+    $ echo PYTHONUNBUFFERED=True >> .env.dev
 
 Create local postgres database for dev
 --------------------------------------
