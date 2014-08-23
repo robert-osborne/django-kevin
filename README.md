@@ -98,7 +98,7 @@ The environment variables for production must contain a separate SECRET_KEY for 
 Deploy to Heroku
 ----------------
 
-*Prerequisites: heroku-config*
+*Prerequisites: Heroku Toolbelt and heroku-config*
 
     git init
     git add .
@@ -112,8 +112,6 @@ Deploy to Heroku
 
 Run project locally in prod environment
 ---------------------------------------
-
-*Prerequisites: Heroku Toolbelt*
 
 This is meant to mimic production as close as possible using both the production database and environment settings so proceed with caution.
 
