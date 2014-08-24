@@ -9,6 +9,10 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='index.html')),
 
+    # Account-related URLs
+    # https://github.com/fusionbox/django-authtools/blob/master/authtools/urls.py
+    url(r'^', include('authtools.urls')),
+
     # Examples:
     # url(r'^$', 'app.views.index', name='index'),
     # url(r'^app/', include('app.urls', namespace='app')),

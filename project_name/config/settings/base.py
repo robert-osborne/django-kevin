@@ -174,6 +174,11 @@ ROOT_URLCONF = 'config.urls'
 ########## END URL CONFIGURATION
 
 
+########## USER MODEL CONFIGURATION
+AUTH_USER_MODEL = 'authtools.User'
+########## END USER MODEL CONFIGURATION
+
+
 ########## APP CONFIGURATION
 DJANGO_APPS = (
     # Default Django apps:
@@ -197,8 +202,9 @@ LOCAL_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+    'authtools',
     'django_extensions',
-    'floppyforms'
+    'floppyforms',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
