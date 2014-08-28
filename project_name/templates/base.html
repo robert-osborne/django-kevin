@@ -8,7 +8,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Le styles -->
     <link href="{% templatetag openblock %} static 'css/bootstrap.min.css' {% templatetag closeblock %}" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -16,11 +15,13 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- This file store project specific CSS -->
+    <!-- SS-Standard Symbols -->
+    <!-- {% templatetag openblock %} static 'fonts/ss-standard/documentation.html' {% templatetag closeblock %}-->
+    <link href="{% templatetag openblock %} static 'css/ss-standard.css' {% templatetag closeblock %}" rel="stylesheet" />
+
+    <!-- Project specific CSS -->
     <link href="{% templatetag openblock %} static 'css/app.css' {% templatetag closeblock %}" rel="stylesheet">
 
-    <!-- Use this to quickly test CSS changes in a template,
-        then move to app.css -->
     {% templatetag openblock %} block extra_css {% templatetag closeblock %}{% templatetag openblock %} endblock extra_css {% templatetag closeblock %}
   </head>
 
@@ -31,18 +32,16 @@
       <h1>{% templatetag openblock %} block page_title {% templatetag closeblock %}Hello World{% templatetag openblock %} endblock page_title {% templatetag closeblock %}</h1>
 
       {% templatetag openblock %} block content {% templatetag closeblock %}
-        <p>Use this document as a way to quick start any new project.</p>
+
       {% templatetag openblock %} endblock content {% templatetag closeblock %}
 
-    </div> <!-- /container -->
+    </div>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="{% templatetag openblock %} static 'js/bootstrap.min.js' {% templatetag closeblock %}"></script>
+    <script src="{% templatetag openblock %} static 'js/ss-standard.js' {% templatetag closeblock %}"></script>
 
-    <!-- place project specific Javascript in this file -->
+    <!-- Project specific JavaScript -->
     <script src="{% templatetag openblock %} static 'js/app.js' {% templatetag closeblock %}"></script>
 
     {% templatetag openblock %} block extra_js {% templatetag closeblock %}{% templatetag openblock %} endblock extra_js {% templatetag closeblock %}
