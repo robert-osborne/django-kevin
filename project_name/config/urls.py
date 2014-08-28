@@ -1,34 +1,26 @@
 from django.conf.urls import patterns, include, url
-from django.conf.urls.static import static
 from django.conf import settings
-from django.views.generic import TemplateView
 
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', TemplateView.as_view(template_name='index.html')),
+    # Base URLs
+    url(r'^', include('base.urls', namespace='base')),
 
-    # Account-related URLs
+    # Authtools URLs
     # https://github.com/fusionbox/django-authtools/blob/master/authtools/urls.py
-    url(r'^', include('authtools.urls')),
+    url(r'^', include('authtools.urls', namespace='authtools')),
 
-    # Examples:
-    # url(r'^$', 'app.views.index', name='index'),
-    # url(r'^app/', include('app.urls', namespace='app')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
+    # Admin URLs
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )
 
 # Uncomment the next line to serve media files in dev.
+# from django.conf.urls.static import static
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     import debug_toolbar
-    urlpatterns += patterns('',
-                            url(r'^__debug__/', include(debug_toolbar.urls)),
-                            )
+    urlpatterns += patterns('', url(r'^__debug__/', include(debug_toolbar.urls)))
