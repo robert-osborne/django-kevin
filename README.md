@@ -54,14 +54,14 @@ The environment variables for development sets the appropriate DJANGO_SETTINGS_M
 Create local postgres database for dev
 --------------------------------------
 
-*Prerequisites: Postgres*
+*Prerequisites: Postgres and Heroku Toolbelt*
 
 Install Postgres for your OS [here](http://www.postgresql.org/download/). For Max OSX the easiest option is to download and run [Postgres.app](http://postgresapp.com/).
 
     # Make sure Postgres.app is running
     workon {{ project_name }}-dev
     createdb {{ project_name }}
-    python {{ project_name }}/manage.py syncdb --noinput
+    foreman run django-admin.py syncdb --noinput
 
 Run project locally in dev environment
 --------------------------------------

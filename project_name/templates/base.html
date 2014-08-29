@@ -29,13 +29,13 @@
 
     <div class="container">
 
-      {% templatetag openblock %} block header {% templatetag openblock %}
-        <h1>{% templatetag openblock %} block page_title {% templatetag openblock %}Hello World{% templatetag openblock %} endblock page_title {% templatetag openblock %}</h1>
-      {% templatetag openblock %} endblock header {% templatetag openblock %}
+      {% templatetag openblock %} block header {% templatetag closeblock %}
+        <h1>{% templatetag openblock %} block page_title {% templatetag closeblock %}Hello World{% templatetag openblock %} endblock page_title {% templatetag closeblock %}</h1>
+      {% templatetag openblock %} endblock header {% templatetag closeblock %}
 
-      {% templatetag openblock %} block messages {% templatetag openblock %}
-        {% templatetag openblock %} include 'base/_messages.html' {% templatetag openblock %}
-      {% templatetag openblock %} endblock messages {% templatetag openblock %}
+      {% templatetag openblock %} block messages {% templatetag closeblock %}
+        {% templatetag openblock %} include 'base/_messages.html' {% templatetag closeblock %}
+      {% templatetag openblock %} endblock messages {% templatetag closeblock %}
 
       {% templatetag openblock %} block content {% templatetag closeblock %}
 
