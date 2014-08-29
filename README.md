@@ -76,10 +76,6 @@ To run one-off commands use:
 
     foreman run django-admin.py COMMAND
 
-Of course you can always use the standard `python manage.py` but keep in mind it's nested within a folder so use:
-
-    python {{ project_name }}/manage.py COMMAND
-
 Production Mode
 ===============
 
