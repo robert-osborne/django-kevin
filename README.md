@@ -49,6 +49,7 @@ The environment variables for development sets the appropriate DJANGO_SETTINGS_M
     echo DJANGO_SETTINGS_MODULE=config.settings.local >> .env.dev
     echo PYTHONPATH={{ project_name }} >> .env.dev
     echo PYTHONUNBUFFERED=True >> .env.dev
+    echo TEST_CACHE=True >> .env.dev
 
 Create local postgres database for dev
 --------------------------------------

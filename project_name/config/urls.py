@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Base URLs
-    url(r'^', include('base.urls', namespace='base')),
+    url(r'^', include('core.urls', namespace='core')),
 
     # Authtools URLs
     # https://github.com/fusionbox/django-authtools/blob/master/authtools/urls.py
