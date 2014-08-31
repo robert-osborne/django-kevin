@@ -21,16 +21,16 @@ ALLOWED_HOSTS = ['example.com', 'localhost', '127.0.0.1']
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-host
-EMAIL_HOST = get_env_setting('EMAIL_HOST', 'smtp.gmail.com')
+# EMAIL_HOST = get_env_setting('EMAIL_HOST')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-host-password
-EMAIL_HOST_PASSWORD = get_env_setting('EMAIL_HOST_PASSWORD', '')
+# EMAIL_HOST_PASSWORD = get_env_setting('EMAIL_HOST_PASSWORD')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-host-user
-EMAIL_HOST_USER = get_env_setting('EMAIL_HOST_USER', 'your_email@example.com')
+# EMAIL_HOST_USER = get_env_setting('EMAIL_HOST_USER')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-port
-EMAIL_PORT = get_env_setting('EMAIL_PORT', 587)
+# EMAIL_PORT = get_env_setting('EMAIL_PORT')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
 EMAIL_SUBJECT_PREFIX = '[%s] ' % PROJECT_NAME

@@ -39,7 +39,7 @@ DATABASES = {
 
 ########## CACHE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#caches
-if get_env_setting('TEST_CACHE') is True:
+if get_env_setting('TEST_CACHE') == 'True':
     CACHES = {
         'default': {
             'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
