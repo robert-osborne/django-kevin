@@ -2,9 +2,9 @@
 
 from __future__ import absolute_import
 
-from core.utils import get_env_setting
-
 from .base import *
+
+import os
 
 
 ########## DEBUG CONFIGURATION
@@ -39,7 +39,7 @@ DATABASES = {
 
 ########## CACHE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#caches
-if get_env_setting('DUMMY_CACHE') == 'True':
+if os.getenv('DUMMY_CACHE') == 'True':
     CACHES = {
         'default': {
             'BACKEND': 'django.core.cache.backends.dummy.DummyCache',

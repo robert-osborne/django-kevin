@@ -2,9 +2,9 @@
 
 from __future__ import absolute_import
 
-from core.utils import get_env_setting
-
 from .base import *
+
+import os
 
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
@@ -21,16 +21,19 @@ ALLOWED_HOSTS = ['example.com', 'localhost', '127.0.0.1']
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-host
-# EMAIL_HOST = get_env_setting('EMAIL_HOST')
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-host-password
-# EMAIL_HOST_PASSWORD = get_env_setting('EMAIL_HOST_PASSWORD')
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-host-user
-# EMAIL_HOST_USER = get_env_setting('EMAIL_HOST_USER')
+EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-port
-# EMAIL_PORT = get_env_setting('EMAIL_PORT')
+EMAIL_PORT = os.getenv('EMAIL_PORT', 587)
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-host-user
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'your_email@example.com')
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-host-password
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'your_email@example.com')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
 EMAIL_SUBJECT_PREFIX = '[%s] ' % PROJECT_NAME
