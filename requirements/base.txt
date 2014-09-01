@@ -10,8 +10,6 @@ django-htmlmin==0.7.0
 django-jsonview==0.4.3
 django-model-utils==2.2
 django-redis==3.7.1
-docutils==0.12
-logutils==0.3.3
 psycopg2==2.5.3
 pytz==2014.4
 static==1.0.2
