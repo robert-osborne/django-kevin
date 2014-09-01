@@ -15,3 +15,9 @@ Instructions to deploy to production.
 ----------------------------
 
 High-level overview of how this app is structured and what tools it uses to do what.
+
+
+[Libraries](libraries.md)
+----------------------------
+
+List of what third-party plugins/libraries are used and what they do.

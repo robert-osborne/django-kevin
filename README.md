@@ -119,27 +119,40 @@ This is meant to mimic production as close as possible using both the production
     foreman run django-admin.py collectstatic --noinput
     foreman start
 
-Suggestions
-===========
+Third-party plugins used
+========================
 
-Third-party plugins
--------------------
+Currently using [Django 1.6.6](https://docs.djangoproject.com/en/1.6/)
 
-- [Celery](http://www.celeryproject.org/) for asynchronous tasks and cron jobs
-- [Redis](http://redis.io/) as a backend for Celery and for caching, auto-completion, sessions, etc.
-- [Memcached](http://memcached.org/) for caching
-- [Varnish](https://www.varnish-cache.org/) for HTTP caching
-- [Fabric](http://www.fabfile.org/) for deployment scripts
-- [New Relic](http://newrelic.com/) for application monitoring
-- [Sentry](https://getsentry.com/welcome/) for exception handling
-- [PG Backups](https://addons.heroku.com/pgbackups) for PostgreSQL backups
-- [django-storages](http://django-storages.readthedocs.org/en/latest/) for CDN static storage
+base.txt
+--------
+- [South 1.0](http://south.readthedocs.org/en/latest/index.html) - database migrations
+- [bpython 0.13.1](http://docs.bpython-interpreter.org/) - advanced python interpreter/REPL
+- [dj-static 0.0.6](https://github.com/kennethreitz/dj-static) - serve production static files with Django
+- [django-authtools 1.0.0](http://django-authtools.readthedocs.org/en/latest/) - custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
+- [django-braces 1.4.0](http://django-braces.readthedocs.org/en/v1.4.0/) - lots of custom mixins
+- [django-extensions 1.3.9](http://django-extensions.readthedocs.org/en/latest/) - useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
+- [django-floppyforms 1.2.0](http://django-floppyforms.readthedocs.org/en/latest/) - control of output of form rendering
+- [django-htmlmin 0.7.0](https://github.com/cobrateam/django-htmlmin) - auto-minifies HTML
+- [django-jsonview 0.4.3](https://github.com/jsocol/django-jsonview) - return python objects as JSON
+- [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - useful model mixins and utilities such as `TimeStampedModel` and `Choices`
+- [django-redis 3.7.1](https://django-redis.readthedocs.org/en/latest/) - enables redis cacheing
+- [psycopg2 2.5.3](http://pythonhosted.org//psycopg2/) - PostgreSQL adapter
+- [pytz 2014.4](http://pytz.sourceforge.net/) - world timezone definitions
+- [static 1.0.2](https://github.com/lukearno/static) - serves static and dynamic content
 
-Django core functions
----------------------
+local.txt
+---------
+- [django-debug-toolbar 1.2.1](http://django-debug-toolbar.readthedocs.org/en/1.2/) - debug information in a toolbar
 
-- Use named URLs, reverse, and the url template tag
-- Use django management commands for scripting
+production.txt
+--------------
+- [dj-database-url 0.3.0](https://github.com/kennethreitz/dj-database-url) - allows Django to use database URLs for Heroku
+- [gunicorn 19.1.0](https://github.com/benoitc/gunicorn) - production WSGI server with workers
+
+test.txt
+--------
+- [coverage 3.7.1](http://nedbatchelder.com/code/coverage/) - measures code coverage
 
 Acknowledgements
 ================
