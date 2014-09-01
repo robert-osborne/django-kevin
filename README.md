@@ -143,6 +143,7 @@ base.txt
 
 local.txt
 ---------
+- [Werkzeug 0.9.6](http://werkzeug.pocoo.org/) - WSGI utility library with powerful debugger
 - [django-debug-toolbar 1.2.1](http://django-debug-toolbar.readthedocs.org/en/1.2/) - debug information in a toolbar
 
 production.txt
