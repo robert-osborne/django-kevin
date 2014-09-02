@@ -105,7 +105,7 @@ STATICFILES_FINDERS = (
     'pipeline.finders.CachedFileFinder',
 )
 
-# Uncommend line to enable django-pipeline compressor and compiler
+# Uncomment line to enable django-pipeline compressor and compiler
 # WARNING: Getting django-pipeline to work on Heroku requires node modules
 #          to be installed globally which is a herculian task, be warned
 #          My best guess on getting it to work involves a post_compile script
