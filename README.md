@@ -97,7 +97,7 @@ Deploy to Heroku
 
 *Prerequisites: Heroku Toolbelt and heroku-config*
 
-First step is to deploy to Heroku with the post_compile script in bin/ so that node functions can be installed for python to call them.
+First step is to deploy to Heroku with the `post_compile` script in bin/ so that node functions can be installed for python to call them.
 
     git init
     git add .
@@ -106,7 +106,7 @@ First step is to deploy to Heroku with the post_compile script in bin/ so that n
     heroku config:push
     git push heroku master
 
-After post_compile is done, uncomment line 108 in `/{{ project_name }}/config/settings/base.py` to enable django-pipeline.
+After `post_compile` is done, uncomment line 108 in `/{{ project_name }}/config/settings/base.py` to enable django-pipeline.
 
     git commit -am "enabled django-pipeline"
     git push heroku master
