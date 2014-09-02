@@ -1,21 +1,18 @@
 #!/usr/bin/env bash
-set -veo pipefail
 
-# The post_compile hook is run by heroku-buildpack-python
+set -eo pipefail
+source bin/common.sh
 
-echo "-----> Running post-compile hook"
-
-if [ -f bin/install_nodejs ]; then
-    echo "-----> Running install_nodejs"
+if ! type node &> /dev/null; then
+    status "Installing Node.js"
     chmod +x bin/install_nodejs
-    bin/install_nodejs
-
-    # PUT YOUR NPM INSTALL LINES HERE: (yuglify for example)
-    npm install -g yuglify
+    bin/install_nodejs 2>&1 | indent
 fi
 
-# PUT ANY POST-BUILD STUFF HERE (like database migrations)
-#python app/manage.py syncdb --noinput
-#python app/manage.py migrate --noinput
+if ! type yuglify &> /dev/null; then
+    status "Installing yuglify"
+    npm install -g yuglify 2>&1 | indent
+fi
 
-echo "-----> Post-compile done"
+echo "Post-compile done" 2>&1 | indent
+echo
