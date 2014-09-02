@@ -102,7 +102,41 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 ########## END STATIC FILE CONFIGURATION
+
+
+########## PIPELINE CONFIGURATION
+# See: https://django-pipeline.readthedocs.org/en/latest/configuration.html
+PIPELINE_CSS = {
+    'master': {
+        'source_filenames': (
+          'css/lib/bootstrap.min.css',
+          'css/lib/ss-standard.css',
+          'css/app.css'
+        ),
+        'output_filename': 'css/master.css',
+        'variant': 'datauri',
+    },
+}
+
+PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
+
+PIPELINE_JS = {
+    'master': {
+        'source_filenames': (
+          'js/lib/jquery.min.js',
+          'js/lib/bootstrap.min.js',
+          'js/lib/ss-standard.js',
+          'js/app.js',
+        ),
+        'output_filename': 'js/master.js',
+    }
+}
+
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
+########## END PIPELINE CONFIGURATION
 
 
 ########## SECRET CONFIGURATION
@@ -157,7 +191,7 @@ TEMPLATE_DIRS = (
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#middleware-classes
 MIDDLEWARE_CLASSES = (
     'django.middleware.gzip.GZipMiddleware',
-    'htmlmin.middleware.HtmlMinifyMiddleware',
+    'pipeline.middleware.MinifyHTMLMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -206,6 +240,7 @@ THIRD_PARTY_APPS = (
     'authtools',
     'django_extensions',
     'floppyforms',
+    'pipeline',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
