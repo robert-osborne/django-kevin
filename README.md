@@ -120,6 +120,31 @@ This is meant to mimic production as close as possible using both the production
     foreman run django-admin.py collectstatic --noinput
     foreman start
 
+Add-ons
+=======
+
+Redis Cloud
+-----------
+In order to enable redis for caching and queues, add [Redis Cloud](https://devcenter.heroku.com/articles/rediscloud) on Heroku.
+
+    heroku addons:add rediscloud:25
+    heroku config:pull
+
+Amazon S3
+---------
+To use Amazon S3 as a static and media file storage, create a custom Group and User via IAM and then a custom static bucket and media bucket with public read policies.
+
+Add the following variables to your .env files:
+
+    AWS_ACCESS_KEY_ID=INSERT_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY=INSERT_SECRET_ACCESS_KEY
+    AWS_STATIC_STORAGE_BUCKET_NAME={{ project_name }}-static
+    AWS_MEDIA_STORAGE_BUCKET_NAME={{ project_name }}-media
+
+Push to Heroku via:
+
+    heroku config:push
+
 Third-party plugins used
 ========================
 
@@ -151,7 +176,9 @@ local.txt
 
 production.txt
 --------------
+- [boto 2.32.1](https://boto.readthedocs.org/en/latest/) - Python interface to AWS
 - [dj-database-url 0.3.0](https://github.com/kennethreitz/dj-database-url) - allows Django to use database URLs for Heroku
+- [django-storages 1.1.8](http://django-storages.readthedocs.org/en/latest/index.html) - custom storage backends; using S3
 - [gunicorn 19.1.0](https://github.com/benoitc/gunicorn) - production WSGI server with workers
 
 test.txt

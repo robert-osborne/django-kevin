@@ -73,3 +73,39 @@ if 'REDISCLOUD_URL' in os.environ:
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = os.environ['SECRET_KEY']
 ########## END SECRET CONFIGURATION
+
+
+########## AMAZON S3 CONFIGURATION
+# See: http://django-storages.readthedocs.org/en/latest/backends/amazon-S3.html
+if 'AWS_ACCESS_KEY_ID' in os.environ:
+    INSTALLED_APPS += (
+        'storages',
+    )
+
+    AWS_S3_SECURE_URLS = True
+    AWS_QUERYSTRING_AUTH = False
+
+    # Separate buckets for static files and media files
+    AWS_STATIC_STORAGE_BUCKET_NAME = os.getenv('AWS_STATIC_STORAGE_BUCKET_NAME')
+    AWS_MEDIA_STORAGE_BUCKET_NAME = os.getenv('AWS_MEDIA_STORAGE_BUCKET_NAME')
+    S3_STATIC_URL = '//%s.s3.amazonaws.com/' % AWS_STATIC_STORAGE_BUCKET_NAME
+    S3_MEDIA_URL = '//%s.s3.amazonaws.com/' % AWS_MEDIA_STORAGE_BUCKET_NAME
+
+    # Using django-pipeline along with S3 storage for staticfiles
+    # See: https://django-pipeline.readthedocs.org/en/latest/storages.html#using-with-other-storages
+    from django.contrib.staticfiles.storage import CachedFilesMixin
+    from pipeline.storage import PipelineMixin
+    from storages.backends.s3boto import S3BotoStorage
+
+
+    class S3PipelineCachedStorage(PipelineMixin, CachedFilesMixin, S3BotoStorage):
+        pass
+
+    StaticRootS3BotoStorage = lambda: S3PipelineCachedStorage(bucket=AWS_STATIC_STORAGE_BUCKET_NAME)
+    STATICFILES_STORAGE = 'config.settings.production.StaticRootS3BotoStorage'
+    STATIC_URL = S3_STATIC_URL
+
+    MediaRootS3BotoStorage = lambda: S3BotoStorage(bucket=AWS_MEDIA_STORAGE_BUCKET_NAME)
+    DEFAULT_FILE_STORAGE = 'config.settings.production.MediaRootS3BotoStorage'
+    MEDIA_URL = S3_MEDIA_URL
+########## END AMAZON S3 CONFIGURATION
