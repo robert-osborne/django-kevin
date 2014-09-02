@@ -139,6 +139,7 @@ base.txt
 - [django-redis 3.7.1](https://django-redis.readthedocs.org/en/latest/) - enables redis cacheing
 - [psycopg2 2.5.3](http://pythonhosted.org//psycopg2/) - PostgreSQL adapter
 - [pytz 2014.4](http://pytz.sourceforge.net/) - world timezone definitions
+- [requests 2.4.0](http://docs.python-requests.org/en/latest/) - HTTP request API
 - [rq 0.4.6](http://python-rq.org/) - background tasks using redis as queue
 - [static 1.0.2](https://github.com/lukearno/static) - serves static and dynamic content
 

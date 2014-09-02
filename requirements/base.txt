@@ -12,5 +12,6 @@ django-model-utils==2.2
 django-redis==3.7.1
 psycopg2==2.5.3
 pytz==2014.4
+requests==2.4.0
 rq==0.4.6
 static==1.0.2
