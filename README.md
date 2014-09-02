@@ -12,7 +12,7 @@ Creating Your Project
 
 To create a new Django project, run the following command replacing `{{ project_name }}` with your actual project name:
 
-    django-admin.py startproject --template=https://github.com/imkevinxu/django-twoscoops-project/archive/master.zip --extension=py,md,html,json --name=Procfile,Procfile.dev {{ project_name }}
+    django-admin.py startproject --template=https://github.com/imkevinxu/django-twoscoops-project/archive/master.zip --extension=py,md,html,json,tmp --name=Procfile,Procfile.dev {{ project_name }}
 
 Make virtual environments
 -------------------------
@@ -112,7 +112,8 @@ After post_compile is done, we can use multi-buildpacks normally so make the fol
     rm -rf bin/
     mv package.json.tmp package.json
     heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
-    git commit -am "heroku deploy with multi-buildpacks for node and python"
+    git add .
+    git commit -m "heroku deploy with multi-buildpacks for node and python"
     git push heroku master
 
 If the logs from the deploy look good, then congrats! You have Heroku working with Python and Node and django-pipeline can access node functions.
