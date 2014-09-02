@@ -1,2 +1,2 @@
 web: django-admin.py runserver_plus
-worker: python -u {{ project_name }}/worker.py
+worker: python -u {{ project_name }}/config/worker.py
