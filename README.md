@@ -97,13 +97,26 @@ Deploy to Heroku
 
 *Prerequisites: Heroku Toolbelt and heroku-config*
 
+First step is to deploy to Heroku with the post_compile script in bin/ so that node functions can be installed globally.
+
     git init
     git add .
     git commit -m "ready for heroku deploy"
     heroku create
     heroku config:push
-    heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
     git push heroku master
+
+After post_compile is done, we can use multi-buildpacks normally so make the following changes.
+
+    # Uncomment line 108 on /{{ project_name }}/config/settings/base.py
+    rm -rf bin/
+    mv package.json.tmp package.json
+    heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
+    git commit -am "heroku deploy with multi-buildpacks for node and python"
+    git push heroku master
+
+If the logs from the deploy look good, then congrats! You have Heroku working with Python and Node and django-pipeline can access node functions.
+
     heroku run django-admin.py syncdb --noinput
     heroku run django-admin.py migrate
     heroku open
