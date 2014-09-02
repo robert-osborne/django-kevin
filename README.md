@@ -128,22 +128,17 @@ Redis Cloud
 In order to enable redis for caching and queues, add [Redis Cloud](https://devcenter.heroku.com/articles/rediscloud) on Heroku.
 
     heroku addons:add rediscloud:25
-    heroku config:pull
 
 Amazon S3
 ---------
 To use Amazon S3 as a static and media file storage, create a custom Group and User via IAM and then a custom static bucket and media bucket with public read policies.
 
-Add the following variables to your .env files:
+Add the following config variables to Heroku:
 
-    AWS_ACCESS_KEY_ID=INSERT_ACCESS_KEY_ID
-    AWS_SECRET_ACCESS_KEY=INSERT_SECRET_ACCESS_KEY
-    AWS_STATIC_STORAGE_BUCKET_NAME={{ project_name }}-static
-    AWS_MEDIA_STORAGE_BUCKET_NAME={{ project_name }}-media
-
-Push to Heroku via:
-
-    heroku config:push
+    heroku config:set AWS_ACCESS_KEY_ID=INSERT_ACCESS_KEY_ID
+    heroku config:set AWS_SECRET_ACCESS_KEY=INSERT_SECRET_ACCESS_KEY
+    heroku config:set AWS_STATIC_STORAGE_BUCKET_NAME={{ project_name }}-static
+    heroku config:set AWS_MEDIA_STORAGE_BUCKET_NAME={{ project_name }}-media
 
 Third-party plugins used
 ========================
