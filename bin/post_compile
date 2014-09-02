@@ -4,7 +4,7 @@ set -eo pipefail
 source bin/common.sh
 
 if ! type node &> /dev/null; then
-    status "Installing Node.js"
+    status "Installing node.js"
     chmod +x bin/install_nodejs
     bin/install_nodejs 2>&1 | indent
 fi
