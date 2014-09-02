@@ -123,7 +123,7 @@ This is meant to mimic production as close as possible using both the production
 Third-party plugins used
 ========================
 
-Currently using [Django 1.6.6](https://docs.djangoproject.com/en/1.6/)
+Currently using [Django 1.6.6](https://docs.djangoproject.com/en/1.6/) and [Node 0.10.x](http://nodejs.org/api/)
 
 base.txt
 --------
@@ -157,6 +157,10 @@ production.txt
 test.txt
 --------
 - [coverage 3.7.1](http://nedbatchelder.com/code/coverage/) - measures code coverage
+
+package.json
+------------
+- [yuglify 0.1.4](https://github.com/yui/yuglify) - uglifyJS and cssmin compressor
 
 Acknowledgements
 ================
