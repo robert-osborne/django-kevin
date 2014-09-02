@@ -42,7 +42,7 @@ DATABASES = {
 CACHES = {
     'default': {
         'BACKEND': 'redis_cache.cache.RedisCache',
-        'LOCATION': '127.0.0.1:6379:1',
+        'LOCATION': 'localhost:6379:1',
     },
     'dummy': {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
