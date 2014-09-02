@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% templatetag openblock %} load staticfiles {% templatetag closeblock %}
+{% templatetag openblock %} load compressed {% templatetag closeblock %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,27 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link href="{% templatetag openblock %} static 'css/bootstrap.min.css' {% templatetag closeblock %}" rel="stylesheet">
+    {% templatetag openblock %} compressed_css 'master' {% templatetag closeblock %}
+    {% templatetag openblock %} block extra_css {% templatetag closeblock %}{% templatetag openblock %} endblock extra_css {% templatetag closeblock %}
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-    <!-- SS-Standard Symbols -->
-    <!-- {% templatetag openblock %} static 'fonts/ss-standard/documentation.html' {% templatetag closeblock %}-->
-    <link href="{% templatetag openblock %} static 'css/ss-standard.css' {% templatetag closeblock %}" rel="stylesheet" />
-
-    <!-- Project specific CSS -->
-    <link href="{% templatetag openblock %} static 'css/app.css' {% templatetag closeblock %}" rel="stylesheet">
-
-    {% templatetag openblock %} block extra_css {% templatetag closeblock %}{% templatetag openblock %} endblock extra_css {% templatetag closeblock %}
   </head>
 
   <body>
-
     <div class="container">
-
       {% templatetag openblock %} block header {% templatetag closeblock %}
         <h1>{% templatetag openblock %} block page_title {% templatetag closeblock %}Hello World{% templatetag openblock %} endblock page_title {% templatetag closeblock %}</h1>
       {% templatetag openblock %} endblock header {% templatetag closeblock %}
@@ -40,16 +31,9 @@
       {% templatetag openblock %} block content {% templatetag closeblock %}
 
       {% templatetag openblock %} endblock content {% templatetag closeblock %}
-
     </div>
 
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="{% templatetag openblock %} static 'js/bootstrap.min.js' {% templatetag closeblock %}"></script>
-    <script src="{% templatetag openblock %} static 'js/ss-standard.js' {% templatetag closeblock %}"></script>
-
-    <!-- Project specific JavaScript -->
-    <script src="{% templatetag openblock %} static 'js/app.js' {% templatetag closeblock %}"></script>
-
+    {% templatetag openblock %} compressed_js 'master' {% templatetag closeblock %}
     {% templatetag openblock %} block extra_js {% templatetag closeblock %}{% templatetag openblock %} endblock extra_js {% templatetag closeblock %}
   </body>
 </html>
