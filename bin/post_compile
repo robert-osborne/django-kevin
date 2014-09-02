@@ -14,5 +14,5 @@ if ! type yuglify &> /dev/null; then
     npm install -g yuglify 2>&1 | indent
 fi
 
-echo "Post-compile done" 2>&1 | indent
+status "Post-compile done"
 echo
