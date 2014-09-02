@@ -56,7 +56,7 @@ DATABASES['default'] = dj_database_url.config()
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#caches
 if 'REDISCLOUD_URL' in os.environ:
     import urlparse
-    redis_url = urlparse.urlparse(os.environ.get('REDISCLOUD_URL'))
+    redis_url = urlparse.urlparse(os.getenv('REDISCLOUD_URL'))
     CACHES = {
         'default': {
             'BACKEND': 'redis_cache.cache.RedisCache',
