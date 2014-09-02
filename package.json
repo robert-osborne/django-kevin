@@ -1,0 +1,13 @@
+{
+  "name": "{{ project_name }}",
+  "description": "Node dependencies for {{ project_name }} Django app",
+  "author": "Kevin Xu <kevin@imkevinxu.com>",
+  "homepage": "http://imkevinxu.com/",
+  "dependencies": {
+    "yuglify": ">= 0.1.4"
+  },
+  "version": "0.0.0",
+  "engines": {
+    "node": "0.10.x"
+  }
+}

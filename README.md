@@ -12,7 +12,7 @@ Creating Your Project
 
 To create a new Django project, run the following command replacing `{{ project_name }}` with your actual project name:
 
-    django-admin.py startproject --template=https://github.com/imkevinxu/django-twoscoops-project/archive/master.zip --extension=py,md,html --name=Procfile,Procfile.dev {{ project_name }}
+    django-admin.py startproject --template=https://github.com/imkevinxu/django-twoscoops-project/archive/master.zip --extension=py,md,html,json --name=Procfile,Procfile.dev {{ project_name }}
 
 Make virtual environments
 -------------------------
@@ -102,6 +102,7 @@ Deploy to Heroku
     git commit -m "ready for heroku deploy"
     heroku create
     heroku config:push
+    heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
     git push heroku master
     heroku run django-admin.py syncdb --noinput
     heroku run django-admin.py migrate
