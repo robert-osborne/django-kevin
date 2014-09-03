@@ -131,9 +131,15 @@ Add-ons
 
 Redis Cloud
 -----------
-In order to enable redis for caching and queues, add [Redis Cloud](https://devcenter.heroku.com/articles/rediscloud) on Heroku.
+In order to enable redis for caching and queues, add [Redis Cloud](https://devcenter.heroku.com/articles/rediscloud) to Heroku.
 
     heroku addons:add rediscloud:25
+
+Redis Queue
+-----------
+Turn on background job worker queue with this one-liner:
+
+    heroku scale worker=1
 
 Amazon S3
 ---------
