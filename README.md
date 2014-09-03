@@ -155,7 +155,7 @@ Add the following config variables to Heroku:
 Libraries
 =========
 
-Python 2.7.8
+Python 2.7.X
 ------------
 
 Currently using [Django 1.6.6](https://docs.djangoproject.com/en/1.6/) for the app framework
@@ -195,7 +195,7 @@ test.txt
 --------
 - [coverage 3.7.1](http://nedbatchelder.com/code/coverage/) - measures code coverage
 
-Node 0.10.31
+Node 0.10.X
 ------------
 
 Using `post_compile` script for the Heroku python environment to recognize node packages

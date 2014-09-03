@@ -12,7 +12,7 @@ fi
 
 if ! type yuglify &> /dev/null; then
     status "Installing yuglify"
-    npm install -g yuglify 2>&1 | indent
+    npm install -g yuglify@0.1.4 2>&1 | indent
     echo
 fi
 
