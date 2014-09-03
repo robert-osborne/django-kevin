@@ -1,4 +1,4 @@
-Welcome to {{ project_name }}'s documentation!
+Welcome to imHome's documentation!
 ==============================================
 
 [Installation](installation.md)
@@ -20,3 +20,8 @@ High-level overview of how this app is structured and what tools it uses to do w
 ----------------------------
 
 List of what third-party plugins/libraries are used and what they do.
+
+[Services](services.md)
+----------------------------
+
+List of cloud services used.

@@ -152,10 +152,13 @@ Add the following config variables to Heroku:
     heroku config:set AWS_STATIC_STORAGE_BUCKET_NAME={{ project_name }}-static
     heroku config:set AWS_MEDIA_STORAGE_BUCKET_NAME={{ project_name }}-media
 
-Third-party plugins used
-========================
+Libraries
+=========
 
-Currently using [Django 1.6.6](https://docs.djangoproject.com/en/1.6/) and [Node 0.10.x](http://nodejs.org/api/)
+Python 2.7.8
+------------
+
+Currently using [Django 1.6.6](https://docs.djangoproject.com/en/1.6/) for the app framework
 
 base.txt
 --------
@@ -192,8 +195,11 @@ test.txt
 --------
 - [coverage 3.7.1](http://nedbatchelder.com/code/coverage/) - measures code coverage
 
-package.json
+Node 0.10.31
 ------------
+
+Using `post_compile` script for the Heroku python environment to recognize node packages
+
 - [yuglify 0.1.4](https://github.com/yui/yuglify) - uglifyJS and cssmin compressor
 
 Acknowledgements
