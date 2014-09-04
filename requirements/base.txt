@@ -28,10 +28,6 @@ django-extensions==1.3.9
 # http://django-floppyforms.readthedocs.org/en/latest/
 django-floppyforms==1.2.0
 
-# Return python objects as JSON
-# https://github.com/jsocol/django-jsonview
-django-jsonview==0.4.3
-
 # Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 # https://django-model-utils.readthedocs.org/en/latest/
 django-model-utils==2.2

@@ -175,7 +175,6 @@ base.txt
 - [django-braces 1.4.0](http://django-braces.readthedocs.org/en/v1.4.0/) - lots of custom mixins
 - [django-extensions 1.3.9](http://django-extensions.readthedocs.org/en/latest/) - useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 - [django-floppyforms 1.2.0](http://django-floppyforms.readthedocs.org/en/latest/) - control of output of form rendering
-- [django-jsonview 0.4.3](https://github.com/jsocol/django-jsonview) - return python objects as JSON
 - [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 - [django-pipeline 1.3.25](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
 - [django-redis 3.7.1](https://django-redis.readthedocs.org/en/latest/) - enables redis cacheing
