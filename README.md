@@ -1,7 +1,7 @@
 django-kevin
 ============
 
-A heavily personalized project template for Django 1.6 using postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
+A heavily personalized project template for Django 1.7 using postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
 
 Forked from the original [django-two-scoops-project](https://github.com/twoscoops/django-twoscoops-project)
 
@@ -60,8 +60,7 @@ Install Postgres for your OS [here](http://www.postgresql.org/download/). For Ma
 
     # Make sure Postgres.app is running
     workon {{ project_name }}-dev
-    createdb {{ project_name }}
-    foreman run django-admin.py syncdb --noinput
+    createdb {{ project_name }}-dev
 
 Run project locally in dev environment
 --------------------------------------
@@ -71,6 +70,10 @@ Recommended to use foreman to start processes:
 *By default, .foreman uses the development versions of .env and Procfile*
 
     foreman start
+
+Migrate models with:
+
+    foreman run django-admin.py migrate
 
 To run one-off commands use:
 
@@ -158,7 +161,7 @@ Libraries
 Python 2.7.X
 ------------
 
-Currently using [Django 1.6.6](https://docs.djangoproject.com/en/1.6/) for the app framework
+Currently using [Django 1.7](https://docs.djangoproject.com/en/1.7/) for the app framework
 
 base.txt
 --------

@@ -284,23 +284,12 @@ LOGGING = {
 ########## END LOGGING CONFIGURATION
 
 
-########## WSGI CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
-WSGI_APPLICATION = 'config.wsgi.application'
-########## END WSGI CONFIGURATION
-
-
 ########## TESTRUNNER CONFIGURATION
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 ########## END TESTRUNNER CONFIGURATION
 
 
-########## SOUTH CONFIGURATION
-# See: http://south.readthedocs.org/en/latest/installation.html#configuring-your-django-installation
-INSTALLED_APPS += (
-    # Database migration helpers:
-    'south',
-)
-# Don't need to use South when setting up a test database.
-SOUTH_TESTS_MIGRATE = False
-########## END SOUTH CONFIGURATION
+########## WSGI CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
+WSGI_APPLICATION = 'config.wsgi.application'
+########## END WSGI CONFIGURATION
