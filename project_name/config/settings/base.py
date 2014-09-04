@@ -290,6 +290,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 ########## END WSGI CONFIGURATION
 
 
+########## TESTRUNNER CONFIGURATION
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+########## END TESTRUNNER CONFIGURATION
+
+
 ########## SOUTH CONFIGURATION
 # See: http://south.readthedocs.org/en/latest/installation.html#configuring-your-django-installation
 INSTALLED_APPS += (
