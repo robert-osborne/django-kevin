@@ -1,7 +1,7 @@
-Custom Django 1.6 Template
-==========================
+django-kevin
+============
 
-A personalized project template for Django 1.6 using postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
+A heavily personalized project template for Django 1.6 using postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
 
 Forked from the original [django-two-scoops-project](https://github.com/twoscoops/django-twoscoops-project)
 
@@ -12,7 +12,7 @@ Creating Your Project
 
 To create a new Django project, run the following command replacing `{{ project_name }}` with your actual project name:
 
-    django-admin.py startproject --template=https://github.com/imkevinxu/django-twoscoops-project/archive/master.zip --extension=py,md,html,json,tmp --name=Procfile,Procfile.dev {{ project_name }}
+    django-admin.py startproject --template=https://github.com/imkevinxu/django-kevin/archive/master.zip --extension=py,md,html,json,tmp --name=Procfile,Procfile.dev {{ project_name }}
 
 Make virtual environments
 -------------------------
