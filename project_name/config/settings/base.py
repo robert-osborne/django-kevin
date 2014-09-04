@@ -206,6 +206,13 @@ MIDDLEWARE_CLASSES = (
 ########## END MIDDLEWARE CONFIGURATION
 
 
+########## MIGRATIONS CONFIGURATION
+MIGRATION_MODULES = {
+    'sites': 'sites.migrations'
+}
+########## END MIGRATIONS CONFIGURATION
+
+
 ########## URL CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
 ROOT_URLCONF = 'config.urls'
