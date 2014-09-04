@@ -113,9 +113,15 @@ After `post_compile` is done, uncomment line 108 in `/{{ project_name }}/config/
 
     git commit -am "enabled django-pipeline"
     git push heroku master
-    heroku run django-admin.py syncdb --noinput
-    heroku run django-admin.py migrate
     heroku open
+
+If you're sure all database migrations are in good condition, migrate models with:
+
+    heroku run django-admin.py migrate
+
+To run one-off commands use:
+
+    heroku run django-admin.py COMMAND
 
 Run project locally in prod environment
 ---------------------------------------
