@@ -1,3 +1,8 @@
-# Test dependencies go here.
+# See more documentation in /docs/libraries.md
+
+# Importing from base.txt
 -r base.txt
+
+# Measures code coverage
+# http://nedbatchelder.com/code/coverage/
 coverage==3.7.1

@@ -1,8 +1,20 @@
-# Pro-tip: Try not to put anything here. There should be no dependency in
-#   production that isn't in development.
+# See more documentation in /docs/libraries.md
+
+# Importing from base.txt
 -r base.txt
 
+# Python interface to AWS
+# https://boto.readthedocs.org/en/latest/
 boto==2.32.1
+
+# Allows Django to use database URLs for Heroku
+# https://github.com/kennethreitz/dj-database-url
 dj-database-url==0.3.0
+
+# Custom storage backends; using S3
+# http://django-storages.readthedocs.org/en/latest/index.html
 django-storages==1.1.8
+
+# Production WSGI server with workers
+# https://github.com/benoitc/gunicorn
 gunicorn==19.1.0

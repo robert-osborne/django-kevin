@@ -173,7 +173,7 @@ base.txt
 - [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 - [django-pipeline 1.3.25](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
 - [django-redis 3.7.1](https://django-redis.readthedocs.org/en/latest/) - enables redis cacheing
-- [psycopg2 2.5.3](http://pythonhosted.org//psycopg2/) - PostgreSQL adapter
+- [psycopg2 2.5.3](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
 - [pytz 2014.4](http://pytz.sourceforge.net/) - world timezone definitions
 - [requests 2.4.0](http://docs.python-requests.org/en/latest/) - HTTP request API
 - [rq 0.4.6](http://python-rq.org/) - background tasks using redis as queue
