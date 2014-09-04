@@ -61,6 +61,7 @@ Install Postgres for your OS [here](http://www.postgresql.org/download/). For Ma
     # Make sure Postgres.app is running
     workon {{ project_name }}-dev
     createdb {{ project_name }}-dev
+    foreman run django-admin.py migrate
 
 Run project locally in dev environment
 --------------------------------------
@@ -70,10 +71,6 @@ Recommended to use foreman to start processes:
 *By default, .foreman uses the development versions of .env and Procfile*
 
     foreman start
-
-Migrate models with:
-
-    foreman run django-admin.py migrate
 
 To run one-off commands use:
 
