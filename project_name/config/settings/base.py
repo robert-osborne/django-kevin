@@ -221,7 +221,7 @@ ROOT_URLCONF = 'config.urls'
 
 
 ########## USER MODEL CONFIGURATION
-AUTH_USER_MODEL = 'authtools.User'
+AUTH_USER_MODEL = 'accounts.User'
 ########## END USER MODEL CONFIGURATION
 
 
@@ -245,6 +245,7 @@ DJANGO_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
+    'accounts',
 )
 
 THIRD_PARTY_APPS = (
