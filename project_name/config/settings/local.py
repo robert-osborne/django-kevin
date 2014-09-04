@@ -39,7 +39,7 @@ DATABASES = {
 
 ########## CACHE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#caches
-CACHES = {
+CACHE_ENGINES = {
     'default': {
         'BACKEND': 'redis_cache.cache.RedisCache',
         'LOCATION': 'localhost:6379:1',
@@ -49,8 +49,10 @@ CACHES = {
     }
 }
 
+CACHES = {}
+CACHES['default'] = CACHE_ENGINES[os.getenv('CACHE', 'default')]
+
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
-SESSION_CACHE_ALIAS = os.getenv('CACHE', 'default')
 ########## END CACHE CONFIGURATION
 
 
