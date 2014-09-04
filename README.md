@@ -72,6 +72,10 @@ Recommended to use foreman to start processes:
 
     foreman start
 
+Create a local super user with:
+
+    foreman run django-admin.py createsuperuser
+
 To run one-off commands use:
 
     foreman run django-admin.py COMMAND
