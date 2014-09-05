@@ -18,9 +18,21 @@ ALLOWED_HOSTS = [PROJECT_DOMAIN, '.herokuapp.com', 'localhost', '127.0.0.1']
 ########## END HOST CONFIGURATION
 
 
+########## SECRET CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
+SECRET_KEY = os.environ['SECRET_KEY']
+########## END SECRET CONFIGURATION
+
+
 ########## EMAIL CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-use-tls
+EMAIL_USE_TLS = True
+
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
+DEFAULT_FROM_EMAIL = '%s Team <contact@%s>' % (PROJECT_NAME, PROJECT_DOMAIN)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-host
 EMAIL_HOST = 'smtp.gmail.com'
@@ -33,23 +45,17 @@ EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-host-password
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
-DEFAULT_FROM_EMAIL = '%s Team <contact@%s>' % (PROJECT_NAME, PROJECT_DOMAIN)
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
-EMAIL_SUBJECT_PREFIX = '[%s] ' % PROJECT_NAME
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-use-tls
-EMAIL_USE_TLS = True
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#server-email
-SERVER_EMAIL = 'Serverbot <dev@%s>' % PROJECT_DOMAIN
 ########## END EMAIL CONFIGURATION
 
 
 ########## MANAGER CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
+EMAIL_SUBJECT_PREFIX = '[%s] ' % PROJECT_NAME
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#server-email
+SERVER_EMAIL = 'Serverbot <dev@%s>' % PROJECT_DOMAIN
+
+# See https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = (
     ('Dev Team', 'Dev Team <dev@%s>' % PROJECT_DOMAIN),
 )
@@ -67,11 +73,23 @@ DATABASES['default'] = dj_database_url.config()
 ########## END DATABASE CONFIGURATION
 
 
+########## TEMPLATE CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
+TEMPLATE_LOADERS = (
+    ('django.template.loaders.cached.Loader', (
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+    )),
+)
+########## END TEMPLATE CONFIGURATION
+
+
 ########## CACHE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#caches
 if 'REDISCLOUD_URL' in os.environ:
     import urlparse
     redis_url = urlparse.urlparse(os.getenv('REDISCLOUD_URL'))
+
     CACHES = {
         'default': {
             'BACKEND': 'redis_cache.cache.RedisCache',
@@ -82,12 +100,6 @@ if 'REDISCLOUD_URL' in os.environ:
         }
     }
 ########## END CACHE CONFIGURATION
-
-
-########## SECRET CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
-SECRET_KEY = os.environ['SECRET_KEY']
-########## END SECRET CONFIGURATION
 
 
 ########## AMAZON S3 CONFIGURATION
@@ -102,9 +114,14 @@ if 'AWS_ACCESS_KEY_ID' in os.environ:
     AWS_QUERYSTRING_AUTH = False
     AWS_PRELOAD_METADATA = True
 
+    AWS_EXPIREY = 60 * 60 * 24 * 7
+    AWS_HEADERS = {
+        'Cache-Control': 'max-age=%d, s-maxage=%d, must-revalidate' % (AWS_EXPIREY, AWS_EXPIREY)
+    }
+
     # Separate buckets for static files and media files
-    AWS_STATIC_STORAGE_BUCKET_NAME = os.getenv('AWS_STATIC_STORAGE_BUCKET_NAME')
-    AWS_MEDIA_STORAGE_BUCKET_NAME = os.getenv('AWS_MEDIA_STORAGE_BUCKET_NAME')
+    AWS_STATIC_STORAGE_BUCKET_NAME = 'imhome-static'
+    AWS_MEDIA_STORAGE_BUCKET_NAME = 'imhome-media'
     S3_STATIC_URL = '//%s.s3.amazonaws.com/' % AWS_STATIC_STORAGE_BUCKET_NAME
     S3_MEDIA_URL = '//%s.s3.amazonaws.com/' % AWS_MEDIA_STORAGE_BUCKET_NAME
 
