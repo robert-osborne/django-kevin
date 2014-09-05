@@ -1,6 +1,8 @@
 django-kevin
 ============
 
+![Django 1.7](http://img.shields.io/badge/Django-1.7-brightgreen.svg)
+
 A heavily personalized project template for Django 1.7 using postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
 
 Forked from the original [django-two-scoops-project](https://github.com/twoscoops/django-twoscoops-project)
