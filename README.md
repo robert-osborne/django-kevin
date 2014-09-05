@@ -110,7 +110,7 @@ First step is to deploy to Heroku with the `post_compile` script in bin/ so that
     heroku config:push
     git push heroku master
 
-After `post_compile` is done, uncomment line 108 in `/{{ project_name }}/config/settings/base.py` to enable django-pipeline.
+After `post_compile` is done, uncomment line 187 in `/{{ project_name }}/config/settings/base.py` to enable django-pipeline.
 
     git commit -am "enabled django-pipeline"
     git push heroku master
