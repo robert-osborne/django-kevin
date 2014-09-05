@@ -10,6 +10,6 @@ from django.core.mail import send_mail
 
 
 class IndexView(TemplateView):
-    template_name = 'index.html'
+    template_name = 'pages/home.html'
 
 index = cache_page(60 * 10)(IndexView.as_view())
