@@ -203,6 +203,7 @@ production.txt
 test.txt
 --------
 - [coverage 3.7.1](http://nedbatchelder.com/code/coverage/) - measures code coverage
+- [flake8 2.2.3](http://flake8.readthedocs.org/en/latest/) - Python style checker
 
 Node 0.10.X
 ------------

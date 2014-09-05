@@ -6,3 +6,7 @@
 # Measures code coverage
 # http://nedbatchelder.com/code/coverage/
 coverage==3.7.1
+
+# Python style checker
+# http://flake8.readthedocs.org/en/latest/
+flake8==2.2.3
