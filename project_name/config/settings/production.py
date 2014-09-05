@@ -86,9 +86,9 @@ TEMPLATE_LOADERS = (
 
 ########## CACHE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#caches
-if 'REDISCLOUD_URL' in os.environ:
+try:
     import urlparse
-    redis_url = urlparse.urlparse(os.getenv('REDISCLOUD_URL'))
+    redis_url = urlparse.urlparse(os.environ['REDISCLOUD_URL'])
 
     CACHES = {
         'default': {
@@ -99,12 +99,19 @@ if 'REDISCLOUD_URL' in os.environ:
             }
         }
     }
+
+except KeyError:
+    print "WARNING: REDISCLOUD_URL env variable is not set"
+    print "         Caching is not enabled"
 ########## END CACHE CONFIGURATION
 
 
 ########## AMAZON S3 CONFIGURATION
 # See: http://django-storages.readthedocs.org/en/latest/backends/amazon-S3.html
-if 'AWS_ACCESS_KEY_ID' in os.environ:
+try:
+    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+
     INSTALLED_APPS += (
         'storages',
         'collectfast'
@@ -141,4 +148,8 @@ if 'AWS_ACCESS_KEY_ID' in os.environ:
     MediaRootS3BotoStorage = lambda: S3BotoStorage(bucket=AWS_MEDIA_STORAGE_BUCKET_NAME)
     DEFAULT_FILE_STORAGE = 'config.settings.production.MediaRootS3BotoStorage'
     MEDIA_URL = S3_MEDIA_URL
+
+except KeyError:
+    print "WARNING: AWS_ACCESS_KEY_ID and/or AWS_SECRET_ACCESS_KEY env variable are not set"
+    print "         Amazon S3 collectstatic upload is not enabled"
 ########## END AMAZON S3 CONFIGURATION
