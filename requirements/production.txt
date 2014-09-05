@@ -3,6 +3,10 @@
 # Importing from base.txt
 -r base.txt
 
+# Faster collectstatic
+# https://github.com/antonagestam/collectfast
+Collectfast==0.2.0
+
 # Python interface to AWS
 # https://boto.readthedocs.org/en/latest/
 boto==2.32.1

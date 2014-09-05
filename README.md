@@ -197,6 +197,7 @@ local.txt
 
 production.txt
 --------------
+- [Collectfast 0.2.0](https://github.com/antonagestam/collectfast) - Faster collectstatic
 - [boto 2.32.1](https://boto.readthedocs.org/en/latest/) - Python interface to AWS
 - [dj-database-url 0.3.0](https://github.com/kennethreitz/dj-database-url) - allows Django to use database URLs for Heroku
 - [django-storages 1.1.8](http://django-storages.readthedocs.org/en/latest/index.html) - custom storage backends; using S3

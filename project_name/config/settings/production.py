@@ -62,6 +62,7 @@ MANAGERS = ADMINS
 ########## DATABASE CONFIGURATION
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
+DATABASES = {}
 DATABASES['default'] = dj_database_url.config()
 ########## END DATABASE CONFIGURATION
 
@@ -94,10 +95,12 @@ SECRET_KEY = os.environ['SECRET_KEY']
 if 'AWS_ACCESS_KEY_ID' in os.environ:
     INSTALLED_APPS += (
         'storages',
+        'collectfast'
     )
 
     AWS_S3_SECURE_URLS = True
     AWS_QUERYSTRING_AUTH = False
+    AWS_PRELOAD_METADATA = True
 
     # Separate buckets for static files and media files
     AWS_STATIC_STORAGE_BUCKET_NAME = os.getenv('AWS_STATIC_STORAGE_BUCKET_NAME')
