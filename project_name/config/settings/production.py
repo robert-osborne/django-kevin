@@ -101,8 +101,7 @@ try:
     }
 
 except KeyError:
-    print "WARNING: REDISCLOUD_URL env variable is not set"
-    print "         Caching is not enabled"
+    pass
 ########## END CACHE CONFIGURATION
 
 
@@ -150,6 +149,5 @@ try:
     MEDIA_URL = S3_MEDIA_URL
 
 except KeyError:
-    print "WARNING: AWS_ACCESS_KEY_ID and/or AWS_SECRET_ACCESS_KEY env variable are not set"
-    print "         Amazon S3 collectstatic upload is not enabled"
+    pass
 ########## END AMAZON S3 CONFIGURATION
