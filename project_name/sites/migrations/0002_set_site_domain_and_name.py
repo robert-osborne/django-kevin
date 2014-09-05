@@ -14,7 +14,7 @@ def update_site_forward(apps, schema_editor):
         }
     else:
         defaults={
-            "domain": "%s.com" % settings.PROJECT_NAME,
+            "domain": settings.PROJECT_DOMAIN,
             "name": settings.PROJECT_NAME
         }
 

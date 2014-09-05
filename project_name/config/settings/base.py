@@ -1,4 +1,13 @@
-"""Common settings and globals."""
+"""
+Base settings and globals.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/dev/topics/settings/
+
+For the full list of settings and their values, see
+https://docs.djangoproject.com/en/dev/ref/settings/
+"""
+
 
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
@@ -14,10 +23,65 @@ PROJECT_ROOT = dirname(CONFIG_ROOT)
 # Project name:
 PROJECT_NAME = basename(PROJECT_ROOT)
 
+# Project domain:
+PROJECT_DOMAIN = '%s.com' % PROJECT_NAME
+
 # Add our project to our pythonpath, this way we don't need to type our project
 # name in our dotted import paths:
 path.append(CONFIG_ROOT)
 ########## END PATH CONFIGURATION
+
+
+########## APP CONFIGURATION
+DJANGO_APPS = (
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.humanize',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
+)
+
+THIRD_PARTY_APPS = (
+    'authtools',
+    'django_extensions',
+    'floppyforms',
+    'pipeline',
+)
+
+LOCAL_APPS = (
+    'accounts',
+)
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+########## END APP CONFIGURATION
+
+
+########## MIDDLEWARE CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#middleware-classes
+MIDDLEWARE_CLASSES = (
+    'django.middleware.gzip.GZipMiddleware',
+    'pipeline.middleware.MinifyHTMLMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+########## END MIDDLEWARE CONFIGURATION
+
+
+########## MIGRATIONS CONFIGURATION
+MIGRATION_MODULES = {
+    'sites': 'sites.migrations'
+}
+########## END MIGRATIONS CONFIGURATION
 
 
 ########## DEBUG CONFIGURATION
@@ -29,15 +93,19 @@ TEMPLATE_DEBUG = DEBUG
 ########## END DEBUG CONFIGURATION
 
 
-########## MANAGER CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = (
-    ('Kevin Xu', 'kevin@imkevinxu.com'),
-)
+########## SECRET CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
+# Note: This key should only be used for development and testing.
+SECRET_KEY = r"{{ secret_key }}"
+########## END SECRET CONFIGURATION
 
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
-MANAGERS = ADMINS
-########## END MANAGER CONFIGURATION
+
+########## FIXTURE CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-FIXTURE_DIRS
+FIXTURE_DIRS = (
+    normpath(join(PROJECT_ROOT, 'fixtures')),
+)
+########## END FIXTURE CONFIGURATION
 
 
 ########## DATABASE CONFIGURATION
@@ -143,26 +211,11 @@ PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 ########## END PIPELINE CONFIGURATION
 
 
-########## SECRET CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
-# Note: This key should only be used for development and testing.
-SECRET_KEY = r"{{ secret_key }}"
-########## END SECRET CONFIGURATION
-
-
 ########## SITE CONFIGURATION
 # Hosts/domain names that are valid for this site
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
 ########## END SITE CONFIGURATION
-
-
-########## FIXTURE CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-FIXTURE_DIRS
-FIXTURE_DIRS = (
-    normpath(join(PROJECT_ROOT, 'fixtures')),
-)
-########## END FIXTURE CONFIGURATION
 
 
 ########## TEMPLATE CONFIGURATION
@@ -191,29 +244,6 @@ TEMPLATE_DIRS = (
 ########## END TEMPLATE CONFIGURATION
 
 
-########## MIDDLEWARE CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#middleware-classes
-MIDDLEWARE_CLASSES = (
-    'django.middleware.gzip.GZipMiddleware',
-    'pipeline.middleware.MinifyHTMLMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
-########## END MIDDLEWARE CONFIGURATION
-
-
-########## MIGRATIONS CONFIGURATION
-MIGRATION_MODULES = {
-    'sites': 'sites.migrations'
-}
-########## END MIGRATIONS CONFIGURATION
-
-
 ########## URL CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
 ROOT_URLCONF = 'config.urls'
@@ -223,41 +253,6 @@ ROOT_URLCONF = 'config.urls'
 ########## USER MODEL CONFIGURATION
 AUTH_USER_MODEL = 'accounts.User'
 ########## END USER MODEL CONFIGURATION
-
-
-########## APP CONFIGURATION
-DJANGO_APPS = (
-    # Default Django apps:
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-
-    # Useful template tags:
-    'django.contrib.humanize',
-
-    # Admin panel and documentation:
-    'django.contrib.admin',
-    'django.contrib.admindocs',
-)
-
-# Apps specific for this project go here.
-LOCAL_APPS = (
-    'accounts',
-)
-
-THIRD_PARTY_APPS = (
-    'authtools',
-    'django_extensions',
-    'floppyforms',
-    'pipeline',
-)
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
-INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
-########## END APP CONFIGURATION
 
 
 ########## LOGGING CONFIGURATION
