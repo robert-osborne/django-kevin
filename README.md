@@ -143,7 +143,7 @@ Add-ons
 
 SSL
 ---
-Enable SSL via Heroku, Cloudflare, or your DNS provider and then uncomment lines 84-107 in `/{{ project_name }}/config/settings/production.py` to enable django-secure security best practices for production.
+Enable SSL via Heroku, Cloudflare, or your DNS provider and then uncomment lines 84-108 in `/{{ project_name }}/config/settings/production.py` to enable django-secure security best practices for production.
 
 Redis Cloud
 -----------
