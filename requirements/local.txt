@@ -10,3 +10,7 @@ Werkzeug==0.9.6
 # Debug information in a toolbar
 # http://django-debug-toolbar.readthedocs.org/en/1.2/
 django-debug-toolbar==1.2.1
+
+# SSL localhost server
+# https://github.com/teddziuba/django-sslserver
+django-sslserver==0.12

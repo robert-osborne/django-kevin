@@ -71,3 +71,11 @@ DEBUG_TOOLBAR_PATCH_SETTINGS = False
 # http://django-debug-toolbar.readthedocs.org/en/latest/installation.html
 INTERNAL_IPS = ('127.0.0.1',)
 ########## END TOOLBAR CONFIGURATION
+
+
+########## SSL SERVER CONFIGURATION
+# See: https://github.com/teddziuba/django-sslserver#getting-started
+INSTALLED_APPS += (
+    'sslserver',
+)
+########## END SSL SERVER CONFIGURATION
