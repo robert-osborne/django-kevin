@@ -25,3 +25,8 @@ List of what third-party plugins/libraries are used and what they do.
 ----------------------------
 
 List of cloud services used.
+
+[Changelog](changelog.md)
+----------------------------
+
+List of changes in each version update.
