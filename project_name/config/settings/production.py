@@ -7,11 +7,6 @@ from .base import *
 import os
 
 
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-SECURE_PROXY_SSL_HEADER
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-
 ########## HOST CONFIGURATION
 # See: https://docs.djangoproject.com/en/1.5/releases/1.5/#allowed-hosts-required-in-production
 ALLOWED_HOSTS = [PROJECT_DOMAIN, '.herokuapp.com', 'localhost', '127.0.0.1']
@@ -84,6 +79,35 @@ TEMPLATE_LOADERS = (
 ########## END TEMPLATE CONFIGURATION
 
 
+########## SECURITY CONFIGURATION
+# See: http://django-secure.readthedocs.org/en/v0.1.2/settings.html
+# INSTALLED_APPS += (
+#     'djangosecure',
+# )
+
+# MIDDLEWARE_CLASSES += (
+#     'djangosecure.middleware.SecurityMiddleware',
+# )
+
+# # Honor the 'X-Forwarded-Proto' header for request.is_secure()
+# # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-SECURE_PROXY_SSL_HEADER
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# # Use this setting if SSL is being served through CloudFlare proxy
+# SECURE_PROXY_SSL_HEADER = ('HTTP_CF_VISITOR', '{"scheme":"https"}',)
+
+# # Set this to 30 seconds and then to 518400 when you can prove it works
+# SECURE_HSTS_SECONDS = 30
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_FRAME_DENY = True
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_BROWSER_XSS_FILTER = True
+# SESSION_COOKIE_SECURE = True
+# SESSION_COOKIE_HTTPONLY = True
+# SECURE_SSL_REDIRECT = True
+########## END SECURITY CONFIGURATION
+
+
 ########## CACHE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#caches
 try:
@@ -99,6 +123,8 @@ try:
             }
         }
     }
+
+    SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 except KeyError:
     pass

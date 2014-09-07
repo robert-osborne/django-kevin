@@ -141,6 +141,10 @@ This is meant to mimic production as close as possible using both the production
 Add-ons
 =======
 
+SSL
+---
+Enable SSL via Heroku, Cloudflare, or your DNS provider and then uncomment lines 84-107 in `/{{ project_name }}/config/settings/production.py` to enable django-secure security best practices for production.
+
 Redis Cloud
 -----------
 In order to enable redis for caching and queues, add [Redis Cloud](https://devcenter.heroku.com/articles/rediscloud) to Heroku.
@@ -201,6 +205,7 @@ production.txt
 - [Collectfast 0.2.0](https://github.com/antonagestam/collectfast) - Faster collectstatic
 - [boto 2.32.1](https://boto.readthedocs.org/en/latest/) - Python interface to AWS
 - [dj-database-url 0.3.0](https://github.com/kennethreitz/dj-database-url) - allows Django to use database URLs for Heroku
+- [django-secure 1.0](http://django-secure.readthedocs.org/en/v0.1.2/) - Django security best practices
 - [django-storages 1.1.8](http://django-storages.readthedocs.org/en/latest/index.html) - custom storage backends; using S3
 - [gunicorn 19.1.0](https://github.com/benoitc/gunicorn) - production WSGI server with workers
 
