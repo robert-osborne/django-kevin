@@ -1,9 +1,15 @@
 {% templatetag openblock %} extends "base.html" {% templatetag closeblock %}
 
-{% templatetag openblock %} block title {% templatetag closeblock %}Page Not Found{% templatetag openblock %} endblock {% templatetag closeblock %}
+{% templatetag openblock %} block title {% templatetag closeblock %}Page Not Found{% templatetag openblock %} endblock title {% templatetag closeblock %}
+
+{% templatetag openblock %} block page_title {% templatetag closeblock %}{% templatetag openblock %} endblock page_title {% templatetag closeblock %}
 
 {% templatetag openblock %} block content {% templatetag closeblock %}
-  <h1>Page Not Found. 404 Error</h1>
 
-  <p>This is not the page you were looking for.</p>
+<div class="404">
+  <div class="glitch" data-text="Page Not Found">Page Not Found</div>
+
+  <p>This is not the page you were looking for. Go back to the <a href="{% url 'core:home' %}">homepage</a>.</p>
+</div>
+
 {% templatetag openblock %} endblock content {% templatetag closeblock %}

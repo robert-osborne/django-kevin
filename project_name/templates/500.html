@@ -1,11 +1,17 @@
 {% templatetag openblock %} extends "base.html" {% templatetag closeblock %}
 
-{% templatetag openblock %} block title {% templatetag closeblock %}Server Error{% templatetag openblock %} endblock {% templatetag closeblock %}
+{% templatetag openblock %} block title {% templatetag closeblock %}Server Error{% templatetag openblock %} endblock title {% templatetag closeblock %}
+
+{% templatetag openblock %} block page_title {% templatetag closeblock %}{% templatetag openblock %} endblock page_title {% templatetag closeblock %}
 
 {% templatetag openblock %} block content {% templatetag closeblock %}
-  <h1>Ooops!!! 500 Error</h1>
+
+<div class="500">
+  <div class="glitch" data-text="Server Error">Server Error</div>
 
   <h3>Looks like something went wrong!</h3>
 
   <p>We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.</p>
+</div>
+
 {% templatetag openblock %} endblock content {% templatetag closeblock %}
