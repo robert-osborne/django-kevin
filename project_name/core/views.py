@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.core.mail import send_mail
 
 
-class IndexView(TemplateView):
+class HomeView(TemplateView):
     template_name = 'pages/home.html'
 
-index = cache_page(60 * 10)(IndexView.as_view())
+home = cache_page(60 * 10)(HomeView.as_view())
