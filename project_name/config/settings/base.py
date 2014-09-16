@@ -193,9 +193,8 @@ STATICFILES_FINDERS = (
 PIPELINE_CSS = {
     'master': {
         'source_filenames': (
-          'css/lib/bootstrap.css',
-          'css/lib/ss-standard.css',
-          'css/app.css',
+          'css/lib/*.css',
+          'css/*.css',
         ),
         'output_filename': 'css/master.css',
         'variant': 'datauri',
@@ -207,9 +206,8 @@ PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 PIPELINE_JS = {
     'master': {
         'source_filenames': (
-          'js/lib/bootstrap.js',
-          'js/lib/ss-standard.js',
-          'js/app.js',
+          'js/lib/*.js',
+          'js/*.js',
         ),
         'output_filename': 'js/master.js',
         'extra_context': {
