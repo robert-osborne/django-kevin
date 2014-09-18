@@ -2,14 +2,21 @@
 ####################
 .env
 .env.dev
-assets/
+assets
+tmp
 
 # Python and Django #
 #####################
 staticfiles
+public
 build
 *.py[co]
 *.egg*
+
+# Node.js #
+###########
+node_modules
+node_debug.log
 
 # Text editors #
 ################
