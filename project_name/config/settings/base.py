@@ -207,7 +207,7 @@ PIPELINE_JS = {
     'master': {
         'source_filenames': (
             'js/lib/*.js',
-            'js/*.js',
+            'js/build/*.js',
         ),
         'output_filename': 'js/master.js',
         'extra_context': {

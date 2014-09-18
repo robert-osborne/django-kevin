@@ -4,21 +4,37 @@
 lint_stylesheets:
   - 'scsslint'
 
+lint_scripts:
+  - 'coffeelint'
+
+lint:
+  - 'lint_stylesheets'
+  - 'lint_scripts'
+
 build_stylesheets:
   - 'clean:stylesheets'
   - 'sass'
   - 'autoprefixer'
   - 'replace:stylesheets'
 
-compress_images:
+build_scripts:
+  - 'clean:scripts'
+  - 'coffee'
+
+build_images:
   - 'clean:images'
   - 'imagemin'
 
 build:
-  - 'concurrent:lint'
-  - 'concurrent:build'
-  - 'notify:build'
+  - 'build_stylesheets'
+  - 'build_scripts'
+  - 'build_images'
+
+heroku:
+  - 'build'
 
 default:
+  - 'lint'
   - 'build'
+  - 'notify:default'
   - 'watch'

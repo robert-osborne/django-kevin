@@ -2,11 +2,14 @@ module.exports =
 
   # Run grunt tasks concurrently
   # https://github.com/sindresorhus/grunt-concurrent
+
   lint: [
     'lint_stylesheets'
+    'lint_scripts'
   ]
+
   build: [
     'build_stylesheets'
-    'compress_images'
+    'build_scripts'
+    'build_images'
   ]
-  test: []

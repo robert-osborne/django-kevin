@@ -2,6 +2,7 @@ module.exports =
 
   # Run tasks whenever watched files change
   # https://github.com/gruntjs/grunt-contrib-watch
+
   options:
     spawn: false
 
@@ -19,10 +20,11 @@ module.exports =
     files: [
       '<%= paths.templates %>/**/*.html'
       '<%= paths.css %>/**/*.{scss,css}'
+      '<%= paths.js %>/**/*.{coffee,js}'
     ]
 
   stylesheets:
-    files: ['<%= paths.css %>/src/*.scss']
+    files: ['<%= paths.css %>/scss/*.scss']
     tasks: [
       'newer:scsslint'
       'newer:sass'
@@ -30,8 +32,15 @@ module.exports =
       'replace:stylesheets'
     ]
 
+  scripts:
+    files: ['<%= paths.js %>/coffee/*.coffee']
+    tasks: [
+      'newer:coffeelint'
+      'newer:coffee'
+    ]
+
   images:
-    files: ['<%= paths.img %>/src/**/*.{png,jpg,gif,svg}']
+    files: ['<%= paths.img %>/**/*.{png,jpg,gif,svg}']
     tasks: [
       'newer:imagemin'
     ]
