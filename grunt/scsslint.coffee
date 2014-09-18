@@ -4,5 +4,5 @@ module.exports =
   # https://github.com/ahmednuaman/grunt-scss-lint
   options:
     colorizeOutput: true
-    config: 'grunt/scss-lint.yaml'
+    config: 'grunt/config/scsslint.yaml'
   stylesheets: ['<%= paths.css %>/src/*.scss']
