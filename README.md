@@ -10,7 +10,7 @@ Forked from the original [django-two-scoops-project](https://github.com/twoscoop
 Creating Your Project
 =====================
 
-*Prerequisites: python, pip, django*
+*Prerequisites: python, django*
 
 To create a new Django project, run the following command replacing `{{ project_name }}` with your actual project name:
 
@@ -37,6 +37,21 @@ For production:
 
     workon {{ project_name }}-prod
     pip install -r requirements.txt
+
+Install node packages
+---------------------
+
+*Prerequisites: node, homebrew*
+
+    sudo npm install
+
+    # In order to be able to lint SCSS files locally
+    # https://github.com/ahmednuaman/grunt-scss-lint#scss-lint-task
+    gem update --system && gem install scss-lint
+    
+    # In order for grunt to notify you of warnings
+    # https://github.com/dylang/grunt-notify#notification-systems
+    brew install terminal-notifier
 
 Development Mode
 ================
@@ -215,11 +230,31 @@ test.txt
 - [flake8 2.2.3](http://flake8.readthedocs.org/en/latest/) - Python style checker
 
 Node 0.10.X
-------------
+===========
 
+bin/post_compile
+----------------
 Using `post_compile` script for the Heroku python environment to recognize node packages
 
 - [yuglify 0.1.4](https://github.com/yui/yuglify) - uglifyJS and cssmin compressor
+
+package.json
+------------
+Locally using node and grunt to watch and compile frontend files
+
+- [coffee-script ^1.8.0](http://coffeescript.org/) - Cleaner JavaScript
+- [grunt ~0.4.5](http://gruntjs.com/) - Automatic Task Runner
+- [grunt-autoprefixer ^1.0.1](https://github.com/nDmitry/grunt-autoprefixer) - Parse CSS and add vendor-prefixed CSS properties
+- [grunt-concurrent ^1.0.0](https://github.com/sindresorhus/grunt-concurrent) - Run grunt tasks concurrently
+- [grunt-contrib-clean ^0.6.0](https://github.com/gruntjs/grunt-contrib-clean) - Clear files and folders
+- [grunt-contrib-watch ^0.6.1](https://github.com/gruntjs/grunt-contrib-watch) - Run tasks whenever watched files change
+- [grunt-newer ^0.7.0](https://github.com/tschaub/grunt-newer) - Configure Grunt tasks to run with changed files only
+- [grunt-notify ^0.3.1](https://github.com/dylang/grunt-notify) - Automatic desktop notifications for Grunt
+- [grunt-sass ^0.14.1](https://github.com/sindresorhus/grunt-sass) - Compile Sass to CSS
+- [grunt-scss-lint ^0.3.3](https://github.com/ahmednuaman/grunt-scss-lint) - Lint your SCSS
+- [grunt-text-replace ^0.3.12](https://github.com/yoniholmes/grunt-text-replace) - General purpose text replacement for grunt
+- [load-grunt-config ^0.13.1](https://github.com/firstandthird/load-grunt-config) - Grunt plugin that lets you break up your Gruntfile config by task
+- [time-grunt ^1.0.0](https://github.com/sindresorhus/time-grunt) - Display the elapsed execution time of grunt tasks
 
 Acknowledgements
 ================
