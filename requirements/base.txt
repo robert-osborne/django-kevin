@@ -44,6 +44,10 @@ django-pipeline==1.3.25
 # https://django-redis.readthedocs.org/en/latest/
 django-redis==3.7.1
 
+# Nifty handlers for the Python standard library’s logging package
+# https://pythonhosted.org/logutils/
+logutils==0.3.3
+
 # PostgreSQL adapter
 # http://pythonhosted.org/psycopg2/
 psycopg2==2.5.3
