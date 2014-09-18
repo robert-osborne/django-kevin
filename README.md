@@ -249,6 +249,7 @@ Locally using node and grunt to watch and compile frontend files
 - [grunt-autoprefixer ^1.0.1](https://github.com/nDmitry/grunt-autoprefixer) - Parse CSS and add vendor-prefixed CSS properties
 - [grunt-concurrent ^1.0.0](https://github.com/sindresorhus/grunt-concurrent) - Run grunt tasks concurrently
 - [grunt-contrib-clean ^0.6.0](https://github.com/gruntjs/grunt-contrib-clean) - Clear files and folders
+- [grunt-contrib-imagemin ^0.8.1](https://github.com/gruntjs/grunt-contrib-imagemin) - Minify PNG, JPEG, GIF, and SVG images
 - [grunt-contrib-watch ^0.6.1](https://github.com/gruntjs/grunt-contrib-watch) - Run tasks whenever watched files change
 - [grunt-newer ^0.7.0](https://github.com/tschaub/grunt-newer) - Configure Grunt tasks to run with changed files only
 - [grunt-notify ^0.3.1](https://github.com/dylang/grunt-notify) - Automatic desktop notifications for Grunt

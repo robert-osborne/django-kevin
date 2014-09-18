@@ -10,8 +10,15 @@ build_stylesheets:
   - 'autoprefixer'
   - 'replace:stylesheets'
 
-default:
+compress_images:
+  - 'clean:images'
+  - 'imagemin'
+
+build:
   - 'concurrent:lint'
   - 'concurrent:build'
   - 'notify:build'
+
+default:
+  - 'build'
   - 'watch'

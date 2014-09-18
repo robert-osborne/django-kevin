@@ -7,5 +7,6 @@ module.exports =
   ]
   build: [
     'build_stylesheets'
+    'compress_images'
   ]
   test: []

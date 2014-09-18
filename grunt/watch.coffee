@@ -29,3 +29,9 @@ module.exports =
       'newer:autoprefixer'
       'replace:stylesheets'
     ]
+
+  images:
+    files: ['<%= paths.img %>/src/**/*.{png,jpg,gif,svg}']
+    tasks: [
+      'newer:imagemin'
+    ]

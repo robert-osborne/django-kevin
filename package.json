@@ -15,6 +15,7 @@
     "grunt-autoprefixer": "^1.0.1",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-imagemin": "^0.8.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-newer": "^0.7.0",
     "grunt-notify": "^0.3.1",
