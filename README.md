@@ -234,8 +234,8 @@ test.txt
 Node 0.10.X
 ===========
 
-bin/post_compile
-----------------
+post_compile
+------------
 Using `post_compile` script for the Heroku python environment to recognize node packages
 
 - [yuglify 0.1.4](https://github.com/yui/yuglify) - uglifyJS and cssmin compressor
