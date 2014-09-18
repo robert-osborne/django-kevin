@@ -97,6 +97,8 @@ To run one-off commands use:
 
     foreman run django-admin.py COMMAND
 
+To enable Live Reload, download and turn on a [browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)
+
 Production Mode
 ===============
 
