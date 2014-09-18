@@ -8,22 +8,22 @@ import os
 
 
 ########## DEBUG CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
+#  https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = True
 
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
+#  https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
 TEMPLATE_DEBUG = DEBUG
 ########## END DEBUG CONFIGURATION
 
 
 ########## EMAIL CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
+#  https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ########## END EMAIL CONFIGURATION
 
 
 ########## DATABASE CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
+#  https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -38,7 +38,7 @@ DATABASES = {
 
 
 ########## CACHE CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#caches
+#  https://docs.djangoproject.com/en/dev/ref/settings/#caches
 CACHE_ENGINES = {
     'default': {
         'BACKEND': 'redis_cache.cache.RedisCache',
@@ -57,7 +57,7 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 
 ########## TOOLBAR CONFIGURATION
-# See: http://django-debug-toolbar.readthedocs.org/en/latest/installation.html#explicit-setup
+#  http://django-debug-toolbar.readthedocs.org/en/latest/installation.html#explicit-setup
 INSTALLED_APPS += (
     'debug_toolbar',
 )
@@ -74,7 +74,7 @@ INTERNAL_IPS = ('127.0.0.1',)
 
 
 ########## SSL SERVER CONFIGURATION
-# See: https://github.com/teddziuba/django-sslserver#getting-started
+#  https://github.com/teddziuba/django-sslserver#getting-started
 INSTALLED_APPS += (
     'sslserver',
 )
