@@ -1,0 +1,17 @@
+# Aliases for registered tasks
+# https://github.com/firstandthird/load-grunt-config#aliases
+
+lint_stylesheets:
+  - 'scsslint'
+
+build_stylesheets:
+  - 'clean:stylesheets'
+  - 'sass'
+  - 'autoprefixer'
+  - 'replace:stylesheets'
+
+default:
+  - 'concurrent:lint'
+  - 'concurrent:build'
+  - 'notify:build'
+  - 'watch'
