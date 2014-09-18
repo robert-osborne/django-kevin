@@ -9,7 +9,7 @@
 <div class="404">
   <div class="glitch" data-text="Page Not Found">Page Not Found</div>
 
-  <p>This is not the page you were looking for. Go back to the <a href="{% url 'core:home' %}">homepage</a>.</p>
+  <p>This is not the page you were looking for. Go back to the <a href="{% templatetag openblock %} url 'core:home' {% templatetag closeblock %}">homepage</a>.</p>
 </div>
 
 {% templatetag openblock %} endblock content {% templatetag closeblock %}
