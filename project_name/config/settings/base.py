@@ -166,7 +166,7 @@ MEDIA_URL = '/media/'
 
 ########## STATIC FILE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = normpath(join(PROJECT_ROOT, 'staticfiles'))
+STATIC_ROOT = normpath(join(PROJECT_ROOT, 'public'))
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
@@ -193,8 +193,8 @@ STATICFILES_FINDERS = (
 PIPELINE_CSS = {
     'master': {
         'source_filenames': (
-          'css/lib/*.css',
-          'css/*.css',
+            'css/lib/*.css',
+            'css/build/*.css',
         ),
         'output_filename': 'css/master.css',
         'variant': 'datauri',
@@ -206,8 +206,8 @@ PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 PIPELINE_JS = {
     'master': {
         'source_filenames': (
-          'js/lib/*.js',
-          'js/*.js',
+            'js/lib/*.js',
+            'js/*.js',
         ),
         'output_filename': 'js/master.js',
         'extra_context': {
