@@ -16,7 +16,6 @@ build
 # Node.js #
 ###########
 node_modules
-node_debug.log
 
 # Text editors #
 ################
