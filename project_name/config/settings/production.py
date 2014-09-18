@@ -153,8 +153,8 @@ try:
     }
 
     # Separate buckets for static files and media files
-    AWS_STATIC_STORAGE_BUCKET_NAME = 'imhome-static'
-    AWS_MEDIA_STORAGE_BUCKET_NAME = 'imhome-media'
+    AWS_STATIC_STORAGE_BUCKET_NAME = '{{ project_name }}-static'
+    AWS_MEDIA_STORAGE_BUCKET_NAME = '{{ project_name }}-media'
     S3_STATIC_URL = '//%s.s3.amazonaws.com/' % AWS_STATIC_STORAGE_BUCKET_NAME
     S3_MEDIA_URL = '//%s.s3.amazonaws.com/' % AWS_MEDIA_STORAGE_BUCKET_NAME
 

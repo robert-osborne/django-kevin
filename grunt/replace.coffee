@@ -7,6 +7,6 @@ module.exports =
     src: ['<%= paths.css %>/build/*.css.map']
     overwrite: true
     replacements: [
-      from: 'imhome/static'
+      from: '<%= name %>/static'
       to: '/static'
     ]

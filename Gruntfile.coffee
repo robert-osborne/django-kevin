@@ -14,6 +14,7 @@ module.exports = (grunt) ->
   # https://github.com/firstandthird/load-grunt-config
   require('load-grunt-config') grunt,
     data:
+      name: name
       paths: paths
 
   # Times how long tasks take

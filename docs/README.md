@@ -1,4 +1,4 @@
-Welcome to imHome's documentation!
+Welcome to {{ project_name }}'s documentation!
 ==============================================
 
 [Installation](installation.md)
