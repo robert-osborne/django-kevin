@@ -221,6 +221,7 @@ base.txt
 --------
 - [South 1.0](http://south.readthedocs.org/en/latest/index.html) - database migrations
 - [bpython 0.13.1](http://docs.bpython-interpreter.org/) - advanced python interpreter/REPL
+- [defusedxml 0.4.1](https://bitbucket.org/tiran/defusedxml) - Secure XML parser protected against XML bombs
 - [dj-static 0.0.6](https://github.com/kennethreitz/dj-static) - serve production static files with Django
 - [django-authtools 1.0.0](http://django-authtools.readthedocs.org/en/latest/) - custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
 - [django-braces 1.4.0](http://django-braces.readthedocs.org/en/v1.4.0/) - lots of custom mixins
@@ -230,6 +231,7 @@ base.txt
 - [django-pipeline 1.3.25](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
 - [django-redis 3.7.1](https://django-redis.readthedocs.org/en/latest/) - enables redis cacheing
 - [psycopg2 2.5.3](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
+- [python-magic 0.4.6](https://github.com/ahupp/python-magic) - Library to identify uploaded file's headers
 - [pytz 2014.4](http://pytz.sourceforge.net/) - world timezone definitions
 - [requests 2.4.0](http://docs.python-requests.org/en/latest/) - HTTP request API
 - [rq 0.4.6](http://python-rq.org/) - background tasks using redis as queue

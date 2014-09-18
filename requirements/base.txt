@@ -8,6 +8,10 @@ Django==1.7
 # http://docs.bpython-interpreter.org/
 bpython==0.13.1
 
+# Secure XML parser protected against XML bombs
+# https://bitbucket.org/tiran/defusedxml
+defusedxml==0.4.1
+
 # Serve production static files with Django
 # https://github.com/kennethreitz/dj-static
 dj-static==0.0.6
@@ -43,6 +47,10 @@ django-redis==3.7.1
 # PostgreSQL adapter
 # http://pythonhosted.org/psycopg2/
 psycopg2==2.5.3
+
+# Library to identify uploaded file's headers
+# https://github.com/ahupp/python-magic
+python-magic==0.4.6
 
 # World timezone definitions
 # http://pytz.sourceforge.net/
