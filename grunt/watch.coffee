@@ -41,6 +41,4 @@ module.exports =
 
   images:
     files: ['<%= paths.img %>/**/*.{png,jpg,gif,svg}']
-    tasks: [
-      'newer:imagemin'
-    ]
+    tasks: ['newer:imagemin']

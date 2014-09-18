@@ -7,4 +7,4 @@ module.exports =
 
   scripts: ['<%= paths.js %>/build']
 
-  images: ['<%= paths.img %>/build']
+  images: ['<%= paths.img %>/compressed']
