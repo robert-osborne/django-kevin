@@ -265,28 +265,28 @@ LOGGING = {
     'disable_existing_loggers': False,
     'filters': {
         'production_only': {
-            '()': 'django.utils.log.RequireDebugFalse'
+            '()': 'django.utils.log.RequireDebugFalse',
         },
         'development_only': {
-            '()': 'django.utils.log.RequireDebugTrue'
+            '()': 'django.utils.log.RequireDebugTrue',
         },
         'readable_sql': {
             '()': 'project_runpy.ReadableSqlFilter',
-        }
+        },
     },
     'formatters': {
         'verbose': {
             'format': '[%(asctime)s] %(levelname)-8s [%(name)s:%(lineno)s] %(message)s',
-            'datefmt': "%m/%d/%Y %H:%M:%S"
+            'datefmt': "%m/%d/%Y %H:%M:%S",
         },
         'simple': {
-            'format': '%(levelname)-8s [%(name)s:%(lineno)s] %(message)s'
-        }
+            'format': '%(levelname)-8s [%(name)s:%(lineno)s] %(message)s',
+        },
     },
     'handlers': {
         'null': {
             'level': 'DEBUG',
-            'class': 'logging.NullHandler'
+            'class': 'logging.NullHandler',
         },
         'default': {
             'level': 'DEBUG',
@@ -311,7 +311,7 @@ LOGGING = {
             'filename': 'logs/log.log',
             'maxBytes': 1024 * 1024,
             'backupCount': 3,
-            'formatter': 'verbose'
+            'formatter': 'verbose',
         },
         'file_sql': {
             'level': 'DEBUG',
@@ -320,36 +320,36 @@ LOGGING = {
             'filename': 'logs/sql.log',
             'maxBytes': 1024 * 1024,
             'backupCount': 3,
-            'formatter': 'verbose'
+            'formatter': 'verbose',
         },
         'mail_admins': {
             'level': 'ERROR',
             'filters': ['production_only'],
             'class': 'django.utils.log.AdminEmailHandler',
-            'include_html': True
-        }
+            'include_html': True,
+        },
     },
     'root': {
         'handlers': ['console_dev', 'console_prod', 'file_log'],
-        'level': 'DEBUG'
+        'level': 'DEBUG',
     },
     'loggers': {
         'werkzeug': {
             'handlers': ['default'],
             'level': 'DEBUG',
-            'propagate': False
+            'propagate': False,
         },
         'django.db.backends': {
             'handlers': ['file_sql'],
             'filters': ['readable_sql'],
             'level': 'DEBUG',
-            'propagate': False
+            'propagate': False,
         },
         'django.request': {
             'handlers': ['mail_admins'],
             'level': 'ERROR',
-            'propagate': False
-        }
+            'propagate': False,
+        },
     }
 }
 ########## END LOGGING CONFIGURATION
