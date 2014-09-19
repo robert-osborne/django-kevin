@@ -43,23 +43,6 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
 ########## END EMAIL CONFIGURATION
 
 
-########## MANAGER CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
-EMAIL_SUBJECT_PREFIX = '[%s] ' % PROJECT_NAME
-
-#  https://docs.djangoproject.com/en/dev/ref/settings/#server-email
-SERVER_EMAIL = 'Serverbot <dev@%s>' % PROJECT_DOMAIN
-
-# See https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = (
-    ('Dev Team', 'Dev Team <dev@%s>' % PROJECT_DOMAIN),
-)
-
-#  https://docs.djangoproject.com/en/dev/ref/settings/#managers
-MANAGERS = ADMINS
-########## END MANAGER CONFIGURATION
-
-
 ########## DATABASE CONFIGURATION
 # Parse database configuration from $DATABASE_URL
 import dj_database_url

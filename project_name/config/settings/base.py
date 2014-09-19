@@ -8,7 +8,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
-
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
@@ -30,6 +29,23 @@ PROJECT_DOMAIN = '%s.com' % PROJECT_NAME
 # name in our dotted import paths:
 path.append(CONFIG_ROOT)
 ########## END PATH CONFIGURATION
+
+
+########## MANAGER CONFIGURATION
+# https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
+EMAIL_SUBJECT_PREFIX = '[%s] ' % PROJECT_NAME
+
+# https://docs.djangoproject.com/en/dev/ref/settings/#server-email
+SERVER_EMAIL = 'Serverbot <dev@%s>' % PROJECT_DOMAIN
+
+# See https://docs.djangoproject.com/en/dev/ref/settings/#admins
+ADMINS = (
+    ('Dev Team', 'Dev Team <dev@%s>' % PROJECT_DOMAIN),
+)
+
+# https://docs.djangoproject.com/en/dev/ref/settings/#managers
+MANAGERS = ADMINS
+########## END MANAGER CONFIGURATION
 
 
 ########## APP CONFIGURATION
@@ -243,33 +259,97 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 
 ########## LOGGING CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#logging
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
+# https://docs.djangoproject.com/en/dev/ref/settings/#logging
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'filters': {
-        'require_debug_false': {
+        'production_only': {
             '()': 'django.utils.log.RequireDebugFalse'
+        },
+        'development_only': {
+            '()': 'django.utils.log.RequireDebugTrue'
+        },
+        'readable_sql': {
+            '()': 'project_runpy.ReadableSqlFilter',
+        }
+    },
+    'formatters': {
+        'verbose': {
+            'format': '[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s',
+            'datefmt': "%m/%d/%Y %H:%M:%S"
+        },
+        'simple': {
+            'format': '[%(levelname)s] %(message)s'
         }
     },
     'handlers': {
+        'null': {
+            'level': 'DEBUG',
+            'class': 'logging.NullHandler'
+        },
+        'default': {
+            'level': 'DEBUG',
+            'class': 'config.colorstreamhandler.ColorStreamHandler',
+        },
+        'console_dev': {
+            'level': 'DEBUG',
+            'filters': ['development_only'],
+            'class': 'config.colorstreamhandler.ColorStreamHandler',
+            'formatter': 'simple',
+        },
+        'console_prod': {
+            'level': 'INFO',
+            'filters': ['production_only'],
+            'class': 'config.colorstreamhandler.ColorStreamHandler',
+            'formatter': 'simple',
+        },
+        'file_log': {
+            'level': 'DEBUG',
+            'filters': ['development_only'],
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'logs/log.log',
+            'maxBytes': 1024 * 1024,
+            'backupCount': 3,
+            'formatter': 'verbose'
+        },
+        'file_sql': {
+            'level': 'DEBUG',
+            'filters': ['development_only'],
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'logs/sql.log',
+            'maxBytes': 1024 * 1024,
+            'backupCount': 3,
+            'formatter': 'verbose'
+        },
         'mail_admins': {
             'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
+            'filters': ['production_only'],
+            'class': 'django.utils.log.AdminEmailHandler',
+            'include_html': True
         }
     },
+    'root': {
+        'handlers': ['console_dev', 'console_prod', 'file_log'],
+        'level': 'DEBUG'
+    },
     'loggers': {
+        'werkzeug': {
+            'handlers': ['default'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+        'django.db.backends': {
+            'handlers': ['file_sql'],
+            'filters': ['readable_sql'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
         'django.request': {
             'handlers': ['mail_admins'],
             'level': 'ERROR',
-            'propagate': True,
-        },
+            'propagate': False
+        }
     }
 }
 ########## END LOGGING CONFIGURATION
