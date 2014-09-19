@@ -8,3 +8,8 @@ module.exports =
   scripts: ['<%= paths.js %>/build']
 
   images: ['<%= paths.img %>/compressed']
+
+  logs: [
+    'logs/*.log'
+    'logs/*.log.*'
+  ]
