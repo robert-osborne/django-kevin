@@ -222,6 +222,7 @@ base.txt
 - [requests 2.4.0](http://docs.python-requests.org/en/latest/) - HTTP request API
 - [rq 0.4.6](http://python-rq.org/) - background tasks using redis as queue
 - [static 1.0.2](https://github.com/lukearno/static) - serves static and dynamic content
+- [unicode-slugify 0.1.1](https://github.com/mozilla/unicode-slugify) - A slugifier that works in unicode
 
 local.txt
 ---------

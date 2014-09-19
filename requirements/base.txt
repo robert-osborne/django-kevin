@@ -75,3 +75,7 @@ rq==0.4.6
 # Serves static and dynamic content
 # https://github.com/lukearno/static
 static==1.0.2
+
+# A slugifier that works in unicode
+# https://github.com/mozilla/unicode-slugify
+unicode-slugify==0.1.1
