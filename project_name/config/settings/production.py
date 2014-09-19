@@ -111,7 +111,10 @@ try:
     SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 except KeyError:
-    pass
+    import logging
+    logger = logging.getLogger(__name__)
+    logger.warning("REDISCLOUD_URL environment variable is not set")
+    logger.warning("Caching is not set up")
 ########## END CACHE CONFIGURATION
 
 
@@ -159,5 +162,8 @@ try:
     MEDIA_URL = S3_MEDIA_URL
 
 except KeyError:
-    pass
+    import logging
+    logger = logging.getLogger(__name__)
+    logger.warning("AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables are not set")
+    logger.warning("AWS S3 static file uploading is not set up")
 ########## END AMAZON S3 CONFIGURATION
