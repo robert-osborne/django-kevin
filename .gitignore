@@ -10,6 +10,7 @@ tmp
 staticfiles
 public
 build
+compressed
 *.py[co]
 *.egg*
 
