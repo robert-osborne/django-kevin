@@ -45,12 +45,12 @@ Install node packages
 
     sudo npm install
 
-    # In order to be able to lint SCSS files locally
-    # https://github.com/ahmednuaman/grunt-scss-lint#scss-lint-task
-    gem update --system && gem install scss-lint
-    
-    # In order for grunt to notify you of warnings
-    # https://github.com/dylang/grunt-notify#notification-systems
+In order to be able to lint SCSS files locally you need `ruby` on your local system and a certain gem. See [https://github.com/ahmednuaman/grunt-scss-lint#scss-lint-task](https://github.com/ahmednuaman/grunt-scss-lint#scss-lint-task)
+
+    gem install scss-lint
+
+In order for grunt to notify you of warnings and when the build is finished, you need a [notification system](https://github.com/dylang/grunt-notify#notification-systems) installed. Below is the Mac OSX notification command-line tool
+
     brew install terminal-notifier
 
 Development Mode
