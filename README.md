@@ -196,7 +196,7 @@ Add the following config variables to Heroku:
 Libraries
 =========
 
-Python 2.7.X
+Python 2.7.8
 ------------
 
 Currently using [Django 1.7](https://docs.djangoproject.com/en/1.7/) for the app framework
