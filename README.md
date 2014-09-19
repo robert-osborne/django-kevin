@@ -130,7 +130,9 @@ First step is to deploy to Heroku with the `post_compile` script in bin/ so that
     heroku config:push
     git push heroku master
 
-After `post_compile` is done, uncomment line 203 in `/{{ project_name }}/config/settings/base.py` with the variable `STATICFILES_STORAGE` to enable django-pipeline.
+If you get the error message "Aborted due to warnings", then just try building the multi-buildpack again with `git push heroku master`.
+
+After `post_compile` is successful, uncomment line 203 in `/{{ project_name }}/config/settings/base.py` with the variable `STATICFILES_STORAGE` to enable django-pipeline.
 
     git commit -am "enabled django-pipeline"
     git push heroku master
