@@ -231,6 +231,7 @@ base.txt
 - [django-pipeline 1.3.25](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
 - [django-redis 3.7.1](https://django-redis.readthedocs.org/en/latest/) - enables redis cacheing
 - [logutils 0.3.3](https://pythonhosted.org/logutils/) - Nifty handlers for the Python standard library’s logging package
+- [project-runpy 0.3.1](https://github.com/crccheck/project_runpy) - Helpers for Python projects like ReadableSqlFilter
 - [psycopg2 2.5.3](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
 - [python-magic 0.4.6](https://github.com/ahupp/python-magic) - Library to identify uploaded file's headers
 - [pytz 2014.4](http://pytz.sourceforge.net/) - world timezone definitions

@@ -48,6 +48,10 @@ django-redis==3.7.1
 # https://pythonhosted.org/logutils/
 logutils==0.3.3
 
+# Helpers for Python projects like ReadableSqlFilter
+# https://github.com/crccheck/project_runpy
+project-runpy==0.3.1
+
 # PostgreSQL adapter
 # http://pythonhosted.org/psycopg2/
 psycopg2==2.5.3
