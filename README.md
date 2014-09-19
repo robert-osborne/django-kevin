@@ -147,37 +147,19 @@ To run one-off commands use:
 Run project locally in prod environment
 ---------------------------------------
 
+**Make sure to edit the .foreman file to use production versions of .env and Procfile**
+
 This is meant to mimic production as close as possible using both the production database and environment settings so proceed with caution.
 
-*Make sure to edit the .foreman file to use production versions of .env and Procfile*
+**WARNING**: If this project has SSL turned on, localhost:5000 won't work anymore because it will always try to redirect to https://localhost:5000. To fix this comment out the SECURITY CONFIGURATION section of `production.py` lines 66-85.
 
-    workon {{ project_name }}-prod
+    workon imhome-prod
+    pip install -r requirements.txt
     heroku config:pull
     foreman run django-admin.py collectstatic --noinput
     foreman start
 
 The site will be located at [localhost:5000](http://localhost:5000).
-
-Run project locally in SSL prod environment
--------------------------------------------
-
-Once the project has SSL turned on, localhost:5000 won't work anymore ecause it will try to redirect to https://localhost:5000.
-
-To get around that we will temporarily install `django-sslserver` in our ocal production environment and use Procfile.ssl to run our app.
-
-**NOTE: EXTREME CAUTION DOING THIS:** This will create a HSTS record for localhost:8000 that automatically redirects it to https://localhost:8000 for 6 days possibly causing local development impossible to do unless overriden specifically according to these hacky [instructions](http://classically.me/blogs/how-clear-hsts-settings-major-browsers)
-
-- `pip install django-sslserver`
-- Add `sslserver` to a list of `INSTALLED_APPS` in `requirements/roduction.py`
-- Edit `.foreman` to use SSL version of Procfile and prod version of .env
-- `foreman start`
-
-The site will be located at [https://localhost:8000](https://ocalhost:8000).
-
-When you're done **REMEMBER TO**:
-- `pip uninstall django-sslserver`
-- Remove `sslserver` from list of `INSTALLED_APPS` in `requirements/roduction.py`
-- Edit `.foreman` to use development version of Procfile and .env
 
 Add-ons
 =======
