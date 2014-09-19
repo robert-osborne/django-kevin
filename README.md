@@ -155,7 +155,7 @@ This is meant to mimic production as close as possible using both the production
 
 **WARNING**: If this project has SSL turned on, localhost:5000 won't work anymore because it will always try to redirect to https://localhost:5000. To fix this comment out the SECURITY CONFIGURATION section of `production.py` lines 66-85.
 
-    workon imhome-prod
+    workon {{ project_name }}-prod
     pip install -r requirements.txt
     heroku config:pull
     foreman run django-admin.py collectstatic --noinput
