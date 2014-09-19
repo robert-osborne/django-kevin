@@ -22,6 +22,11 @@ urlpatterns = patterns('',
 )
 
 if settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^404/$', TemplateView.as_view(template_name="404.html")),
+        (r'^500/$', TemplateView.as_view(template_name="500.html")),
+    )
+
     import debug_toolbar
     urlpatterns += patterns('', url(r'^__debug__/', include(debug_toolbar.urls)))
 
