@@ -203,6 +203,7 @@ Currently using [Django 1.7](https://docs.djangoproject.com/en/1.7/) for the app
 
 base.txt
 --------
+- [Markdown 2.5](http://pythonhosted.org/Markdown/) - Python implementation of John Gruber’s Markdown
 - [South 1.0](http://south.readthedocs.org/en/latest/index.html) - database migrations
 - [bpython 0.13.1](http://docs.bpython-interpreter.org/) - advanced python interpreter/REPL
 - [defusedxml 0.4.1](https://bitbucket.org/tiran/defusedxml) - Secure XML parser protected against XML bombs
@@ -211,9 +212,11 @@ base.txt
 - [django-braces 1.4.0](http://django-braces.readthedocs.org/en/v1.4.0/) - lots of custom mixins
 - [django-extensions 1.3.9](http://django-extensions.readthedocs.org/en/latest/) - useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 - [django-floppyforms 1.2.0](http://django-floppyforms.readthedocs.org/en/latest/) - control of output of form rendering
+- [django-filter 0.7](https://django-filter.readthedocs.org/en/latest/) - A generic system for filtering Django QuerySets based on user selections
 - [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 - [django-pipeline 1.3.25](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
 - [django-redis 3.7.1](https://django-redis.readthedocs.org/en/latest/) - enables redis cacheing
+- [djangorestframework 2.4.3](http://www.django-rest-framework.org/) - Powerful REST framework to create APIs
 - [logutils 0.3.3](https://pythonhosted.org/logutils/) - Nifty handlers for the Python standard library’s logging package
 - [project-runpy 0.3.1](https://github.com/crccheck/project_runpy) - Helpers for Python projects like ReadableSqlFilter
 - [psycopg2 2.5.3](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
