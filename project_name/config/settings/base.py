@@ -66,6 +66,7 @@ THIRD_PARTY_APPS = (
     'django_extensions',
     'floppyforms',
     'pipeline',
+    'rest_framework',
 )
 
 LOCAL_APPS = (
@@ -143,6 +144,16 @@ USE_L10N = True
 #  https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
 ########## END GENERAL CONFIGURATION
+
+
+########## REST API CONFIGURATION
+# http://www.django-rest-framework.org/api-guide/settings
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
+    'PAGINATE_BY': 10,
+}
+########## END REST API CONFIGURATION
 
 
 ########## TEMPLATE CONFIGURATION
@@ -329,22 +340,33 @@ LOGGING = {
             'include_html': True,
         },
     },
+    # Catch-all modules that use logging
+    # Writes to console and file on development, only to console on production
     'root': {
         'handlers': ['console_dev', 'console_prod', 'file_log'],
         'level': 'DEBUG',
     },
     'loggers': {
+        # Hide MARKDOWN module when using django-rest-framework
+        'MARKDOWN': {
+            'handlers': ['null'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        # Log requests locally without [INFO] tag
         'werkzeug': {
             'handlers': ['default'],
             'level': 'DEBUG',
             'propagate': False,
         },
+        # Write all SQL queries to a file
         'django.db.backends': {
             'handlers': ['file_sql'],
             'filters': ['readable_sql'],
             'level': 'DEBUG',
             'propagate': False,
         },
+        # Email admins when 500 error occurs
         'django.request': {
             'handlers': ['mail_admins'],
             'level': 'ERROR',
