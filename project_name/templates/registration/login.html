@@ -1,18 +1,18 @@
-{% extends "registration/base.html" %}
-{% load i18n %}
+{% templatetag openblock %} extends "registration/base.html" {% templatetag closeblock %}
+{% templatetag openblock %} load i18n {% templatetag closeblock %}
 
-{% block title %}{% trans "Log In" %}{% endblock %}
+{% templatetag openblock %} block title {% templatetag closeblock %}{% templatetag openblock %} trans "Log In" {% templatetag closeblock %}{% templatetag openblock %} endblock {% templatetag closeblock %}
 
-{% block content %}
+{% templatetag openblock %} block content {% templatetag closeblock %}
   <section class="form short">
-    <h1>{% trans "Log In" %}</h1>
+    <h1>{% templatetag openblock %} trans "Log In" {% templatetag closeblock %}</h1>
     <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
+      {% templatetag openblock %} csrf_token {% templatetag closeblock %}
+      {% templatetag openvariable %} form.as_p {% templatetag closevariable %}
       <p class="submitRow">
-        <a href="{% url 'password_reset' %}">{% trans "Forgot Password?" %}</a>
-        <input type="submit" value="{% trans "Log In" %}" />
+        <a href="{% templatetag openblock %} url 'password_reset' {% templatetag closeblock %}">{% templatetag openblock %} trans "Forgot Password?" {% templatetag closeblock %}</a>
+        <input type="submit" value="{% templatetag openblock %} trans "Log In" {% templatetag closeblock %}" />
       </p>
     </form>
   </section>
-{% endblock %}
+{% templatetag openblock %} endblock {% templatetag closeblock %}
