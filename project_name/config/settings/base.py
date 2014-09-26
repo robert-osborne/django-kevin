@@ -72,13 +72,13 @@ LOCAL_APPS = (
     'accounts',
 )
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
+# https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 ########## END APP CONFIGURATION
 
 
 ########## MIDDLEWARE CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#middleware-classes
+# https://docs.djangoproject.com/en/dev/ref/settings/#middleware-classes
 MIDDLEWARE_CLASSES = (
     'django.middleware.gzip.GZipMiddleware',
     'pipeline.middleware.MinifyHTMLMiddleware',
@@ -101,23 +101,23 @@ MIGRATION_MODULES = {
 
 
 ########## DEBUG CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#debug
+# https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = False
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
+# https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
 TEMPLATE_DEBUG = DEBUG
 ########## END DEBUG CONFIGURATION
 
 
 ########## SECRET CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
+# https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key should only be used for development and testing.
 SECRET_KEY = r"{{ secret_key }}"
 ########## END SECRET CONFIGURATION
 
 
 ########## FIXTURE CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-FIXTURE_DIRS
+# https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-FIXTURE_DIRS
 FIXTURE_DIRS = (
     normpath(join(PROJECT_ROOT, 'fixtures')),
 )
@@ -125,28 +125,28 @@ FIXTURE_DIRS = (
 
 
 ########## GENERAL CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#time-zone
+# https://docs.djangoproject.com/en/dev/ref/settings/#time-zone
 TIME_ZONE = 'America/Los_Angeles'
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#language-code
+# https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = 'en-us'
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#site-id
+# https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
+# https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
 USE_I18N = True
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#use-l10n
+# https://docs.djangoproject.com/en/dev/ref/settings/#use-l10n
 USE_L10N = True
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
+# https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
 ########## END GENERAL CONFIGURATION
 
 
 ########## TEMPLATE CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
+# https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.debug',
@@ -158,13 +158,13 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
 )
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
+# https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
+# https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
 TEMPLATE_DIRS = (
     normpath(join(PROJECT_ROOT, 'templates')),
 )
@@ -172,27 +172,27 @@ TEMPLATE_DIRS = (
 
 
 ########## MEDIA CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#media-root
+# https://docs.djangoproject.com/en/dev/ref/settings/#media-root
 MEDIA_ROOT = normpath(join(PROJECT_ROOT, 'media'))
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#media-url
+# https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
 ########## END MEDIA CONFIGURATION
 
 
 ########## STATIC FILE CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#static-root
+# https://docs.djangoproject.com/en/dev/ref/settings/#static-root
 STATIC_ROOT = normpath(join(PROJECT_ROOT, 'public'))
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#static-url
+# https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
 
-#  https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
+# https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
     normpath(join(PROJECT_ROOT, 'static')),
 )
 
-#  https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
+# https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -205,7 +205,7 @@ STATICFILES_FINDERS = (
 
 
 ########## PIPELINE CONFIGURATION
-#  https://django-pipeline.readthedocs.org/en/latest/configuration.html
+# https://django-pipeline.readthedocs.org/en/latest/configuration.html
 PIPELINE_CSS = {
     'master': {
         'source_filenames': (
@@ -237,13 +237,13 @@ PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 
 
 ########## URL CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
+# https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
 ROOT_URLCONF = 'config.urls'
 ########## END URL CONFIGURATION
 
 
 ########## WSGI CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
+# https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'config.wsgi.application'
 ########## END WSGI CONFIGURATION
 

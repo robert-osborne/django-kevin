@@ -8,37 +8,37 @@ import os
 
 
 ########## HOST CONFIGURATION
-#  https://docs.djangoproject.com/en/1.5/releases/1.5/#allowed-hosts-required-in-production
+# https://docs.djangoproject.com/en/1.5/releases/1.5/#allowed-hosts-required-in-production
 ALLOWED_HOSTS = [PROJECT_DOMAIN, '.herokuapp.com', 'localhost', '127.0.0.1']
 ########## END HOST CONFIGURATION
 
 
 ########## SECRET CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
+# https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = os.environ['SECRET_KEY']
 ########## END SECRET CONFIGURATION
 
 
 ########## EMAIL CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#email-use-tls
+# https://docs.djangoproject.com/en/dev/ref/settings/#email-use-tls
 EMAIL_USE_TLS = True
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
+# https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
+# https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
 DEFAULT_FROM_EMAIL = '%s Team <contact@%s>' % (PROJECT_NAME, PROJECT_DOMAIN)
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#email-host
+# https://docs.djangoproject.com/en/dev/ref/settings/#email-host
 EMAIL_HOST = 'smtp.gmail.com'
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#email-port
+# https://docs.djangoproject.com/en/dev/ref/settings/#email-port
 EMAIL_PORT = 587
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#email-host-user
+# https://docs.djangoproject.com/en/dev/ref/settings/#email-host-user
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')
 
-#  https://docs.djangoproject.com/en/dev/ref/settings/#email-host-password
+# https://docs.djangoproject.com/en/dev/ref/settings/#email-host-password
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
 ########## END EMAIL CONFIGURATION
 
@@ -52,7 +52,7 @@ DATABASES['default'] = dj_database_url.config()
 
 
 ########## TEMPLATE CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
+# https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
 TEMPLATE_LOADERS = (
     ('django.template.loaders.cached.Loader', (
         'django.template.loaders.filesystem.Loader',
@@ -63,7 +63,7 @@ TEMPLATE_LOADERS = (
 
 
 ########## SECURITY CONFIGURATION
-#  http://django-secure.readthedocs.org/en/v0.1.2/settings.html
+# http://django-secure.readthedocs.org/en/v0.1.2/settings.html
 # INSTALLED_APPS += (
 #     'djangosecure',
 # )
@@ -73,7 +73,7 @@ TEMPLATE_LOADERS = (
 # )
 
 # # Honor the 'X-Forwarded-Proto' header for request.is_secure()
-# #  https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-SECURE_PROXY_SSL_HEADER
+# # https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-SECURE_PROXY_SSL_HEADER
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # # Use this setting if SSL is being served through CloudFlare proxy
@@ -93,7 +93,7 @@ TEMPLATE_LOADERS = (
 
 
 ########## CACHE CONFIGURATION
-#  https://docs.djangoproject.com/en/dev/ref/settings/#caches
+# https://docs.djangoproject.com/en/dev/ref/settings/#caches
 try:
     import urlparse
     redis_url = urlparse.urlparse(os.environ['REDISCLOUD_URL'])
@@ -116,7 +116,7 @@ except KeyError:
 
 
 ########## AMAZON S3 CONFIGURATION
-#  http://django-storages.readthedocs.org/en/latest/backends/amazon-S3.html
+# http://django-storages.readthedocs.org/en/latest/backends/amazon-S3.html
 try:
     AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
     AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
@@ -142,7 +142,7 @@ try:
     S3_MEDIA_URL = '//%s.s3.amazonaws.com/' % AWS_MEDIA_STORAGE_BUCKET_NAME
 
     # Using django-pipeline along with S3 storage for staticfiles
-    #  https://django-pipeline.readthedocs.org/en/latest/storages.html#using-with-other-storages
+    # https://django-pipeline.readthedocs.org/en/latest/storages.html#using-with-other-storages
     from django.contrib.staticfiles.storage import CachedFilesMixin
     from pipeline.storage import PipelineMixin
     from storages.backends.s3boto import S3BotoStorage
