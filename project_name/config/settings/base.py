@@ -70,7 +70,7 @@ THIRD_PARTY_APPS = (
 
 LOCAL_APPS = (
     'extensions',
-    'accounts',
+    'apps.accounts',
 )
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -96,7 +96,7 @@ MIDDLEWARE_CLASSES = (
 
 ########## MIGRATIONS CONFIGURATION
 MIGRATION_MODULES = {
-    'sites': 'sites.migrations'
+    'sites': 'apps.sites.migrations'
 }
 ########## END MIGRATIONS CONFIGURATION
 
@@ -262,7 +262,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 ########## USER MODEL CONFIGURATION
-AUTH_USER_MODEL = 'accounts.User'
+AUTH_USER_MODEL = 'apps.accounts.User'
 ########## END USER MODEL CONFIGURATION
 
 
