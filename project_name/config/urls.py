@@ -8,6 +8,9 @@ urlpatterns = patterns('',
     # Core URLs
     url(r'^', include('core.urls', namespace='core')),
 
+    # Extension URLs that subclass views from third-party libraries
+    url(r'^', include('extensions.urls.subclass')),
+
     # Root-level redirects for common browser requests
     url(r'^favicon\.ico$', RedirectView.as_view(url=settings.STATIC_URL + 'img/favicon.ico')),
     url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
@@ -18,7 +21,11 @@ urlpatterns = patterns('',
 
     # Authtools URLs
     # https://github.com/fusionbox/django-authtools/blob/master/authtools/urls.py
-    url(r'^', include('authtools.urls', namespace='authtools')),
+    url(r'^', include('authtools.urls')),
+
+    # Extension URLs that rewrite the URL from third-party libraries
+    # Belongs at the bottom of the URLconf
+    url(r'^', include('extensions.urls.rewrite')),
 )
 
 admin.site.site_header = '%s Headquarters' % settings.PROJECT_NAME

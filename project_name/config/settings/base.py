@@ -69,6 +69,7 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
+    'extensions',
     'accounts',
 )
 
@@ -240,6 +241,18 @@ PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 # https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
 ROOT_URLCONF = 'config.urls'
 ########## END URL CONFIGURATION
+
+
+########## LOGIN/LOGOUT CONFIGURATION
+# https://docs.djangoproject.com/en/dev/ref/settings/#login-redirect-url
+LOGIN_REDIRECT_URL = '/'
+
+# https://docs.djangoproject.com/en/dev/ref/settings/#login-url
+LOGIN_URL = '/login/'
+
+# https://docs.djangoproject.com/en/dev/ref/settings/#logout-url
+LOGOUT_URL = '/logout/'
+########## END LOGIN/LOGOUT CONFIGURATION
 
 
 ########## WSGI CONFIGURATION
