@@ -130,8 +130,6 @@ First step is to deploy to Heroku with the `post_compile` script in bin/ so that
     heroku config:push
     git push heroku master
 
-If you get the error message "Push rejected, failed to compile Multipack app", then just keep trying to rebuild the multi-buildpack again with `git push heroku master`.
-
 After `post_compile` is successful, uncomment line 203 in `/{{ project_name }}/config/settings/base.py` with the variable `STATICFILES_STORAGE` to enable django-pipeline.
 
     git commit -am "enabled django-pipeline"
