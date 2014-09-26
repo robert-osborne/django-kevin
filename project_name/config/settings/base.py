@@ -20,7 +20,7 @@ CONFIG_ROOT = dirname(dirname(abspath(__file__)))
 PROJECT_ROOT = dirname(CONFIG_ROOT)
 
 # Project name:
-PROJECT_NAME = basename(PROJECT_ROOT)
+PROJECT_NAME = basename(PROJECT_ROOT).capitalize()
 
 # Project domain:
 PROJECT_DOMAIN = '%s.com' % PROJECT_NAME
