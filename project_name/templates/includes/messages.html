@@ -1,7 +1,7 @@
 {% templatetag openblock %} if messages {% templatetag closeblock %}
   <div class="messages">
     {% templatetag openblock %} for message in messages {% templatetag closeblock %}
-      <div class="alert alert-dismissible alert-{% templatetag openblock %} if message.tags == 'error' {% templatetag closeblock %}danger{% templatetag openblock %} elif message.tags == 'debug' {% templatetag closeblock %}info{% templatetag openblock %} else {% templatetag closeblock %}{{ message.tags }}{% templatetag openblock %} endif {% templatetag closeblock %}" role="alert">
+      <div class="alert alert-dismissible alert-{% templatetag openblock %} if message.tags == 'error' {% templatetag closeblock %}danger{% templatetag openblock %} elif message.tags == 'debug' {% templatetag closeblock %}info{% templatetag openblock %} else {% templatetag closeblock %}{% templatetag openvariable %} message.tags {% templatetag closevariable %}{% templatetag openblock %} endif {% templatetag closeblock %}" role="alert">
         <button type="button" class="close" data-dismiss="alert">
           <span aria-hidden="true">&times;</span>
           <span class="sr-only">Close</span>
@@ -10,4 +10,4 @@
       </div>
     {% templatetag openblock %} endfor {% templatetag closeblock %}
   </div>
-  {% templatetag openblock %} endif {% templatetag closeblock %}
+{% templatetag openblock %} endif {% templatetag closeblock %}
