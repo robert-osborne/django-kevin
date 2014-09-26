@@ -69,8 +69,9 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
+    'accounts',
+    'apps',
     'extensions',
-    'apps.accounts',
 )
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -262,7 +263,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 ########## USER MODEL CONFIGURATION
-AUTH_USER_MODEL = 'apps.accounts.User'
+AUTH_USER_MODEL = 'accounts.User'
 ########## END USER MODEL CONFIGURATION
 
 
