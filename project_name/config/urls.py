@@ -19,12 +19,6 @@ urlpatterns = patterns('',
     # Authtools URLs
     # https://github.com/fusionbox/django-authtools/blob/master/authtools/urls.py
     url(r'^', include('authtools.urls', namespace='authtools')),
-
-    # Django Rest Framework URLs
-    # http://www.django-rest-framework.org/api-guide/routers
-    url(r'^api/', include('api.v1.urls', namespace='api_v1')),
-    url(r'^api/v1/', include('api.v1.urls', namespace='api_v1')),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 )
 
 admin.site.site_header = '%s Headquarters' % settings.PROJECT_NAME
