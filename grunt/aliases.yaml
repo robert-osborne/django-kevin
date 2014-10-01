@@ -20,6 +20,7 @@ build_stylesheets:
 build_scripts:
   - 'clean:scripts'
   - 'coffee'
+  - 'copy:jasmine'
 
 build_images:
   - 'clean:images'
@@ -33,8 +34,15 @@ build:
 heroku:
   - 'build'
 
-default:
+compile:
   - 'lint'
   - 'build'
-  - 'notify:default'
-  - 'watch'
+  - 'notify:compile'
+
+test:
+  - 'jasmine'
+
+dev:
+  - 'compile'
+  - 'test'
+  - 'concurrent:dev'

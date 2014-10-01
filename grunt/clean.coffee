@@ -5,7 +5,10 @@ module.exports =
 
   stylesheets: ['<%= paths.css %>/build']
 
-  scripts: ['<%= paths.js %>/build']
+  scripts: [
+    '<%= paths.js %>/build'
+    '<%= paths.js %>/tests/build'
+  ]
 
   images: ['<%= paths.img %>/compressed']
 

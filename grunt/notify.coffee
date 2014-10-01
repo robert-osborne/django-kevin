@@ -5,12 +5,16 @@ module.exports =
 
   lint:
     options:
-      message: "Lint is complete"
+      message: "Linting is complete"
 
   build:
     options:
-      message: "Build is complete"
+      message: "Building is complete"
 
-  default:
+  test:
+    options:
+      message: "Testing is complete"
+
+  compile:
     options:
       message: "Compiling is complete, now watching..."

@@ -7,6 +7,6 @@ module.exports =
     files: [
       expand: true
       cwd: '<%= paths.img %>/'
-      src: ['**/*.{png,jpg,gif,svg}']
+      src: ['**/*.{png,jpg,gif,svg,ico}']
       dest: '<%= paths.img %>/compressed'
     ]

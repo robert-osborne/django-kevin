@@ -33,10 +33,16 @@ module.exports =
     ]
 
   scripts:
-    files: ['<%= paths.js %>/coffee/*.coffee']
+    files: [
+      '<%= paths.js %>/coffee/*.coffee'
+      '<%= paths.js %>/tests/coffee/*.coffee'
+      '<%= paths.js %>/tests/lib/*.js'
+    ]
     tasks: [
       'newer:coffeelint'
       'newer:coffee'
+      'newer:copy:jasmine'
+      'jasmine'
     ]
 
   images:

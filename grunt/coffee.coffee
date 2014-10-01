@@ -13,3 +13,14 @@ module.exports =
       dest: '<%= paths.js %>/build'
       ext: '.js'
     ]
+
+  tests:
+    options:
+      sourceMap: true
+    files: [
+      expand: true
+      cwd: '<%= paths.js %>/tests/coffee'
+      src: ['*.coffee']
+      dest: '<%= paths.js %>/tests/build'
+      ext: '.js'
+    ]
