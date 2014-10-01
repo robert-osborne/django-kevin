@@ -10,3 +10,27 @@ module.exports =
       from: '<%= name %>/static'
       to: '/static'
     ]
+
+  specRunner:
+    src: ['<%= paths.tests %>/jasmine.html']
+    overwrite: true
+    replacements: [
+      {
+        from: '.grunt'
+        to: '../.grunt'
+      }
+      {
+        from: '<%= name %>'
+        to: '../<%= name %>'
+      }
+      {
+        from: '</body>'
+        to: '
+            <h1 style="font-family: Helvetica Neue; font-weight: 300;">
+              <a href="/tests/coverage" style="color: #007069;">
+                Click here for JS Test Coverage
+              </a>
+            </h1></body>
+            '
+      }
+    ]

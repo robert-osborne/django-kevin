@@ -39,6 +39,7 @@ module.exports =
     tasks: [
       'newer:coffeelint:scripts'
       'newer:coffee:scripts'
+      'test'
     ]
 
   tests:
@@ -48,7 +49,7 @@ module.exports =
     tasks: [
       'newer:coffeelint:tests'
       'newer:coffee:tests'
-      'jasmine'
+      'test'
     ]
 
   images:

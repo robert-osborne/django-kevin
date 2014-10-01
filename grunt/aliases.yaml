@@ -20,7 +20,7 @@ build_stylesheets:
 build_scripts:
   - 'clean:scripts'
   - 'coffee'
-  - 'copy:jasmine'
+  - 'copy:tests'
 
 build_images:
   - 'clean:images'
@@ -40,7 +40,11 @@ compile:
   - 'notify:compile'
 
 test:
+  - 'clean:tests'
   - 'jasmine'
+  - 'copy:specRunner'
+  - 'clean:specRunner'
+  - 'replace:specRunner'
 
 dev:
   - 'compile'
