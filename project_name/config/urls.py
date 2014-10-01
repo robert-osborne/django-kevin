@@ -12,8 +12,8 @@ urlpatterns = patterns('',
     url(r'^', include('extensions.urls.subclass')),
 
     # Root-level redirects for common browser requests
-    url(r'^favicon\.ico$', RedirectView.as_view(url=settings.STATIC_URL + 'img/favicon.ico')),
-    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    url(r'^favicon\.ico$', RedirectView.as_view(url=settings.STATIC_URL + 'img/compressed/favicon.ico'), name='favicon.ico'),
+    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain'), name='robots.txt'),
 
     # Admin URLs
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -33,8 +33,9 @@ admin.site.index_title = 'Base of Operations'
 
 if settings.DEBUG:
     urlpatterns += patterns('',
-        (r'^404/$', TemplateView.as_view(template_name="404.html")),
-        (r'^500/$', TemplateView.as_view(template_name="500.html")),
+        # Testing 404 and 500 error pages
+        url(r'^404/$', TemplateView.as_view(template_name='404.html'), name='404'),
+        url(r'^500/$', TemplateView.as_view(template_name='500.html'), name='500'),
     )
 
     import debug_toolbar
