@@ -205,7 +205,7 @@ Libraries
 =========
 
 Python 2.7.8
-------------
+============
 
 Currently using [Django 1.7](https://docs.djangoproject.com/en/1.7/) for the app framework
 
@@ -284,6 +284,28 @@ Locally using node and grunt to watch and compile frontend files
 - [grunt-text-replace ^0.3.12](https://github.com/yoniholmes/grunt-text-replace) - General purpose text replacement for grunt
 - [load-grunt-config ^0.13.1](https://github.com/firstandthird/load-grunt-config) - Grunt plugin that lets you break up your Gruntfile config by task
 - [time-grunt ^1.0.0](https://github.com/sindresorhus/time-grunt) - Display the elapsed execution time of grunt tasks
+
+Static Assets
+=============
+
+Fonts
+-----
+- [SS-Standard 1.005](https://symbolset.com/icons/standard) - Standard icon library as a font. Documentation located locally at `/{{ project_name }}/static/css/fonts/ss-standard/documentation.html`
+
+CSS
+---
+- [Bootstrap 3.2.0](http://getbootstrap.com) - CSS/JS starting framework
+
+JS
+--
+- [Bootstrap 3.2.0](http://getbootstrap.com) - CSS/JS starting framework
+- [Underscore.js 1.7.0](http://underscorejs.org) - Very useful functional programming helpers
+- [CSRF.js](https://docs.djangoproject.com/en/dev/ref/contrib/csrf/#ajax) - Django Cross Site Request Forgery protection via AJAX
+
+Jasmine
+-------
+- [Jasmine-Ajax 2.0.1](http://github.com/pivotal/jasmine-ajax) - Set of helpers for testing AJAX requests with Jasmine
+- [Jasmine-jQuery 2.0.5](https://github.com/velesin/jasmine-jquery) - Set of jQuery helpers for Jasmine
 
 Acknowledgements
 ================
