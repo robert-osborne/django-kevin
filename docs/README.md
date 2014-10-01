@@ -13,9 +13,9 @@ Instructions to deploy to production.
 -------------------------------
 High-level overview of how this app is structured.
 
-[API](api.md)
--------------
-High-level overview of the API.
+[Testing](testing.md)
+---------------------
+Instructions to run unit and functional tests.
 
 [Libraries](libraries.md)
 -------------------------
