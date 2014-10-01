@@ -167,9 +167,9 @@ Testing
 Jasmine JS Unit Tests
 ---------------------
 
-Grunt automatically compiles Jasmine tests written in coffeescript at `{{ project_name }}/static/js/tests/coffee` and runs the tests upon every save.
+Grunt automatically compiles Jasmine tests written in coffeescript at `/{{ project_name }}/static/js/tests/coffee` and runs the tests upon every save.
 
-Grunt also creates a static file server to view the results of the test located at [http://localhost:9000/tests/jasmine.html](http://localhost:9000/tests/jasmine.html).
+Grunt also creates a static file server to view the results of the test located at [localhost:9000/tests/jasmine.html](localhost:9000/tests/jasmine.html).
 
 Add-ons
 =======
