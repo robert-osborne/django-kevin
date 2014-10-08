@@ -1,6 +1,6 @@
 [run]
 branch = True
-source = {{ project_name g}}
+source = {{ project_name }}
 omit =
     *config*
     *migrations*
