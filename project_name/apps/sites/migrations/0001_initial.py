@@ -15,8 +15,8 @@ class Migration(migrations.Migration):
             name='Site',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('domain', models.CharField(max_length=100, verbose_name='domain', validators=[django.contrib.sites.models._simple_domain_name_validator])),
-                ('name', models.CharField(max_length=50, verbose_name='name')),
+                ('domain', models.CharField(max_length=100, verbose_name='domain name', validators=[django.contrib.sites.models._simple_domain_name_validator])),
+                ('name', models.CharField(max_length=50, verbose_name='display name')),
             ],
             options={
                 'ordering': ('domain',),
