@@ -4,7 +4,9 @@ from django.contrib import admin
 
 from django.views.generic.base import RedirectView, TemplateView
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
+
     # Core URLs
     url(r'^', include('core.urls', namespace='core')),
 
@@ -32,14 +34,16 @@ admin.site.site_header = '%s Headquarters' % settings.PROJECT_NAME
 admin.site.index_title = 'Base of Operations'
 
 if settings.DEBUG:
-    urlpatterns += patterns('',
+    urlpatterns += patterns(
+        '',
+
         # Testing 404 and 500 error pages
         url(r'^404/$', TemplateView.as_view(template_name='404.html'), name='404'),
         url(r'^500/$', TemplateView.as_view(template_name='500.html'), name='500'),
     )
 
-    import debug_toolbar
-    urlpatterns += patterns('', url(r'^__debug__/', include(debug_toolbar.urls)))
-
     from django.conf.urls.static import static
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+    import debug_toolbar
+    urlpatterns += patterns('', url(r'^__debug__/', include(debug_toolbar.urls)))

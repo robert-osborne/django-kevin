@@ -19,6 +19,9 @@ CONFIG_ROOT = dirname(dirname(abspath(__file__)))
 # Absolute filesystem path to the project directory:
 PROJECT_ROOT = dirname(CONFIG_ROOT)
 
+# Absolute filesystem path to the django repo directory:
+DJANGO_ROOT = dirname(PROJECT_ROOT)
+
 # Project name:
 PROJECT_NAME = basename(PROJECT_ROOT).capitalize()
 
@@ -224,6 +227,7 @@ PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 PIPELINE_JS = {
     'master': {
         'source_filenames': (
+            'js/lib/jquery.js',
             'js/lib/*.js',
             'js/build/*.js',
         ),
@@ -304,25 +308,25 @@ LOGGING = {
         },
         'default': {
             'level': 'DEBUG',
-            'class': 'config.colorstreamhandler.ColorStreamHandler',
+            'class': 'config.lib.colorstreamhandler.ColorStreamHandler',
         },
         'console_dev': {
             'level': 'DEBUG',
             'filters': ['development_only'],
-            'class': 'config.colorstreamhandler.ColorStreamHandler',
+            'class': 'config.lib.colorstreamhandler.ColorStreamHandler',
             'formatter': 'simple',
         },
         'console_prod': {
             'level': 'INFO',
             'filters': ['production_only'],
-            'class': 'config.colorstreamhandler.ColorStreamHandler',
+            'class': 'config.lib.colorstreamhandler.ColorStreamHandler',
             'formatter': 'simple',
         },
         'file_log': {
             'level': 'DEBUG',
             'filters': ['development_only'],
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': 'logs/log.log',
+            'filename': join(DJANGO_ROOT, 'logs/log.log'),
             'maxBytes': 1024 * 1024,
             'backupCount': 3,
             'formatter': 'verbose',
@@ -331,7 +335,7 @@ LOGGING = {
             'level': 'DEBUG',
             'filters': ['development_only'],
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': 'logs/sql.log',
+            'filename': join(DJANGO_ROOT, 'logs/sql.log'),
             'maxBytes': 1024 * 1024,
             'backupCount': 3,
             'formatter': 'verbose',
