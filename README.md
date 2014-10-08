@@ -219,7 +219,9 @@ Jasmine JS Unit Tests
 
 Grunt automatically compiles Jasmine tests written in coffeescript at `/{{ project_name }}/static/js/tests/coffee` and runs the tests upon every save.
 
-You can specifically view the results of Jasmine JS tests at [localhost:9000/tests/jasmine](http://localhost:9000/tests/jasmine).
+You can specifically view the results of Jasmine JS unit tests at [localhost:9000/tests/jasmine](http://localhost:9000/tests/jasmine).
+
+You can specifically view the results of JS coverage tests at [localhost:9000/tests/jasmine/coverage.html](http://localhost:9000/tests/jasmine/coverage.html).
 
 Add-ons
 =======
