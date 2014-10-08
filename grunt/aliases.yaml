@@ -54,7 +54,6 @@ build_jasmine:
   - 'replace:specRunner'
 
 test:
-  - 'shell:flake8'
   - 'shell:django'
   - 'clean:jasmine'
   - 'lint_jasmine'

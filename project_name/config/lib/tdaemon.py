@@ -146,7 +146,7 @@ class Watcher(object):
         if self.test_program == 'django-nose-coverage':
             flake8 = "echo 'Running flake8...' && flake8 %s" % self.file_path
             coverage = "coverage run $(which django-admin.py) test && coverage combine && coverage report && coverage html"
-            cmd = "%s && %s" % (flake8, coverage)
+            cmd = "%s; echo && %s" % (flake8, coverage)
         elif self.test_program == 'coverage':
             cmd = "coverage run %s/manage.py test" % self.file_path
         elif self.test_program in ('nose', 'nosetests'):
