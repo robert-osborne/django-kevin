@@ -11,7 +11,7 @@ module.exports =
       specs: '<%= paths.js %>/tests/build/*Spec.js'
       helpers: '<%= paths.js %>/tests/build/*Helper.js'
       vendor: [
-        '<%= paths.js %>/lib/jquery.js'
+        'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
         '<%= paths.js %>/lib/*.js'
       ]
       keepRunner: true

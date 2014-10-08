@@ -227,7 +227,6 @@ PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 PIPELINE_JS = {
     'master': {
         'source_filenames': (
-            'js/lib/jquery.js',
             'js/lib/*.js',
             'js/build/*.js',
         ),
