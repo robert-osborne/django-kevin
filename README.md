@@ -167,7 +167,7 @@ Set the .foreman file to use production environment variables and processes:
 
 Use the right virtual environment:
 
-    workon imhome-prod
+    workon {{ project_name }}-prod
 
 This is meant to mimic production as close as possible using both the production database and environment settings so proceed with caution.
 
