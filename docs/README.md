@@ -3,7 +3,11 @@ Welcome to {{ project_name }}'s documentation!
 
 [Installation](installation.md)
 -------------------------------
-Instructions to get your development environment set up and to start coding!
+Instructions to get your environment set up and to start coding!
+
+[Development](development.md)
+-------------------------------
+Instructions to start your local server.
 
 [Deployment](deployment.md)
 ---------------------------
