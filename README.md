@@ -74,6 +74,11 @@ The environment variables for development sets the appropriate DJANGO_SETTINGS_M
     echo PYTHONUNBUFFERED=True >> .env.dev
     echo CACHE=dummy >> .env.dev
 
+Recommended to use foreman to use development environment variables and processes:
+
+    echo "env: .env.dev" > .foreman
+    echo "procfile: Procfile.dev" >> .foreman
+
 Create local postgres database for dev
 --------------------------------------
 
@@ -88,11 +93,6 @@ Install Postgres for your OS [here](http://www.postgresql.org/download/). For Ma
 
 Run project locally in dev environment
 --------------------------------------
-
-Recommended to use foreman to use development environment variables and processes:
-
-    echo "env: .env.dev" > .foreman
-    echo "procfile: Procfile.dev" >> .foreman
 
 Use the right virtual environment:
 
@@ -204,7 +204,7 @@ Set the .foreman file to use testing environment variables and processes:
 
 Use the right virtual environment:
 
-    workon {{ project_home }}-test
+    workon {{ project_name }}-test
 
 Automatically run all tests and linters and watch files to continuously run tests:
 
@@ -212,14 +212,14 @@ Automatically run all tests and linters and watch files to continuously run test
 
 You can view the results of the tests at [localhost:9000/tests](http://localhost:9000/tests).
 
-You can specifically view the results of Django coverage tests at [localhost:9000/tests/django](localhost:9000/tests/django).
+You can specifically view the results of Django coverage tests at [localhost:9000/tests/django](http://localhost:9000/tests/django).
 
 Jasmine JS Unit Tests
 ---------------------
 
 Grunt automatically compiles Jasmine tests written in coffeescript at `/{{ project_name }}/static/js/tests/coffee` and runs the tests upon every save.
 
-You can specifically view the results of Jasmine JS tests at [localhost:9000/tests/jasmine](localhost:9000/tests/jasmine).
+You can specifically view the results of Jasmine JS tests at [localhost:9000/tests/jasmine](http://localhost:9000/tests/jasmine).
 
 Add-ons
 =======
