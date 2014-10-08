@@ -1,6 +1,7 @@
 # Project-specific #
 ####################
 .env*
+.foreman
 assets
 tmp
 tests/*
