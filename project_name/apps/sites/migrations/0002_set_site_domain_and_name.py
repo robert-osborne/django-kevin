@@ -32,7 +32,7 @@ def update_site_backward(apps, schema_editor):
         id=settings.SITE_ID,
         defaults={
             "domain": "example.com",
-            "name": "example.com"
+            "name": "example"
         }
     )
 
