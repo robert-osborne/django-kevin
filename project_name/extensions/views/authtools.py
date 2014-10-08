@@ -3,13 +3,19 @@
 
 from __future__ import absolute_import
 
-from authtools.views import LogoutView, PasswordChangeView, PasswordResetView
+from authtools.views import LogoutView, PasswordResetView, PasswordChangeView
 
 
 class ExtLogoutView(LogoutView):
     template_name = 'registration/logout.html'
 
 logout = ExtLogoutView.as_view()
+
+
+class ExtPasswordResetView(PasswordResetView):
+    template_name = 'registration/password_reset.html'
+
+password_reset = ExtPasswordResetView.as_view()
 
 
 class ExtPasswordChangeView(PasswordChangeView):
@@ -23,9 +29,3 @@ class ExtPasswordChangeView(PasswordChangeView):
         return super(ExtPasswordChangeView, self).get_success_url()
 
 password_change = ExtPasswordChangeView.as_view()
-
-
-class ExtPasswordResetView(PasswordResetView):
-    template_name = 'registration/password_reset.html'
-
-password_reset = ExtPasswordResetView.as_view()
