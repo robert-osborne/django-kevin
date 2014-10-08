@@ -1,2 +1,2 @@
-web: gunicorn {{ project_name }}.config.wsgi --workers $WEB_CONCURRENCY
+web: gunicorn config.wsgi --workers $WEB_CONCURRENCY --pythonpath $PYTHONPATH
 worker: python -u {{ project_name }}/config/worker.py
