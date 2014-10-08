@@ -33,25 +33,20 @@ module.exports =
     ]
 
   scripts:
-    files: [
-      '<%= paths.js %>/coffee/*.coffee'
-    ]
+    files: ['<%= paths.js %>/coffee/*.coffee']
     tasks: [
       'newer:coffeelint:scripts'
       'newer:coffee:scripts'
-      'test'
-    ]
-
-  tests:
-    files: [
-      '<%= paths.js %>/tests/coffee/*.coffee'
-    ]
-    tasks: [
-      'newer:coffeelint:tests'
-      'newer:coffee:tests'
-      'test'
     ]
 
   images:
     files: ['<%= paths.img %>/**/*.{png,jpg,gif,svg}']
     tasks: ['newer:imagemin']
+
+  jasmine:
+    files: ['<%= paths.js %>/tests/coffee/*.coffee']
+    tasks: [
+      'lint_jasmine'
+      'build_jasmine'
+      'notify:test'
+    ]

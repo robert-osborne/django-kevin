@@ -14,7 +14,7 @@ module.exports =
       ext: '.js'
     ]
 
-  tests:
+  jasmine:
     options:
       sourceMap: true
     files: [

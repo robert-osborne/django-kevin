@@ -11,20 +11,21 @@ module.exports =
       specs: '<%= paths.js %>/tests/build/*Spec.js'
       helpers: '<%= paths.js %>/tests/build/*Helper.js'
       vendor: [
-        'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
-        '<%= paths.js %>/lib/*.js',
-        ]
+        '<%= paths.js %>/lib/jquery.js'
+        '<%= paths.js %>/lib/*.js'
+      ]
       keepRunner: true
       template: require('grunt-template-jasmine-istanbul')
       templateOptions:
-        coverage: '<%= paths.tests %>/coverage/coverage.json'
+        coverage: '<%= paths.tests %>/jasmine/coverage.json'
         report: [
           {
             type: 'html'
             options:
-              dir: '<%= paths.tests %>/coverage'
+              dir: '<%= paths.tests %>/jasmine'
           }
           { type: 'text-summary' }
+          { type: 'text' }
         ]
 
     src: '<%= paths.js %>/build/*.js'

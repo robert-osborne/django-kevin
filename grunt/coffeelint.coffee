@@ -5,4 +5,4 @@ module.exports =
 
   scripts: ['<%= paths.js %>/coffee/*.coffee']
 
-  tests: ['<%= paths.js %>/tests/coffee/*.coffee']
+  jasmine: ['<%= paths.js %>/tests/coffee/*.coffee']

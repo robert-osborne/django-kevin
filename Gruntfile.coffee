@@ -9,6 +9,7 @@ module.exports = (grunt) ->
     fonts: name + '/static/fonts'
     img: name + '/static/img'
     js: name + '/static/js'
+    config: name + '/config'
     tests: 'tests'
 
   # Loads grunt config automatically via broken up tasks

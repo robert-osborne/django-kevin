@@ -12,7 +12,12 @@ module.exports =
 
   images: ['<%= paths.img %>/compressed']
 
-  tests: ['<%= paths.tests %>/*']
+  tests: [
+    '<%= paths.tests %>/*'
+    '.coverage'
+  ]
+
+  jasmine: ['<%= paths.tests %>/jasmine']
 
   specRunner: ['_SpecRunner.html']
 
