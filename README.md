@@ -223,6 +223,45 @@ You can specifically view the results of Jasmine JS unit tests at [localhost:900
 
 You can specifically view the results of JS coverage tests at [localhost:9000/tests/jasmine/coverage.html](http://localhost:9000/tests/jasmine/coverage.html).
 
+Architecture
+============
+
+Extensions
+----------
+
+The extensions folder contains third-party app overrides. If you want to subclass third-party views, models, templatetags, etc, rewrite URL patterns, or change migrations but don't want to fork the whole library, just add your custom code to this folder and reference it instead of the third-party app.
+
+Static Files
+------------
+
+### Stylesheets `{{ project_name }}/static/css`
+
+3rd-party library code belongs in `/lib` and custom SCSS is written in `/scss`. It is suggested to break up code into meaningful files.
+
+`grunt` will compile and watch all the source code and store inside `/build`.
+
+`django-pipeline` will then collect all the CSS from `/lib` and `/build` and either display them as normal in DEBUG mode or minified and concatenated in PRODUCTION mode via `collectstatic`.
+
+### Scripts `{{ project_name }}/static/js`
+
+3rd-party library code belongs in `/lib` and custom CoffeeScript is written in `/coffee`. It is suggested to break up code into meaningful files.
+
+`grunt` will compile and watch all the source code and store inside `/build`.
+
+`django-pipeline` will then collect all the JS from `/lib` and `/build` and either display them as normal in DEBUG mode or uglified and concatenated in PRODUCTION mode via `collectstatic`.
+
+### Images `{{ project_name }}/static/img`
+
+All images will be stored in the root folder and `grunt` will compress them into `/compressed`.
+
+That means all static template tags that reference images will have to point to `img/compressed` like so:
+
+    <img src="{% static 'img/compressed/loading.gif' %}">
+
+### Fonts `{{ project_name }}/static/fonts`
+
+Fonts are stored here. CSS files that reference these have to be careful with relative paths
+
 Add-ons
 =======
 

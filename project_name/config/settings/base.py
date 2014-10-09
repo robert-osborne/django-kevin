@@ -100,7 +100,7 @@ MIDDLEWARE_CLASSES = (
 
 ########## MIGRATIONS CONFIGURATION
 MIGRATION_MODULES = {
-    'sites': 'apps.sites.migrations'
+    'sites': 'extensions.sites.migrations'
 }
 ########## END MIGRATIONS CONFIGURATION
 
