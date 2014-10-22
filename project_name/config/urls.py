@@ -17,6 +17,8 @@ urlpatterns = [
 
     # Admin URLs
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/rq/scheduler/', include('extensions.rq_scheduler.urls', namespace='rq_scheduler')),
+    url(r'^admin/rq/', include('django_rq.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
     # Authtools URLs
@@ -38,8 +40,15 @@ if settings.DEBUG:
         url(r'^500/$', TemplateView.as_view(template_name='500.html'), name='500'),
     ]
 
-    from django.conf.urls.static import static
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    try:
+        from django.conf.urls.static import static
+        urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-    import debug_toolbar
-    urlpatterns += [url(r'^__debug__/', include(debug_toolbar.urls))]
+        import debug_toolbar
+        urlpatterns += [url(r'^__debug__/', include(debug_toolbar.urls))]
+
+    # Should only occur when debug mode is on for production testing
+    except ImportError as e:
+        import logging
+        l = logging.getLogger(__name__)
+        l.warning(e)
