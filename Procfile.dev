@@ -1,3 +1,4 @@
 web: django-admin.py runserver_plus
-worker: python -u {{ project_name }}/config/worker.py
+worker: django-admin.py rqworker high default low
 grunt: grunt dev
+scheduler: rqscheduler
