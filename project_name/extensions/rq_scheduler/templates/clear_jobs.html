@@ -1,0 +1,42 @@
+{% templatetag openblock %} extends "admin/base_site.html" {% templatetag closeblock %}
+
+{% templatetag openblock %} load url from future {% templatetag closeblock %}
+
+{% templatetag openblock %} block extrastyle {% templatetag closeblock %}
+  {% templatetag openvariable %} block.super {% templatetag closevariable %}
+  <style>
+    .data {
+      display: inline-block;
+      float: left;
+      width: 80%;
+    }
+  </style>
+  <link href="{% templatetag openvariable %} STATIC_URL {% templatetag closevariable %}admin/css/forms.css" type="text/css" rel="stylesheet">
+  {% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag openblock %} block breadcrumbs {% templatetag closeblock %}
+  <div class="breadcrumbs">
+    <a href="{% templatetag openblock %} url 'admin:index' {% templatetag closeblock %}">Home</a> &rsaquo;
+    <a href="{% templatetag openblock %} url 'rq_scheduler:jobs' {% templatetag closeblock %}">RQ Scheduler</a> &rsaquo;
+    Clear All
+  </div>
+  {% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag openblock %} block content_title {% templatetag closeblock %}<h1>Are you sure?</h1>{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag openblock %} block content {% templatetag closeblock %}
+
+<div id="content-main">
+  <p>
+    Are you sure you want to clear all <a href="{% templatetag openblock %} url 'rq_scheduler:jobs' {% templatetag closeblock %}">RQ Scheduled Jobs</a>?
+    This action can not be undone.
+  </p>
+  <form action="" method="post">
+    {% templatetag openblock %} csrf_token {% templatetag closeblock %}
+    <div>
+      <input type="submit" value="Yes, I'm sure" />
+    </div>
+  </form>
+</div>
+
+{% templatetag openblock %} endblock {% templatetag closeblock %}

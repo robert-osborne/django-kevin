@@ -1,0 +1,46 @@
+{% templatetag openblock %} extends "admin/index.html" {% templatetag closeblock %}
+
+{% templatetag openblock %} load url from future {% templatetag closeblock %}
+
+{% templatetag openblock %} block sidebar {% templatetag closeblock %}
+
+  {% templatetag openvariable %} block.super {% templatetag closevariable %}
+
+  <div style="clear: both"></div>
+  <h1 style="margin-top: 15px">Redis Apps</h1>
+
+  <div id="django-rq" style="float: left">
+    <div class="module">
+      <table style="width: 498px">
+        <caption>Django RQ</caption>
+        <tbody>
+          <tr>
+            <th>
+              <a href="{% templatetag openblock %} url 'rq_home' {% templatetag closeblock %}">
+                Queues
+              </a>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="rq-scheduler" style="float: left">
+    <div class="module">
+      <table style="width: 498px">
+        <caption>RQ Scheduler</caption>
+        <tbody>
+          <tr>
+            <th>
+              <a href="{% templatetag openblock %} url 'rq_scheduler:jobs' {% templatetag closeblock %}">
+                Scheduled Jobs
+              </a>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  {% templatetag openblock %} endblock {% templatetag closeblock %}

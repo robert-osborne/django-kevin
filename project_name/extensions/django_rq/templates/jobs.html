@@ -1,0 +1,116 @@
+{% templatetag openblock %} extends "admin/base_site.html" {% templatetag closeblock %}
+
+{% templatetag openblock %} load admin_static {% templatetag closeblock %}
+{% templatetag openblock %} load url from future {% templatetag closeblock %}
+
+{% templatetag openblock %} block extrastyle {% templatetag closeblock %}
+  {% templatetag openvariable %} block.super {% templatetag closevariable %}
+  <link rel="stylesheet" type="text/css" href="{% templatetag openblock %} static "admin/css/changelists.css" {% templatetag closeblock %}">
+  {% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag openblock %} block extrahead {% templatetag closeblock %}
+  {% templatetag openvariable %} block.super {% templatetag closevariable %}
+  <script type="text/javascript" src="{% templatetag openblock %} static "admin/js/jquery.js" {% templatetag closeblock %}"></script>
+  <script type="text/javascript" src="{% templatetag openblock %} static "admin/js/jquery.init.js" {% templatetag closeblock %}"></script>
+  <script type="text/javascript" src="{% templatetag openblock %} static "admin/js/actions.js" {% templatetag closeblock %}"></script>
+  <script type="text/javascript">
+  (function($) {
+    $(document).ready(function($) {
+      $("tr input.action-select").actions();
+    });
+  })(django.jQuery);
+  </script>
+  {% templatetag openblock %} endblock {% templatetag closeblock %}
+
+
+{% templatetag openblock %} block breadcrumbs {% templatetag closeblock %}
+  <div class="breadcrumbs">
+    <a href="{% templatetag openblock %} url 'admin:index' {% templatetag closeblock %}">Home</a> &rsaquo;
+    <a href="{% templatetag openblock %} url 'rq_home' {% templatetag closeblock %}">Django RQ</a> &rsaquo;
+    <a href="{% templatetag openblock %} url 'rq_jobs' queue_index {% templatetag closeblock %}">{% templatetag openvariable %} queue.name {% templatetag closevariable %}</a>
+  </div>
+  {% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag openblock %} block content_title {% templatetag closeblock %}<h1>Jobs in {% templatetag openvariable %} queue.name {% templatetag closevariable %}</h1>{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag openblock %} block content {% templatetag closeblock %}
+
+<div id="content-main">
+  <ul class="object-tools">
+    <li><a href="{% templatetag openblock %} url 'rq_clear' queue_index {% templatetag closeblock %}" class="deletelink">Empty Queue</a></li>
+  </ul>
+  <div class="module" id="changelist">
+    <form id="changelist-form" action="{% templatetag openblock %} url 'rq_actions' queue_index {% templatetag closeblock %}" method="post">
+      {% templatetag openblock %} csrf_token {% templatetag closeblock %}
+      <div class="actions">
+        <label>Actions:
+          <select name="action">
+            <option value="" selected="selected">---------</option>
+            <option value="delete">Delete</option>
+            {% templatetag openblock %} if queue.name == 'failed' {% templatetag closeblock %}
+              <option value="requeue">Requeue</option>
+            {% templatetag openblock %} endif {% templatetag closeblock %}
+          </select>
+        </label>
+        <button type="submit" class="button" title="Execute selected action" name="index" value="0">Go</button>
+      </div>
+      <div class="results">
+        <table id="result_list">
+          <thead>
+            <tr>
+              <th scope="col" class="action-checkbox-column">
+                <div class="text">
+                  <span><input type="checkbox" id="action-toggle" style="display: inline-block;"></span>
+                </div>
+                <div class="clear"></div>
+              </th>
+              <th><div class="text"><span>ID</span></div></th>
+              <th><div class="text"><span>Created</span></div></th>
+              <th><div class="text"><span>Enqueued</span></div></th>
+              <th><div class="text"><span>Status</span></div></th>
+              <th><div class="text"><span>Callable</span></div></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% templatetag openblock %} for job in jobs {% templatetag closeblock %}
+              <tr class="{% templatetag openblock %} cycle 'row1' 'row2' {% templatetag closeblock %}">
+                <td class="action-checkbox">
+                  <input class="action-select" name="_selected_action" type="checkbox" value="{% templatetag openvariable %} job.id {% templatetag closevariable %}">
+                </td>
+                <th>
+                  <a href="{% templatetag openblock %} url 'rq_job_detail' queue_index job.id {% templatetag closeblock %}">
+                    {% templatetag openvariable %} job.id {% templatetag closevariable %}
+                  </a>
+                </th>
+                <td>{% templatetag openvariable %} job.created_at {% templatetag closevariable %}</td>
+                <td>{% templatetag openvariable %} job.enqueued_at {% templatetag closevariable %}</td>
+                <td>
+                  {% templatetag openblock %} if job.get_status {% templatetag closeblock %}
+                    {% templatetag openvariable %} job.get_status {% templatetag closevariable %}
+                  {% templatetag openblock %} else {% templatetag closeblock %}
+                    {% templatetag openvariable %} job.status {% templatetag closevariable %}
+                  {% templatetag openblock %} endif {% templatetag closeblock %}
+                </td>
+                <td>{% templatetag openvariable %} job.func_name {% templatetag closevariable %}</td>
+              </tr>
+            {% templatetag openblock %} endfor {% templatetag closeblock %}
+          </tbody>
+        </table>
+      </div>
+      <p class="paginator">
+        {% templatetag openblock %} for p in page_range {% templatetag closeblock %}
+          {% templatetag openblock %} if p == page {% templatetag closeblock %}
+            <span class="this-page">{% templatetag openvariable %} p {% templatetag closevariable %}</span>
+          {% templatetag openblock %} elif forloop.last {% templatetag closeblock %}
+            <a href="?page={% templatetag openvariable %} p {% templatetag closevariable %}" class="end">{% templatetag openvariable %} p {% templatetag closevariable %}</a>
+          {% templatetag openblock %} else {% templatetag closeblock %}
+            <a href="?page={% templatetag openvariable %} p {% templatetag closevariable %}">{% templatetag openvariable %} p {% templatetag closevariable %}</a>
+          {% templatetag openblock %} endif {% templatetag closeblock %}
+        {% templatetag openblock %} endfor {% templatetag closeblock %}
+        {% templatetag openvariable %} num_jobs {% templatetag closevariable %} jobs
+      </p>
+    </form>
+  </div>
+</div>
+
+{% templatetag openblock %} endblock {% templatetag closeblock %}

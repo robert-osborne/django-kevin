@@ -1,0 +1,159 @@
+{% templatetag openblock %} extends "admin/base_site.html" {% templatetag closeblock %}
+
+{% templatetag openblock %} load url from future {% templatetag closeblock %}
+
+{% templatetag openblock %} block extrastyle {% templatetag closeblock %}
+  {% templatetag openvariable %} block.super {% templatetag closevariable %}
+  <style>
+    .data {
+      display: inline-block;
+      float: left;
+      width: 80%;
+      font-size: 12px;
+      padding-top: 3px;
+    }
+  </style>
+  <link href="{% templatetag openvariable %} STATIC_URL {% templatetag closevariable %}admin/css/forms.css" type="text/css" rel="stylesheet">
+  {% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag openblock %} block breadcrumbs {% templatetag closeblock %}
+  <div class="breadcrumbs">
+    <a href="{% templatetag openblock %} url 'admin:index' {% templatetag closeblock %}">Home</a> &rsaquo;
+    <a href="{% templatetag openblock %} url 'rq_scheduler:jobs' {% templatetag closeblock %}">RQ Scheduler</a> &rsaquo;
+    <a href="{% templatetag openblock %} url 'rq_scheduler:job_detail' job.id {% templatetag closeblock %}">{% templatetag openvariable %} job.id {% templatetag closevariable %}</a>
+  </div>
+  {% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag openblock %} block content_title {% templatetag closeblock %}<h1>Job Info</h1>{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag openblock %} block content {% templatetag closeblock %}
+
+<div id="content-main">
+
+  <fieldset class="module aligned ">
+
+    <div class="form-row">
+      <div>
+        <label class="required">ID:</label>
+        <div class="data">{% templatetag openvariable %} job.id {% templatetag closevariable %}</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label class="required">Queue:</label>
+        <div class="data">{% templatetag openvariable %} job.origin {% templatetag closevariable %}</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label class="required">Timeout:</label>
+        <div class="data">{% templatetag openvariable %} job.timeout {% templatetag closevariable %}</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label class="required">Result TTL:</label>
+        <div class="data">{% templatetag openvariable %} job.result_ttl {% templatetag closevariable %}</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label class="required">Created:</label>
+        <div class="data">{% templatetag openvariable %} job.created_at {% templatetag closevariable %} ({% templatetag openvariable %} job.created_at|timesince {% templatetag closevariable %} ago)</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label class="required">Scheduled:</label>
+        <div class="data">
+          {% templatetag openblock %} if job.scheduled_at {% templatetag closeblock %}
+            {% templatetag openvariable %} job.scheduled_at {% templatetag closevariable %} (in {% templatetag openvariable %} job.scheduled_at|timeuntil {% templatetag closevariable %})
+          {% templatetag openblock %} else {% templatetag closeblock %}
+            Queued
+          {% templatetag openblock %} endif {% templatetag closeblock %}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label class="required">Queued:</label>
+        <div class="data">
+          {% templatetag openblock %} if job.enqueued_at {% templatetag closeblock %}
+            {% templatetag openvariable %} job.enqueued_at {% templatetag closevariable %} (in {% templatetag openvariable %} job.enqueued_at|timeuntil {% templatetag closevariable %})
+          {% templatetag openblock %} else {% templatetag closeblock %}
+            Not queued yet
+          {% templatetag openblock %} endif {% templatetag closeblock %}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label class="required">Status:</label>
+        <div class="data">{% templatetag openvariable %} job.get_status {% templatetag closevariable %}</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label class="required">Callable:</label>
+        <div class="data">{% templatetag openvariable %} job.func_name {% templatetag closevariable %}</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label class="required">Args:</label>
+        <div class="data">
+          {% templatetag openblock %} if job.args {% templatetag closeblock %}
+          <ul>
+            {% templatetag openblock %} for arg in job.args {% templatetag closeblock %}
+              <li>{% templatetag openvariable %} arg {% templatetag closevariable %}</li>
+            {% templatetag openblock %} endfor {% templatetag closeblock %}
+          </ul>
+          {% templatetag openblock %} endif {% templatetag closeblock %}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label class="required">Kwargs:</label>
+        <div class="data">
+          {% templatetag openblock %} if job.kwargs {% templatetag closeblock %}
+            <ul>
+              {% templatetag openblock %} for key, value in job.kwargs.items {% templatetag closeblock %}
+                <li>{% templatetag openvariable %} key {% templatetag closevariable %}: {% templatetag openvariable %} value|escape {% templatetag closevariable %}</li>
+              {% templatetag openblock %} endfor {% templatetag closeblock %}
+            </ul>
+          {% templatetag openblock %} endif {% templatetag closeblock %}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label class="required">Exception:</label>
+        <div class="data"><pre>{% templatetag openblock %} if job.exc_info {% templatetag closeblock %}{% templatetag openvariable %} job.exc_info|linebreaks {% templatetag closevariable %}{% templatetag openblock %} endif {% templatetag closeblock %}</pre></div>
+      </div>
+    </div>
+
+  </fieldset>
+
+  <div class="submit-row">
+    <p class="deletelink-box"><a href="{% templatetag openblock %} url 'rq_scheduler:delete_job' job.id {% templatetag closeblock %}" class="deletelink">Delete</a></p>
+    <form method="POST" action="{% templatetag openblock %} url 'rq_scheduler:enqueue_job' job.id {% templatetag closeblock %}">
+      {% templatetag openblock %} csrf_token {% templatetag closeblock %}
+      <input type="submit" value="Enqueue" class="default" name="enqueue">
+    </form>
+  </div>
+
+</div>
+
+{% templatetag openblock %} endblock {% templatetag closeblock %}

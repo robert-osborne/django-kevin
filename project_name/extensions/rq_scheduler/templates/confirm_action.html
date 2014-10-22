@@ -1,0 +1,50 @@
+{% templatetag openblock %} extends "admin/base_site.html" {% templatetag closeblock %}
+
+{% templatetag openblock %} load url from future {% templatetag closeblock %}
+
+{% templatetag openblock %} block extrastyle {% templatetag closeblock %}
+  {% templatetag openvariable %} block.super {% templatetag closevariable %}
+  <style>
+    .data {
+      display: inline-block;
+      float: left;
+      width: 80%;
+    }
+  </style>
+  <link href="{% templatetag openvariable %} STATIC_URL {% templatetag closevariable %}admin/css/forms.css" type="text/css" rel="stylesheet">
+  {% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag openblock %} block breadcrumbs {% templatetag closeblock %}
+  <div class="breadcrumbs">
+    <a href="{% templatetag openblock %} url 'admin:index' {% templatetag closeblock %}">Home</a> &rsaquo;
+    <a href="{% templatetag openblock %} url 'rq_scheduler:jobs' {% templatetag closeblock %}">RQ Scheduler</a> &rsaquo;
+    {% templatetag openvariable %} action|capfirst {% templatetag closevariable %}
+  </div>
+  {% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag openblock %} block content_title {% templatetag closeblock %}<h1>Are you sure?</h1>{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag openblock %} block content {% templatetag closeblock %}
+
+<div id="content-main">
+  <p>
+    Are you sure you want to <b>{% templatetag openvariable %} action|capfirst {% templatetag closevariable %}</b> the selected jobs from <a href="{% templatetag openblock %} url 'rq_scheduler:jobs' {% templatetag closeblock %}" target="_blank">RQ Scheduled Jobs</a>? These jobs are selected:
+  </p>
+  <ul>
+  {% templatetag openblock %} for job_id in job_ids {% templatetag closeblock %}
+    <li><a href="{% templatetag openblock %} url 'rq_scheduler:job_detail' job_id {% templatetag closeblock %}" target="_blank">{% templatetag openvariable %} job_id {% templatetag closevariable %}</a></li>
+  {% templatetag openblock %} endfor {% templatetag closeblock %}
+  </ul>
+  <form action="" method="post">
+    {% templatetag openblock %} csrf_token {% templatetag closeblock %}
+    <div>
+      {% templatetag openblock %} for job_id in job_ids {% templatetag closeblock %}
+        <input type="hidden" name="job_ids" value="{% templatetag openvariable %} job_id {% templatetag closevariable %}">
+      {% templatetag openblock %} endfor {% templatetag closeblock %}
+      <input type="hidden" name="action" value="{% templatetag openvariable %} action {% templatetag closevariable %}" />
+      <input type="submit" value="Yes, I'm sure" />
+    </div>
+  </form>
+</div>
+
+{% templatetag openblock %} endblock {% templatetag closeblock %}
