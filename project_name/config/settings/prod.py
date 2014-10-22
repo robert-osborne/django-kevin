@@ -140,7 +140,7 @@ try:
     SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 except KeyError:
-    pass
+    RQ_QUEUES = {}
 ########## END CACHE/QUEUE CONFIGURATION
 
 
