@@ -26,7 +26,7 @@ DJANGO_ROOT = dirname(PROJECT_ROOT)
 PROJECT_NAME = basename(PROJECT_ROOT).capitalize()
 
 # Project domain:
-PROJECT_DOMAIN = '%s.com' % PROJECT_NAME
+PROJECT_DOMAIN = '%s.com' % PROJECT_NAME.lower()
 
 # Add our project to our pythonpath, this way we don't need to type our project
 # name in our dotted import paths:
@@ -34,13 +34,16 @@ path.append(CONFIG_ROOT)
 ########## END PATH CONFIGURATION
 
 
-########## MANAGER CONFIGURATION
+########## EMAIL CONFIGURATION
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
 EMAIL_SUBJECT_PREFIX = '[%s] ' % PROJECT_NAME
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#server-email
 SERVER_EMAIL = 'Serverbot <dev@%s>' % PROJECT_DOMAIN
+########## END EMAIL CONFIGURATION
 
+
+########## MANAGER CONFIGURATION
 # See https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = (
     ('Dev Team', 'Dev Team <dev@%s>' % PROJECT_DOMAIN),
@@ -67,18 +70,24 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     'authtools',
     'django_extensions',
+    'django_rq',
     'floppyforms',
     'pipeline',
 )
 
-LOCAL_APPS = (
+PROJECT_APPS = (
     'accounts',
-    'apps',
-    'extensions',
+)
+
+EXTENSION_APPS = (
+    'extensions.authtools',
+    'extensions.django_rq',
+    'extensions.rq_scheduler',
+    'extensions.sites',
 )
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS + EXTENSION_APPS
 ########## END APP CONFIGURATION
 
 
@@ -117,7 +126,7 @@ TEMPLATE_DEBUG = DEBUG
 ########## SECRET CONFIGURATION
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key should only be used for development and testing.
-SECRET_KEY = r"{{ secret_key }}"
+SECRET_KEY = r"lle*l7qn&!tog)$1n$=#op1rst%e!7k8t-k@wm&&v@msnuo6ud"
 ########## END SECRET CONFIGURATION
 
 
@@ -172,6 +181,7 @@ TEMPLATE_LOADERS = (
 # https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
 TEMPLATE_DIRS = (
     normpath(join(PROJECT_ROOT, 'templates')),
+    normpath(join(PROJECT_ROOT, 'extensions')),
 )
 ########## END TEMPLATE CONFIGURATION
 
@@ -205,7 +215,7 @@ STATICFILES_FINDERS = (
     'pipeline.finders.CachedFileFinder',
 )
 
-# STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 ########## END STATIC FILE CONFIGURATION
 
 
@@ -353,12 +363,6 @@ LOGGING = {
         'level': 'DEBUG',
     },
     'loggers': {
-        # Log requests locally without [INFO] tag
-        'werkzeug': {
-            'handlers': ['default'],
-            'level': 'DEBUG',
-            'propagate': False,
-        },
         # Write all SQL queries to a file
         'django.db.backends': {
             'handlers': ['file_sql'],

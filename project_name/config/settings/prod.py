@@ -62,6 +62,21 @@ TEMPLATE_LOADERS = (
 ########## END TEMPLATE CONFIGURATION
 
 
+########## LOGGING CONFIGURATION
+# https://docs.djangoproject.com/en/dev/ref/settings/#logging
+LOGGERS = {
+    # Log queue workers to console and file on development
+    'rq.worker': {
+        'handlers': ['default', 'file_log'],
+        'level': 'INFO',
+        'propagate': False,
+    }
+}
+
+LOGGING['loggers'].update(LOGGERS)
+########## END LOGGING CONFIGURATION
+
+
 ########## SECURITY CONFIGURATION
 # http://django-secure.readthedocs.org/en/v0.1.2/settings.html
 # INSTALLED_APPS += (
@@ -92,7 +107,7 @@ TEMPLATE_LOADERS = (
 ########## END SECURITY CONFIGURATION
 
 
-########## CACHE CONFIGURATION
+########## CACHE/QUEUE CONFIGURATION
 # https://docs.djangoproject.com/en/dev/ref/settings/#caches
 try:
     import urlparse
@@ -108,11 +123,25 @@ try:
         }
     }
 
+    RQ_QUEUES = {
+        'default': {
+            'USE_REDIS_CACHE': 'default'
+        },
+        'high': {
+            'USE_REDIS_CACHE': 'default'
+        },
+        'low': {
+            'USE_REDIS_CACHE': 'default'
+        }
+    }
+
+    RQ_SHOW_ADMIN_LINK = True
+
     SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 except KeyError:
     pass
-########## END CACHE CONFIGURATION
+########## END CACHE/QUEUE CONFIGURATION
 
 
 ########## AMAZON S3 CONFIGURATION
@@ -136,8 +165,8 @@ try:
     }
 
     # Separate buckets for static files and media files
-    AWS_STATIC_STORAGE_BUCKET_NAME = '{{ project_name }}-static'
-    AWS_MEDIA_STORAGE_BUCKET_NAME = '{{ project_name }}-media'
+    AWS_STATIC_STORAGE_BUCKET_NAME = '%s-static' % PROJECT_NAME.lower()
+    AWS_MEDIA_STORAGE_BUCKET_NAME = '%s-media' % PROJECT_NAME.lower()
     S3_STATIC_URL = '//%s.s3.amazonaws.com/' % AWS_STATIC_STORAGE_BUCKET_NAME
     S3_MEDIA_URL = '//%s.s3.amazonaws.com/' % AWS_MEDIA_STORAGE_BUCKET_NAME
 
@@ -151,11 +180,11 @@ try:
         pass
 
     StaticRootS3BotoStorage = lambda: S3PipelineCachedStorage(bucket=AWS_STATIC_STORAGE_BUCKET_NAME)
-    STATICFILES_STORAGE = 'config.settings.production.StaticRootS3BotoStorage'
+    STATICFILES_STORAGE = 'config.settings.prod.StaticRootS3BotoStorage'
     STATIC_URL = S3_STATIC_URL
 
     MediaRootS3BotoStorage = lambda: S3BotoStorage(bucket=AWS_MEDIA_STORAGE_BUCKET_NAME)
-    DEFAULT_FILE_STORAGE = 'config.settings.production.MediaRootS3BotoStorage'
+    DEFAULT_FILE_STORAGE = 'config.settings.prod.MediaRootS3BotoStorage'
     MEDIA_URL = S3_MEDIA_URL
 
 except KeyError:

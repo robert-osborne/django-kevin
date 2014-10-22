@@ -16,18 +16,12 @@ TEMPLATE_DEBUG = DEBUG
 ########## END DEBUG CONFIGURATION
 
 
-########## EMAIL CONFIGURATION
-# https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-########## END EMAIL CONFIGURATION
-
-
 ########## DATABASE CONFIGURATION
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '{{ project_name }}-dev',
+        'NAME': '%s-dev' % PROJECT_NAME.lower(),
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost',
@@ -37,23 +31,74 @@ DATABASES = {
 ########## END DATABASE CONFIGURATION
 
 
+########## EMAIL CONFIGURATION
+# https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+########## END EMAIL CONFIGURATION
+
+
 ########## CACHE CONFIGURATION
 # https://docs.djangoproject.com/en/dev/ref/settings/#caches
 CACHE_ENGINES = {
-    'default': {
+    'redis': {
         'BACKEND': 'redis_cache.cache.RedisCache',
-        'LOCATION': 'localhost:6379:1',
+        'LOCATION': 'localhost:6379:0',
     },
     'dummy': {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     }
 }
 
-CACHES = {}
-CACHES['default'] = CACHE_ENGINES[os.getenv('CACHE', 'default')]
+CACHES = {
+    'redis': {
+        'BACKEND': 'redis_cache.cache.RedisCache',
+        'LOCATION': 'localhost:6379:0',
+    }
+}
+
+CACHES['default'] = CACHE_ENGINES[os.getenv('CACHE', 'dummy')]
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 ########## END CACHE CONFIGURATION
+
+
+########## REDIS QUEUE CONFIGURATION
+# https://github.com/ui/django-rq#support-for-django-redis-and-django-redis-cache
+RQ_QUEUES = {
+    'default': {
+        'USE_REDIS_CACHE': 'redis'
+    },
+    'high': {
+        'USE_REDIS_CACHE': 'redis'
+    },
+    'low': {
+        'USE_REDIS_CACHE': 'redis'
+    }
+}
+
+RQ_SHOW_ADMIN_LINK = True
+########## END REDIS QUEUE CONFIGURATION
+
+
+########## LOGGING CONFIGURATION
+# https://docs.djangoproject.com/en/dev/ref/settings/#logging
+LOGGERS = {
+    # Log requests locally without [INFO] tag
+    'werkzeug': {
+        'handlers': ['default'],
+        'level': 'DEBUG',
+        'propagate': False,
+    },
+    # Log queue workers to console and file on development
+    'rq.worker': {
+        'handlers': ['default', 'file_log'],
+        'level': 'DEBUG',
+        'propagate': False,
+    },
+}
+
+LOGGING['loggers'].update(LOGGERS)
+########## END LOGGING CONFIGURATION
 
 
 ########## TOOLBAR CONFIGURATION
