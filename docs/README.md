@@ -6,8 +6,8 @@ Welcome to {{ project_name }}'s documentation!
 Instructions to get your environment set up and to start coding!
 
 [Development](development.md)
--------------------------------
-Instructions to start your local server.
+-----------------------------
+Instructions to start your dev server.
 
 [Deployment](deployment.md)
 ---------------------------

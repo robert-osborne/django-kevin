@@ -1,9 +1,9 @@
 django-kevin
 ============
 
-![Django 1.7](http://img.shields.io/badge/Django-1.7-brightgreen.svg)
+![Django 1.7.1](http://img.shields.io/badge/Django-1.7.1-brightgreen.svg)
 
-A heavily personalized project template for Django 1.7 using postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
+A heavily personalized project template for Django 1.7.1 using postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
 
 Forked from the original [django-two-scoops-project](https://github.com/twoscoops/django-twoscoops-project)
 
@@ -32,7 +32,7 @@ Install python packages
 For development:
 
     workon {{ project_name }}-dev
-    pip install -r requirements/local.txt
+    pip install -r requirements/dev.txt
 
 For production:
 
@@ -51,11 +51,18 @@ Install node packages
 
     sudo npm install
 
+One-time system installs
+------------------------
+
 In order to be able to lint SCSS files locally you need `ruby` on your local system and a certain gem. See [https://github.com/ahmednuaman/grunt-scss-lint#scss-lint-task](https://github.com/ahmednuaman/grunt-scss-lint#scss-lint-task)
 
     gem install scss-lint
 
-In order for grunt to notify you of warnings and when the build is finished, you need a [notification system](https://github.com/dylang/grunt-notify#notification-systems) installed. Below is the Mac OSX notification command-line tool
+In order to use django-pipeline for post-processing, you need `yuglify` installed on your local system:
+
+    npm install -g yuglify
+
+In order for grunt to notify you of warnings and when the build is finished, you need a [notification system](https://github.com/dylang/grunt-notify#notification-systems) installed. Below is the Mac OSX notification command-line tool:
 
     brew install terminal-notifier
 
@@ -69,9 +76,10 @@ The environment variables for development sets the appropriate DJANGO_SETTINGS_M
 
 *.env.dev is not version controlled so the first person to create this project needs to create a .env.dev file for Foreman to read into the environment. Future collaboraters need to email the creator for it.*
 
-    echo DJANGO_SETTINGS_MODULE=config.settings.local >> .env.dev
+    echo DJANGO_SETTINGS_MODULE=config.settings.dev >> .env.dev
     echo PYTHONPATH={{ project_name }} >> .env.dev
     echo PYTHONUNBUFFERED=True >> .env.dev
+    echo PYTHONWARNINGS=ignore:RemovedInDjango18Warning >> .env.dev
     echo CACHE=dummy >> .env.dev
 
 Recommended to use foreman to use development environment variables and processes:
@@ -122,12 +130,13 @@ The environment variables for production must contain a separate SECRET_KEY for 
 
 *.env is not version controlled so the first person to create this project needs to create a .env file for Foreman and Heroku to read into the environment. Future collaboraters need to email the creator for it.*
 
-    echo "SECRET_KEY=`date | md5`" >> .env
-    echo "DJANGO_SETTINGS_MODULE=config.settings.production" >> .env
-    echo "PYTHONPATH={{ project_name }}" >> .env
-    echo "WEB_CONCURRENCY=3" >> .env
-    echo "PYTHONUNBUFFERED=True" >> .env
-    echo "BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git" >> .env
+    echo SECRET_KEY=`date | md5` >> .env
+    echo DJANGO_SETTINGS_MODULE=config.settings.prod >> .env
+    echo PYTHONPATH={{ project_name }} >> .env
+    echo WEB_CONCURRENCY=3 >> .env
+    echo PYTHONUNBUFFERED=True >> .env
+    echo PYTHONWARNINGS=ignore:RemovedInDjango18Warning >> .env
+    echo BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git >> .env
 
 Deploy to Heroku
 ----------------
@@ -143,7 +152,7 @@ First step is to deploy to Heroku with the `post_compile` script in bin/ so that
     heroku config:push
     git push heroku master
 
-After `post_compile` is successful, uncomment line 208 in `/{{ project_name }}/config/settings/base.py` with the variable `STATICFILES_STORAGE` to enable django-pipeline.
+After `post_compile` is successful, uncomment the line with the variable `STATICFILES_STORAGE` in `/{{ project_name }}/config/settings/base.py` to enable django-pipeline.
 
     git commit -am "enabled django-pipeline"
     git push heroku master
@@ -171,7 +180,7 @@ Use the right virtual environment:
 
 This is meant to mimic production as close as possible using both the production database and environment settings so proceed with caution.
 
-**WARNING**: If this project has SSL turned on, localhost:5000 won't work anymore because it will always try to redirect to https://localhost:5000. To fix this comment out the SECURITY CONFIGURATION section of `production.py` lines 66-85.
+**WARNING**: If this project has SSL turned on, localhost:5000 won't work anymore because it will always try to redirect to https://localhost:5000. To fix this comment out the SECURITY CONFIGURATION section in `/{{ project_name }}/config/settings/prod.py`
 
     heroku config:pull
     foreman run django-admin.py collectstatic --noinput
@@ -223,63 +232,30 @@ You can specifically view the results of Jasmine JS unit tests at [localhost:900
 
 You can specifically view the results of JS coverage tests at [localhost:9000/tests/jasmine/coverage.html](http://localhost:9000/tests/jasmine/coverage.html).
 
-Architecture
-============
-
-Extensions
-----------
-
-The extensions folder contains third-party app overrides. If you want to subclass third-party views, models, templatetags, etc, rewrite URL patterns, or change migrations but don't want to fork the whole library, just add your custom code to this folder and reference it instead of the third-party app.
-
-Static Files
-------------
-
-### Stylesheets `{{ project_name }}/static/css`
-
-3rd-party library code belongs in `/lib` and custom SCSS is written in `/scss`. It is suggested to break up code into meaningful files.
-
-`grunt` will compile and watch all the source code and store inside `/build`.
-
-`django-pipeline` will then collect all the CSS from `/lib` and `/build` and either display them as normal in DEBUG mode or minified and concatenated in PRODUCTION mode via `collectstatic`.
-
-### Scripts `{{ project_name }}/static/js`
-
-3rd-party library code belongs in `/lib` and custom CoffeeScript is written in `/coffee`. It is suggested to break up code into meaningful files.
-
-`grunt` will compile and watch all the source code and store inside `/build`.
-
-`django-pipeline` will then collect all the JS from `/lib` and `/build` and either display them as normal in DEBUG mode or uglified and concatenated in PRODUCTION mode via `collectstatic`.
-
-### Images `{{ project_name }}/static/img`
-
-All images will be stored in the root folder and `grunt` will compress them into `/compressed`.
-
-That means all static template tags that reference images will have to point to `img/compressed` like so:
-
-    <img src="{% static 'img/compressed/loading.gif' %}">
-
-### Fonts `{{ project_name }}/static/fonts`
-
-Fonts are stored here. CSS files that reference these have to be careful with relative paths
-
 Add-ons
 =======
 
 SSL
 ---
-Enable SSL via Heroku, Cloudflare, or your DNS provider and then uncomment lines 67-91 in `/{{ project_name }}/config/settings/production.py` to enable django-secure security best practices for production.
+Enable SSL via Heroku, Cloudflare, or your DNS provider and then uncomment the SECURITY CONFIGURATION of `/{{ project_name }}/config/settings/prod.py` to enable django-secure and other security best practices for production.
 
-Redis Cloud
------------
+Redis Cloud Caching
+-------------------
 In order to enable redis for caching and queues, add [Redis Cloud](https://devcenter.heroku.com/articles/rediscloud) to Heroku.
 
     heroku addons:add rediscloud:25
 
-Redis Queue
------------
-Turn on background job worker queue with this one-liner:
+Redis Queue Worker
+------------------
+Turn on background job worker with this one-liner:
 
     heroku scale worker=1
+
+Redis Queue Scheduler
+---------------------
+Turn on background job scheduler with this one-liner:
+
+    heroku scale scheduler=1
 
 Amazon S3
 ---------
@@ -298,7 +274,7 @@ Libraries
 Python 2.7.8
 ============
 
-Currently using [Django 1.7](https://docs.djangoproject.com/en/1.7/) for the app framework
+Currently using [Django 1.7.1](https://docs.djangoproject.com/en/1.7/) for the app framework
 
 base.txt
 --------
@@ -312,24 +288,26 @@ base.txt
 - [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 - [django-pipeline 1.3.25](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
 - [django-redis 3.7.1](https://django-redis.readthedocs.org/en/latest/) - Enables redis caching
+- [django-rq 0.7.0](https://github.com/ui/django-rq) - Django integration for RQ)
 - [logutils 0.3.3](https://pythonhosted.org/logutils/) - Nifty handlers for the Python standard library’s logging package
 - [project-runpy 0.3.1](https://github.com/crccheck/project_runpy) - Helpers for Python projects like ReadableSqlFilter
 - [psycopg2 2.5.3](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
 - [python-magic 0.4.6](https://github.com/ahupp/python-magic) - Library to identify uploaded files' headers
 - [pytz 2014.4](http://pytz.sourceforge.net/) - World timezone definitions
 - [requests 2.4.0](http://docs.python-requests.org/en/latest/) - HTTP request API
-- [rq 0.4.6](http://python-rq.org/) - Background tasks using redis as queue
+- [rq-scheduler 0.5.0](https://github.com/ui/rq-scheduler) - Job scheduling capabilities to RQ
+- [six 1.8.0](http://pythonhosted.org/six/) - Python 2 and 3 compatibility utilities
 - [static 1.0.2](https://github.com/lukearno/static) - Serves static and dynamic content
 - [unicode-slugify 0.1.1](https://github.com/mozilla/unicode-slugify) - A slugifier that works in unicode
 
-local.txt
----------
+dev.txt
+-------
 - [Werkzeug 0.9.6](http://werkzeug.pocoo.org/) - WSGI utility library with powerful debugger
 - [django-debug-toolbar 1.2.1](http://django-debug-toolbar.readthedocs.org/en/1.2/) - Debug information in a toolbar
 - [django-sslserver 0.12](https://github.com/teddziuba/django-sslserver) - SSL localhost server
 
-production.txt
---------------
+prod.txt
+--------
 - [Collectfast 0.2.0](https://github.com/antonagestam/collectfast) - Faster collectstatic
 - [boto 2.32.1](https://boto.readthedocs.org/en/latest/) - Python interface to AWS
 - [dj-database-url 0.3.0](https://github.com/kennethreitz/dj-database-url) - Allows Django to use database URLs for Heroku
