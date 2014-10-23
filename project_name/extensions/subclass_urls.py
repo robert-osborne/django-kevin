@@ -1,5 +1,5 @@
-from extensions.authtools import urls as authtools_urls
-from extensions.django_rq import urls as django_rq_urls
+from .authtools import urls as authtools_urls
+from .django_rq import urls as django_rq_urls
 
 urlpatterns = []
 urlpatterns += authtools_urls.subclass_urlpatterns

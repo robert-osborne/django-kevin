@@ -82,18 +82,18 @@ LOGGING['loggers'].update(LOGGERS)
 # INSTALLED_APPS += (
 #     'djangosecure',
 # )
-
+#
 # MIDDLEWARE_CLASSES += (
 #     'djangosecure.middleware.SecurityMiddleware',
 # )
-
+#
 # # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 # # https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-SECURE_PROXY_SSL_HEADER
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
+#
 # # Use this setting if SSL is being served through CloudFlare proxy
 # SECURE_PROXY_SSL_HEADER = ('HTTP_CF_VISITOR', '{"scheme":"https"}',)
-
+#
 # # Set this to 30 seconds and then to 518400 when you can prove it works
 # SECURE_HSTS_SECONDS = 30
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True

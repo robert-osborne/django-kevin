@@ -8,7 +8,7 @@ urlpatterns = [
     # Core URLs
     url(r'^', include('core.urls', namespace='core')),
 
-    # Extension URLs that subclass views from third-party libraries
+    # Extension URLs that subclass views from third-party libraries higher in priority
     url(r'^', include('extensions.subclass_urls')),
 
     # Root-level redirects for common browser requests

@@ -13,7 +13,7 @@ class CoreViewsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'pages/home.html')
 
-        # Cached view doesn't render template again
         response = self.client.get(reverse('core:home'))
         self.assertEqual(response.status_code, 200)
+        # Cached view doesn't render template again
         self.assertTemplateNotUsed(response, 'pages/home.html')
