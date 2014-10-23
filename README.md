@@ -12,9 +12,11 @@ Creating Your Project
 
 *Prerequisites: python, django*
 
-To create a new Django project, run the following command replacing `{{ project_name }}` with your actual project name:
+To create a new Django project, run the following command replacing PROJECT_NAME with your actual project name:
 
-    django-admin.py startproject --template=https://github.com/imkevinxu/django-kevin/archive/master.zip --extension=py,md,html,json,coveragerc --name=Procfile,Procfile.dev {{ project_name }}
+    django-admin.py startproject --template=https://github.com/imkevinxu/django-kevin/archive/master.zip --extension=py,md,html,json,coveragerc --name=Procfile,Procfile.dev PROJECT_NAME
+
+Afterwards please reference the actual README.md you just created in your new project folder, all the references to {{ project_name }} will be changed accordingly.
 
 Make virtual environments
 -------------------------
@@ -72,7 +74,7 @@ Development Mode
 Set .env.dev variable for dev
 -----------------------------
 
-The environment variables for development sets the appropriate DJANGO_SETTINGS_MODULE and PYTHONPATH in order to use django-admin.py seemlessly. Necessary for Foreman and other worker processes
+The environment variables for development sets the appropriate `DJANGO_SETTINGS_MODULE` and `PYTHONPATH` in order to use `django-admin.py` seemlessly. Necessary for Foreman and other worker processes
 
 *.env.dev is not version controlled so the first person to create this project needs to create a .env.dev file for Foreman to read into the environment. Future collaboraters need to email the creator for it.*
 
@@ -126,7 +128,7 @@ Production Mode
 Set .env variable for prod
 --------------------------
 
-The environment variables for production must contain a separate SECRET_KEY for security and the appropriate DJANGO_SETTINGS_MODULE and PYTHONPATH in order to use django-admin.py seemlessly. Hacky use of `date | md5` to generate a pseudo-random string.
+The environment variables for production must contain a separate `SECRET_KEY` for security and the appropriate `DJANGO_SETTINGS_MODULE` and `PYTHONPATH` in order to use `django-admin.py` seemlessly. Hacky use of `date | md5` to generate a pseudo-random string.
 
 *.env is not version controlled so the first person to create this project needs to create a .env file for Foreman and Heroku to read into the environment. Future collaboraters need to email the creator for it.*
 
@@ -143,24 +145,21 @@ Deploy to Heroku
 
 *Prerequisites: Heroku Toolbelt and heroku-config*
 
-First step is to deploy to Heroku with the `post_compile` script in bin/ so that node functions can be installed for python to call them.
+First step is to deploy to Heroku with the `post_compile` script in `/bin` so that node functions can be installed for python to call them.
 
     git init
     git add .
-    git commit -m "ready for heroku deploy"
+    git commit -m "Ready for initial Heroku deploy"
     heroku create
     heroku config:push
     git push heroku master
 
-After `post_compile` is successful, uncomment the line with the variable `STATICFILES_STORAGE` in `/{{ project_name }}/config/settings/base.py` to enable django-pipeline.
+After `post_compile` is successful, uncomment the line with the variable `STATICFILES_STORAGE` in `/{{ project_name }}/config/settings/base.py` to enable django-pipeline and push again.
 
-    git commit -am "enabled django-pipeline"
+    git commit -am "Enabled django-pipeline"
     git push heroku master
-    heroku open
-
-If you're sure all database migrations are in good condition, migrate models with:
-
     heroku run django-admin.py migrate
+    heroku open
 
 To run one-off commands use:
 
@@ -194,7 +193,7 @@ Testing Mode
 Set .env.test variable for test
 ------------------------------
 
-The environment variables for testing sets the appropriate DJANGO_SETTINGS_MODULE and PYTHONPATH in order to use django-admin.py seemlessly. Necessary for Foreman and other worker processes
+The environment variables for testing sets the appropriate `DJANGO_SETTINGS_MODUL`E and `PYTHONPATH` in order to use `django-admin.py` seemlessly. Necessary for Foreman and other worker processes
 
 *.env.test is not version controlled so the first person to create this project needs to create a .env.test file for Foreman to read into the environment. Future collaboraters need to email the creator for it.*
 
@@ -215,11 +214,15 @@ Use the right virtual environment:
 
     workon {{ project_name }}-test
 
+And have static assets prepared (for coverage tests):
+    
+    foreman run django-admin.py collectstatic --noinput
+
 Automatically run all tests and linters and watch files to continuously run tests:
 
     foreman start
 
-You can view the results of the tests at [localhost:9000/tests](http://localhost:9000/tests).
+You can view the results of the tests in HTML at [localhost:9000/tests](http://localhost:9000/tests).
 
 You can specifically view the results of Django coverage tests at [localhost:9000/tests/django](http://localhost:9000/tests/django).
 
@@ -237,7 +240,7 @@ Add-ons
 
 SSL
 ---
-Enable SSL via Heroku, Cloudflare, or your DNS provider and then uncomment the SECURITY CONFIGURATION of `/{{ project_name }}/config/settings/prod.py` to enable django-secure and other security best practices for production.
+Enable SSL via Heroku, Cloudflare, or your DNS provider and then uncomment the SECURITY CONFIGURATION section in `/{{ project_name }}/config/settings/prod.py` to enable django-secure and other security best practices for production.
 
 Redis Cloud Caching
 -------------------
@@ -247,12 +250,32 @@ In order to enable redis for caching and queues, add [Redis Cloud](https://devce
 
 Redis Queue Worker
 ------------------
+Add a worker process to Procfile:
+
+    echo "worker: django-admin.py rqworker high default low" >> Procfile
+
+Push the changed Procfile to Heroku:
+
+    git add Procfile
+    git commit -m "Added worker process to Procfile, pushing to Heroku"
+    git push heroku master
+
 Turn on background job worker with this one-liner:
 
     heroku scale worker=1
 
 Redis Queue Scheduler
 ---------------------
+Add a scheduler process to Procfile:
+
+    echo "scheduler: rqscheduler --url $REDISCLOUD_URL" >> Procfile
+
+Push the changed Procfile to Heroku:
+
+    git add Procfile
+    git commit -m "Added scheduler process to Procfile, pushing to Heroku"
+    git push heroku master
+
 Turn on background job scheduler with this one-liner:
 
     heroku scale scheduler=1
