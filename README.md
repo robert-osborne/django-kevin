@@ -235,12 +235,16 @@ You can specifically view the results of Jasmine JS unit tests at [localhost:900
 
 You can specifically view the results of JS coverage tests at [localhost:9000/tests/jasmine/coverage.html](http://localhost:9000/tests/jasmine/coverage.html)
 
-Add-ons
-=======
+Add-ons & Services
+==================
 
 SSL
 ---
 Enable SSL via Heroku, Cloudflare, or your DNS provider and then uncomment the SECURITY CONFIGURATION section in `/{{ project_name }}/config/settings/prod.py` to enable django-secure and other security best practices for production.
+
+Invoke
+------
+Scripts can be programmed to be run on the command-line for repeated tasks like deployment, building, or cleaning. Write your tasks in `tasks.py`.
 
 Redis Cloud Caching
 -------------------
@@ -291,8 +295,8 @@ Add the following config variables to Heroku:
     heroku config:set AWS_STATIC_STORAGE_BUCKET_NAME={{ project_name }}-static
     heroku config:set AWS_MEDIA_STORAGE_BUCKET_NAME={{ project_name }}-media
 
-Suggested Add-ons
------------------
+Suggestions
+-----------
 - [Sentry](https://devcenter.heroku.com/articles/sentry) for error tracking with [Raven](http://raven.readthedocs.org/en/latest/index.html) as the client. Make sure to use a [synchronous blocking transport](http://python-rq.org/patterns/sentry/).
 
 Libraries
@@ -316,6 +320,7 @@ base.txt
 - [django-pipeline 1.3.25](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
 - [django-redis 3.7.1](https://django-redis.readthedocs.org/en/latest/) - Enables redis caching
 - [django-rq 0.7.0](https://github.com/ui/django-rq) - Django integration for RQ
+- [invoke 0.9.0](https://github.com/pyinvoke/invoke) - Python task execution in `tasks.py`
 - [logutils 0.3.3](https://pythonhosted.org/logutils/) - Nifty handlers for the Python standard library’s logging package
 - [project-runpy 0.3.1](https://github.com/crccheck/project_runpy) - Helpers for Python projects like ReadableSqlFilter
 - [psycopg2 2.5.3](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
