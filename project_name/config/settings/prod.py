@@ -109,7 +109,9 @@ LOGGING['loggers'].update(LOGGERS)
 
 ########## CACHE/QUEUE CONFIGURATION
 # https://docs.djangoproject.com/en/dev/ref/settings/#caches
-try:
+RQ_QUEUES = {}
+
+if 'REDISCLOUD_URL' in os.environ:
     import urlparse
     redis_url = urlparse.urlparse(os.environ['REDISCLOUD_URL'])
 
@@ -138,15 +140,12 @@ try:
     RQ_SHOW_ADMIN_LINK = True
 
     SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
-
-except KeyError:
-    RQ_QUEUES = {}
 ########## END CACHE/QUEUE CONFIGURATION
 
 
 ########## AMAZON S3 CONFIGURATION
 # http://django-storages.readthedocs.org/en/latest/backends/amazon-S3.html
-try:
+if 'AWS_ACCESS_KEY_ID' in os.environ:
     AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
     AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 
@@ -186,7 +185,4 @@ try:
     MediaRootS3BotoStorage = lambda: S3BotoStorage(bucket=AWS_MEDIA_STORAGE_BUCKET_NAME)
     DEFAULT_FILE_STORAGE = 'config.settings.prod.MediaRootS3BotoStorage'
     MEDIA_URL = S3_MEDIA_URL
-
-except KeyError:
-    pass
 ########## END AMAZON S3 CONFIGURATION
