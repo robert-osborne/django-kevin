@@ -14,7 +14,7 @@ Creating Your Project
 
 To create a new Django project, run the following command replacing PROJECT_NAME with your actual project name:
 
-    django-admin.py startproject --template=https://github.com/imkevinxu/django-kevin/archive/master.zip --extension=py,md,html,json,coveragerc --name=Procfile,Procfile.dev PROJECT_NAME
+    django-admin.py startproject --template=https://github.com/imkevinxu/django-kevin/archive/master.zip --extension=py,md,html,json,coveragerc PROJECT_NAME
 
 Afterwards please reference the actual `README.md` you just created in your new project folder, all the references to {{ project_name }} will be changed accordingly.
 
@@ -290,6 +290,10 @@ Add the following config variables to Heroku:
     heroku config:set AWS_SECRET_ACCESS_KEY=INSERT_SECRET_ACCESS_KEY
     heroku config:set AWS_STATIC_STORAGE_BUCKET_NAME={{ project_name }}-static
     heroku config:set AWS_MEDIA_STORAGE_BUCKET_NAME={{ project_name }}-media
+
+Suggested Add-ons
+-----------------
+- [Sentry](https://devcenter.heroku.com/articles/sentry) for error tracking with [Raven](http://raven.readthedocs.org/en/latest/index.html) as the client. Make sure to use a [synchronous blocking transport](http://python-rq.org/patterns/sentry/).
 
 Libraries
 =========
