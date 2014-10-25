@@ -23,7 +23,7 @@ class DjangoRQExtensionsTestCase(TestCase):
         self.recipient_list = ["test@example.com"]
 
         self.queue = get_queue(async=True)
-        for i in range(3):
+        for i in range(2):
             self.queue.enqueue(send_mail, self.subject, self.message, self.from_email, self.recipient_list)
 
     def tearDown(self):
@@ -33,7 +33,7 @@ class DjangoRQExtensionsTestCase(TestCase):
         response = self.client.get(reverse('rq_jobs', kwargs={'queue_index': 0}))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'django_rq/templates/jobs.html')
-        self.assertContains(response, "2 jobs")
+        self.assertContains(response, "1 jobs")
         self.assertContains(response, "%s, %s" % (date(datetime.now()), time(datetime.now())))
 
         self.queue.empty()
