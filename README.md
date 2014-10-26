@@ -429,6 +429,5 @@ This project follows best practices as espoused in [Two Scoops of Django: Best P
 Many thanks to:
 ---------------
 
-- Daniel Greenfield and Audrey Roy for writing the book
-- Randall Degges for django-skel
+- [Daniel Greenfield](https://twitter.com/pydanny) and [Audrey Roy](https://twitter.com/audreyr) for writing the book
 - All of the [contributors](https://github.com/twoscoops/django-twoscoops-project/blob/master/CONTRIBUTORS.txt) to the original fork
