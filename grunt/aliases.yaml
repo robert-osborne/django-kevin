@@ -37,7 +37,6 @@ dev:
   - 'lint'
   - 'build'
   - 'notify:compile'
-  - 'open:dev'
   - 'watch'
 
 lint_jasmine:
