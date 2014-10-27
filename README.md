@@ -316,16 +316,35 @@ PG Backups
 
     heroku addons:add pgbackups:auto-month
 
-Logentries
+Monitoring
 ----------
-[Logentries](https://devcenter.heroku.com/articles/logentries) provides logging backups as well as search and notifications. To enable their free tier:
-
-    heroku addons:add logentries
-
-Suggestions
------------
-- [New Relic](https://devcenter.heroku.com/articles/newrelic) for performance monitoring
+- [Librato](https://devcenter.heroku.com/articles/librato) for Heroku performance monitoring
+- [New Relic](https://devcenter.heroku.com/articles/newrelic) for server performance monitoring
+- [RedisMonitor](https://devcenter.heroku.com/articles/redismonitor) for Redis server monitoring
+- [Logentries](https://devcenter.heroku.com/articles/logentries) provides logging backups as well as search and notifications. Can also additionally backup to S3
 - [Sentry](https://devcenter.heroku.com/articles/sentry) for error tracking with [Raven](http://raven.readthedocs.org/en/latest/index.html) as the client. Make sure to use a [synchronous blocking transport](http://python-rq.org/patterns/sentry/).
+- [Ranger](https://devcenter.heroku.com/articles/ranger) to alert you when your app is down
+
+Testing
+-------
+- [Rainforest RQ](https://devcenter.heroku.com/articles/rainforest) for simple integration testing
+- [Tinfoil Security](https://devcenter.heroku.com/articles/tinfoilsecurity) for regularly scanning your app for security vulnerabilities
+- [Loader.io](https://devcenter.heroku.com/articles/loaderio) for load testing
+
+Continuous Integration
+----------------------
+Includes a fancy badge for GitHub README
+
+- [Travis CI](https://travis-ci.org/) for continuous integration testing
+- [Coveralls.io](https://coveralls.io/) for coverage testing
+- [Requires.io](https://requires.io/) for dependency management
+
+Utilities
+---------
+- [Filepicker](https://devcenter.heroku.com/articles/filepicker) for file uploading and content management
+- [Twilio](http://www.twilio.com/) for sending SMS, MMS, and Voice. Recommended to use [`django-twilio`](http://django-twilio.readthedocs.org/en/latest/)
+- [Mailgun](https://devcenter.heroku.com/articles/mailgun) or [Sendgrid](https://devcenter.heroku.com/articles/sendgrid) for email sending. Here are some useful [email templates](http://blog.mailgun.com/transactional-html-email-templates/)
+- [MailChimp](http://mailchimp.com/) for email newsletters or create your own [custom newsletter emails](http://zurb.com/playground/responsive-email-templates)
 
 Libraries
 =========
