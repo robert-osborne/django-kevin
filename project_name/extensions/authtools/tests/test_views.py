@@ -13,17 +13,17 @@ class AuthtoolsViewsExtensionsTestCase(TestCase):
     def test_logout_view_extension(self):
         response = self.client.get(reverse('logout'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'registration/logout.html')
+        self.assertTemplateUsed(response, 'accounts/logout.html')
 
     def test_password_reset_view_extension(self):
         response = self.client.get(reverse('password_reset'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'registration/password_reset.html')
+        self.assertTemplateUsed(response, 'accounts/password_reset.html')
 
     def test_password_change_view_extension(self):
         response = self.client.get(reverse('password_change'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'registration/password_change.html')
+        self.assertTemplateUsed(response, 'accounts/password_change.html')
 
         password_change_payload = {'old_password': 'password', 'new_password1': '123', 'new_password2': '123'}
         response = self.client.post(reverse('password_change'), password_change_payload)
