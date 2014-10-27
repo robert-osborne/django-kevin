@@ -3,7 +3,7 @@ django-kevin
 
 ![Django 1.7.1](http://img.shields.io/badge/Django-1.7.1-brightgreen.svg)
 
-A heavily personalized project template for Django 1.7.1 using postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
+A heavily personalized project template for Django 1.7.1 using Postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
 
 Forked from the original [django-two-scoops-project](https://github.com/twoscoops/django-twoscoops-project)
 
@@ -295,9 +295,16 @@ Add the following config variables to Heroku:
     heroku config:set AWS_STATIC_STORAGE_BUCKET_NAME={{ project_name }}-static
     heroku config:set AWS_MEDIA_STORAGE_BUCKET_NAME={{ project_name }}-media
 
+PG Backups
+----------
+Turn on automatic Postgres database backups with the following one-liner:
+
+    heroku addons:add pgbackups:auto-month
+
 Suggestions
 -----------
 - [Sentry](https://devcenter.heroku.com/articles/sentry) for error tracking with [Raven](http://raven.readthedocs.org/en/latest/index.html) as the client. Make sure to use a [synchronous blocking transport](http://python-rq.org/patterns/sentry/).
+- [New Relic](https://devcenter.heroku.com/articles/newrelic) for performance monitoring
 
 Libraries
 =========
