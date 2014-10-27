@@ -76,7 +76,6 @@ class RQSchedulerViewExtensionsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'rq_scheduler/templates/job_detail.html')
         self.assertContains(response, "django.core.mail.send_mail")
-        self.assertContains(response, "finished")
 
     def test_clear_jobs_view_extension(self):
         for i in range(2):

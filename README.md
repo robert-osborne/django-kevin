@@ -12,7 +12,7 @@ Forked from the original [django-two-scoops-project](https://github.com/twoscoop
 Creating Your Project
 =====================
 
-*Prerequisites: python, django*
+*Prerequisites: django*
 
 To create a new Django project, run the following command replacing PROJECT_NAME with your actual project name:
 
@@ -51,12 +51,18 @@ For testing:
 Install node packages
 ---------------------
 
-*Prerequisites: node, homebrew*
+*Prerequisites: node*
 
     sudo npm install
 
 One-time system installs
 ------------------------
+
+*Prerequisites: homebrew*
+
+In order to use the grunt task runner you need to install it globally:
+
+    npm install -g grunt-cli
 
 In order to be able to lint SCSS files locally you need `ruby` on your local system and a certain gem. See [https://github.com/ahmednuaman/grunt-scss-lint#scss-lint-task](https://github.com/ahmednuaman/grunt-scss-lint#scss-lint-task)
 
@@ -69,6 +75,13 @@ In order to use django-pipeline for post-processing, you need `yuglify` installe
 In order for grunt to notify you of warnings and when the build is finished, you need a [notification system](https://github.com/dylang/grunt-notify#notification-systems) installed. Below is the Mac OSX notification command-line tool:
 
     brew install terminal-notifier
+
+In order to use Redis for caching and queuing, you need to download it and have it running in the background. This will also set `redis-server` to automatically run at launch:
+
+    brew install redis
+    ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
+    launchctl start ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
 
 Development Mode
 ================
