@@ -244,7 +244,7 @@ Enable SSL via Heroku, Cloudflare, or your DNS provider and then uncomment the S
 
 Invoke
 ------
-Scripts can be programmed to be run on the command-line for repeated tasks like deployment, building, or cleaning. Write your tasks in `tasks.py`.
+Scripts can be programmed to be run on the command-line using [Invoke](https://github.com/pyinvoke/invoke) for repeated tasks like deployment, building, or cleaning. Write your tasks in `tasks.py`.
 
 Redis Cloud Caching
 -------------------
@@ -254,7 +254,7 @@ In order to enable redis for caching and queues, add [Redis Cloud](https://devce
 
 Redis Queue Worker
 ------------------
-Add a worker process to Procfile:
+Add a [Redis Queue](https://github.com/ui/django-rq) worker process to Procfile:
 
     echo "worker: django-admin.py rqworker high default low" >> Procfile
 
@@ -270,7 +270,7 @@ Turn on background job worker with this one-liner:
 
 Redis Queue Scheduler
 ---------------------
-Add a scheduler process to Procfile:
+Add a [RQ Scheduler](https://github.com/ui/rq-scheduler) process to Procfile:
 
     echo "scheduler: rqscheduler --url $REDISCLOUD_URL" >> Procfile
 
@@ -297,9 +297,15 @@ Add the following config variables to Heroku:
 
 PG Backups
 ----------
-Turn on automatic Postgres database backups with the following one-liner:
+[PG Backups](https://devcenter.heroku.com/articles/pgbackups) is a Heroku add-on for automatic Postgres database backups. Enable with the following one-liner:
 
     heroku addons:add pgbackups:auto-month
+
+Logentries
+----------
+[Logentries](https://devcenter.heroku.com/articles/logentries) provides logging backups as well as search and notifications. To enable their free tier:
+
+    heroku addons:add logentries
 
 Suggestions
 -----------
