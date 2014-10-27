@@ -2,6 +2,7 @@ django-kevin
 ============
 
 ![Django 1.7.1](http://img.shields.io/badge/Django-1.7.1-brightgreen.svg)
+![Requirements Status](https://requires.io/github/imkevinxu/django-kevin/requirements.svg?branch=master)
 
 A heavily personalized project template for Django 1.7.1 using Postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
 
@@ -309,8 +310,8 @@ Logentries
 
 Suggestions
 -----------
-- [Sentry](https://devcenter.heroku.com/articles/sentry) for error tracking with [Raven](http://raven.readthedocs.org/en/latest/index.html) as the client. Make sure to use a [synchronous blocking transport](http://python-rq.org/patterns/sentry/).
 - [New Relic](https://devcenter.heroku.com/articles/newrelic) for performance monitoring
+- [Sentry](https://devcenter.heroku.com/articles/sentry) for error tracking with [Raven](http://raven.readthedocs.org/en/latest/index.html) as the client. Make sure to use a [synchronous blocking transport](http://python-rq.org/patterns/sentry/).
 
 Libraries
 =========
@@ -327,7 +328,7 @@ base.txt
 - [dj-static 0.0.6](https://github.com/kennethreitz/dj-static) - Serve production static files with Django
 - [django-authtools 1.0.0](http://django-authtools.readthedocs.org/en/latest/) - Custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
 - [django-braces 1.4.0](http://django-braces.readthedocs.org/en/v1.4.0/) - Lots of custom mixins
-- [django-extensions 1.3.9](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
+- [django-extensions 1.4.4](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 - [django-floppyforms 1.2.0](http://django-floppyforms.readthedocs.org/en/latest/) - Control of output of form rendering
 - [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 - [django-pipeline 1.3.25](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
@@ -336,27 +337,27 @@ base.txt
 - [invoke 0.9.0](https://github.com/pyinvoke/invoke) - Python task execution in `tasks.py`
 - [logutils 0.3.3](https://pythonhosted.org/logutils/) - Nifty handlers for the Python standard library’s logging package
 - [project-runpy 0.3.1](https://github.com/crccheck/project_runpy) - Helpers for Python projects like ReadableSqlFilter
-- [psycopg2 2.5.3](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
+- [psycopg2 2.5.4](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
 - [python-magic 0.4.6](https://github.com/ahupp/python-magic) - Library to identify uploaded files' headers
-- [pytz 2014.4](http://pytz.sourceforge.net/) - World timezone definitions
-- [requests 2.4.0](http://docs.python-requests.org/en/latest/) - HTTP request API
+- [pytz 2014.7](http://pytz.sourceforge.net/) - World timezone definitions
+- [requests 2.4.3](http://docs.python-requests.org/en/latest/) - HTTP request API
 - [rq-scheduler 0.5.0](https://github.com/ui/rq-scheduler) - Job scheduling capabilities to RQ
 - [six 1.8.0](http://pythonhosted.org/six/) - Python 2 and 3 compatibility utilities
-- [static 1.0.2](https://github.com/lukearno/static) - Serves static and dynamic content
+- [static 1.1.1](https://github.com/lukearno/static) - Serves static and dynamic content
 - [unicode-slugify 0.1.1](https://github.com/mozilla/unicode-slugify) - A slugifier that works in unicode
 
 dev.txt
 -------
 - [Werkzeug 0.9.6](http://werkzeug.pocoo.org/) - WSGI utility library with powerful debugger
 - [django-debug-toolbar 1.2.1](http://django-debug-toolbar.readthedocs.org/en/1.2/) - Debug information in a toolbar
-- [django-sslserver 0.12](https://github.com/teddziuba/django-sslserver) - SSL localhost server
+- [django-sslserver 0.14](https://github.com/teddziuba/django-sslserver) - SSL localhost server
 
 prod.txt
 --------
-- [Collectfast 0.2.0](https://github.com/antonagestam/collectfast) - Faster collectstatic
-- [boto 2.32.1](https://boto.readthedocs.org/en/latest/) - Python interface to AWS
+- [Collectfast 0.2.1](https://github.com/antonagestam/collectfast) - Faster collectstatic
+- [boto 2.34.0](https://boto.readthedocs.org/en/latest/) - Python interface to AWS
 - [dj-database-url 0.3.0](https://github.com/kennethreitz/dj-database-url) - Allows Django to use database URLs for Heroku
-- [django-secure 1.0](http://django-secure.readthedocs.org/en/v0.1.2/) - Django security best practices
+- [django-secure 1.0.1](http://django-secure.readthedocs.org/en/v0.1.2/) - Django security best practices
 - [django-storages 1.1.8](http://django-storages.readthedocs.org/en/latest/index.html) - Custom storage backends; using S3
 - [gunicorn 19.1.0](https://github.com/benoitc/gunicorn) - Production WSGI server with workers
 
@@ -366,7 +367,7 @@ test.txt
 - [nose-exclude 0.2.0](https://bitbucket.org/kgrandis/nose-exclude) - Easily specify directories to be excluded from testing
 - [django-nose 1.2](https://github.com/django-nose/django-nose) - Django test runner using nose
 - [factory-boy 2.4.1](https://github.com/rbarrois/factory_boy) - Test fixtures replacement for Python
-- [flake8 2.2.3](http://flake8.readthedocs.org/en/latest/) - Python style checker
+- [flake8 2.2.5](http://flake8.readthedocs.org/en/latest/) - Python style checker
 
 config/lib
 ----------

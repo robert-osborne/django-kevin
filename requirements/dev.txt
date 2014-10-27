@@ -13,4 +13,4 @@ django-debug-toolbar==1.2.1
 
 # SSL localhost server
 # https://github.com/teddziuba/django-sslserver
-django-sslserver==0.12
+django-sslserver==0.14
