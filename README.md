@@ -274,7 +274,7 @@ Redis Queue Scheduler
 ---------------------
 Add a [RQ Scheduler](https://github.com/ui/rq-scheduler) process to Procfile:
 
-    echo "scheduler: rqscheduler --url $REDISCLOUD_URL" >> Procfile
+    echo "scheduler: rqscheduler --url \$REDISCLOUD_URL" >> Procfile
 
 Push the changed Procfile to Heroku:
 
