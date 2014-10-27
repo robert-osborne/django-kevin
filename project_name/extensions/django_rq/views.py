@@ -56,9 +56,6 @@ def jobs(request, queue_index):
 
 @staff_member_required
 def job_detail(request, queue_index, job_id):
-    if job_id == 'empty':
-        return clear_queue(request, queue_index)
-
     queue_index = int(queue_index)
     queue = get_queue_by_index(queue_index)
     try:
