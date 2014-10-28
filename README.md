@@ -382,7 +382,7 @@ base.txt
 dev.txt
 -------
 - [Werkzeug 0.9.6](http://werkzeug.pocoo.org/) - WSGI utility library with powerful debugger
-- [django-debug-toolbar 1.2.1](http://django-debug-toolbar.readthedocs.org/en/1.2/) - Debug information in a toolbar
+- [django-debug-toolbar 1.2.2](http://django-debug-toolbar.readthedocs.org/en/1.2/) - Debug information in a toolbar
 - [django-sslserver 0.14](https://github.com/teddziuba/django-sslserver) - SSL localhost server
 
 prod.txt
