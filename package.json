@@ -1,6 +1,6 @@
 {
   "name": "{{ project_name }}",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Using Grunt to automate linting, compiling, and watching frontend code",
   "author": "Kevin Xu",
   "homepage": "https://{{ project_name }}.com/",
