@@ -4,6 +4,7 @@ django-kevin
 ![Django 1.7.1](http://img.shields.io/badge/Django-1.7.1-brightgreen.svg)
 ![Stablility Status](http://img.shields.io/badge/Stability-Stable-brightgreen.svg)
 [![Requirements Status](https://requires.io/github/imkevinxu/django-kevin/requirements.svg?branch=master)](https://requires.io/github/imkevinxu/django-kevin/requirements/?branch=master)
+[![devDependency Status](https://david-dm.org/imkevinxu/django-kevin/dev-status.svg)](https://david-dm.org/imkevinxu/django-kevin#info=devDependencies)
 
 A heavily personalized project template for Django 1.7.1 using Postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
 
@@ -426,21 +427,21 @@ Locally using node and grunt to watch and compile frontend files
 - [grunt-coffeelint 0.0.13](https://github.com/vojtajina/grunt-coffeelint) - Lint your CoffeeScript
 - [grunt-concurrent ^1.0.0](https://github.com/sindresorhus/grunt-concurrent) - Run grunt tasks concurrently
 - [grunt-contrib-clean ^0.6.0](https://github.com/gruntjs/grunt-contrib-clean) - Clear files and folders
-- [grunt-contrib-coffee ^0.11.1](https://github.com/gruntjs/grunt-contrib-coffee) - Compile CoffeeScript files to JavaScript
+- [grunt-contrib-coffee ^0.12.0](https://github.com/gruntjs/grunt-contrib-coffee) - Compile CoffeeScript files to JavaScript
 - [grunt-contrib-connect ^0.8.0](https://github.com/gruntjs/grunt-contrib-connect) - Start a static web server
-- [grunt-contrib-copy ^0.6.0](https://github.com/gruntjs/grunt-contrib-copy) - Copy files and folders
-- [grunt-contrib-imagemin ^0.8.1](https://github.com/gruntjs/grunt-contrib-imagemin) - Minify PNG, JPEG, GIF, and SVG images
+- [grunt-contrib-copy ^0.7.0](https://github.com/gruntjs/grunt-contrib-copy) - Copy files and folders
+- [grunt-contrib-imagemin ^0.9.1](https://github.com/gruntjs/grunt-contrib-imagemin) - Minify PNG, JPEG, GIF, and SVG images
 - [grunt-contrib-jasmine ^0.8.0](https://github.com/gruntjs/grunt-contrib-jasmine) - Run jasmine specs headlessly through PhantomJS
 - [grunt-contrib-watch ^0.6.1](https://github.com/gruntjs/grunt-contrib-watch) - Run tasks whenever watched files change
-- [grunt-newer ^0.7.0](https://github.com/tschaub/grunt-newer) - Configure Grunt tasks to run with changed files only
+- [grunt-newer ^0.8.0](https://github.com/tschaub/grunt-newer) - Configure Grunt tasks to run with changed files only
 - [grunt-notify ^0.3.1](https://github.com/dylang/grunt-notify) - Automatic desktop notifications for Grunt
 - [grunt-open ^0.2.3](https://github.com/jsoverson/grunt-open) - Open urls and files from a grunt task
-- [grunt-sass ^0.14.1](https://github.com/sindresorhus/grunt-sass) - Compile Sass to CSS
+- [grunt-sass ^0.16.0](https://github.com/sindresorhus/grunt-sass) - Compile Sass to CSS
 - [grunt-scss-lint ^0.3.3](https://github.com/ahmednuaman/grunt-scss-lint) - Lint your SCSS
 - [grunt-shell ^1.1.1](https://github.com/sindresorhus/grunt-shell) - Run shell commands
 - [grunt-template-jasmine-istanbul ^0.3.0](https://github.com/maenu/grunt-template-jasmine-istanbul) - Code coverage template mix-in for grunt-contrib-jasmine, using istanbul
 - [grunt-text-replace ^0.3.12](https://github.com/yoniholmes/grunt-text-replace) - General purpose text replacement for grunt
-- [load-grunt-config ^0.13.1](https://github.com/firstandthird/load-grunt-config) - Grunt plugin that lets you break up your Gruntfile config by task
+- [load-grunt-config ^0.16.0](https://github.com/firstandthird/load-grunt-config) - Grunt plugin that lets you break up your Gruntfile config by task
 - [time-grunt ^1.0.0](https://github.com/sindresorhus/time-grunt) - Display the elapsed execution time of grunt tasks
 
 Static Assets
