@@ -3,7 +3,7 @@ django-kevin
 
 ![Django 1.7.1](http://img.shields.io/badge/Django-1.7.1-brightgreen.svg)
 ![Stablility Status](http://img.shields.io/badge/Stability-Stable-brightgreen.svg)
-![Requirements Status](https://requires.io/github/imkevinxu/django-kevin/requirements.svg?branch=master)
+[![Requirements Status](https://requires.io/github/imkevinxu/django-kevin/requirements.svg?branch=master)](https://requires.io/github/imkevinxu/django-kevin/requirements/?branch=master)
 
 A heavily personalized project template for Django 1.7.1 using Postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
 
@@ -364,7 +364,7 @@ base.txt
 - [django-extensions 1.4.4](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 - [django-floppyforms 1.2.0](http://django-floppyforms.readthedocs.org/en/latest/) - Control of output of form rendering
 - [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
-- [django-pipeline 1.3.25](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
+- [django-pipeline 1.3.26](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
 - [django-redis 3.7.1](https://django-redis.readthedocs.org/en/latest/) - Enables redis caching
 - [django-rq 0.7.0](https://github.com/ui/django-rq) - Django integration for RQ
 - [invoke 0.9.0](https://github.com/pyinvoke/invoke) - Python task execution in `tasks.py`
