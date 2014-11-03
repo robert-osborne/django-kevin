@@ -373,7 +373,7 @@ base.txt
 - [project-runpy 0.3.1](https://github.com/crccheck/project_runpy) - Helpers for Python projects like ReadableSqlFilter
 - [psycopg2 2.5.4](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
 - [python-magic 0.4.6](https://github.com/ahupp/python-magic) - Library to identify uploaded files' headers
-- [pytz 2014.7](http://pytz.sourceforge.net/) - World timezone definitions
+- [pytz 2014.9](http://pytz.sourceforge.net/) - World timezone definitions
 - [requests 2.4.3](http://docs.python-requests.org/en/latest/) - HTTP request API
 - [rq-scheduler 0.5.0](https://github.com/ui/rq-scheduler) - Job scheduling capabilities to RQ
 - [six 1.8.0](http://pythonhosted.org/six/) - Python 2 and 3 compatibility utilities

@@ -70,7 +70,7 @@ python-magic==0.4.6
 
 # World timezone definitions
 # http://pytz.sourceforge.net/
-pytz==2014.7
+pytz==2014.9
 
 # HTTP request API
 # http://docs.python-requests.org/en/latest/
