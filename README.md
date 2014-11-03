@@ -320,7 +320,7 @@ PG Backups
 Monitoring
 ----------
 - [Librato](https://devcenter.heroku.com/articles/librato) for Heroku performance monitoring
-- [New Relic](https://devcenter.heroku.com/articles/newrelic) for server performance monitoring
+- [New Relic](https://devcenter.heroku.com/articles/newrelic) for server performance monitoring (protip: set [availability monitoring](https://coderwall.com/p/u0x3nw) on to avoid Heroku idling)
 - [RedisMonitor](https://devcenter.heroku.com/articles/redismonitor) for Redis server monitoring
 - [Logentries](https://devcenter.heroku.com/articles/logentries) provides logging backups as well as search and notifications. Can also additionally backup to S3
 - [Sentry](https://devcenter.heroku.com/articles/sentry) for error tracking with [Raven](http://raven.readthedocs.org/en/latest/index.html) as the client. Make sure to use a [synchronous blocking transport](http://python-rq.org/patterns/sentry/).
