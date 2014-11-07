@@ -26,7 +26,7 @@ django-braces==1.4.0
 
 # Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 # http://django-extensions.readthedocs.org/en/latest/
-django-extensions==1.4.5
+django-extensions==1.4.6
 
 # Control of output of form rendering
 # http://django-floppyforms.readthedocs.org/en/latest/
