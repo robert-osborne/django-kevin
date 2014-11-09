@@ -428,7 +428,7 @@ Locally using node and grunt to watch and compile frontend files
 - [grunt-concurrent ^1.0.0](https://github.com/sindresorhus/grunt-concurrent) - Run grunt tasks concurrently
 - [grunt-contrib-clean ^0.6.0](https://github.com/gruntjs/grunt-contrib-clean) - Clear files and folders
 - [grunt-contrib-coffee ^0.12.0](https://github.com/gruntjs/grunt-contrib-coffee) - Compile CoffeeScript files to JavaScript
-- [grunt-contrib-connect ^0.8.0](https://github.com/gruntjs/grunt-contrib-connect) - Start a static web server
+- [grunt-contrib-connect ^0.9.0](https://github.com/gruntjs/grunt-contrib-connect) - Start a static web server
 - [grunt-contrib-copy ^0.7.0](https://github.com/gruntjs/grunt-contrib-copy) - Copy files and folders
 - [grunt-contrib-imagemin ^0.9.1](https://github.com/gruntjs/grunt-contrib-imagemin) - Minify PNG, JPEG, GIF, and SVG images
 - [grunt-contrib-jasmine ^0.8.0](https://github.com/gruntjs/grunt-contrib-jasmine) - Run jasmine specs headlessly through PhantomJS
