@@ -423,7 +423,7 @@ Locally using node and grunt to watch and compile frontend files
 
 - [coffee-script ^1.8.0](http://coffeescript.org/) - Cleaner JavaScript
 - [grunt ~0.4.5](http://gruntjs.com/) - Automatic Task Runner
-- [grunt-autoprefixer ^1.0.1](https://github.com/nDmitry/grunt-autoprefixer) - Parse CSS and add vendor-prefixed CSS properties
+- [grunt-autoprefixer ^2.0.0](https://github.com/nDmitry/grunt-autoprefixer) - Parse CSS and add vendor-prefixed CSS properties
 - [grunt-coffeelint 0.0.13](https://github.com/vojtajina/grunt-coffeelint) - Lint your CoffeeScript
 - [grunt-concurrent ^1.0.0](https://github.com/sindresorhus/grunt-concurrent) - Run grunt tasks concurrently
 - [grunt-contrib-clean ^0.6.0](https://github.com/gruntjs/grunt-contrib-clean) - Clear files and folders
