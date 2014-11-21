@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% templatetag openblock %} load staticfiles compressed i18n {% templatetag closeblock %}
+{% templatetag openblock %} load staticfiles pipeline i18n {% templatetag closeblock %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="{% templatetag openblock %} url 'favicon.ico' {% templatetag closeblock %}" />
 
-    {% templatetag openblock %} compressed_css 'master' {% templatetag closeblock %}
+    {% templatetag openblock %} stylesheet 'master' {% templatetag closeblock %}
     {% templatetag openblock %} block extra_css {% templatetag closeblock %}{% templatetag openblock %} endblock extra_css {% templatetag closeblock %}
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -35,7 +35,7 @@
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    {% templatetag openblock %} compressed_js 'master' {% templatetag closeblock %}
+    {% templatetag openblock %} javascript 'master' {% templatetag closeblock %}
     {% templatetag openblock %} block extra_js {% templatetag closeblock %}{% templatetag openblock %} endblock extra_js {% templatetag closeblock %}
   </body>
 </html>
