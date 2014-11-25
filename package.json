@@ -30,7 +30,7 @@
     "grunt-scss-lint": "^0.3.3",
     "grunt-shell": "^1.1.1",
     "grunt-template-jasmine-istanbul": "^0.3.0",
-    "grunt-text-replace": "^0.3.12",
+    "grunt-text-replace": "^0.4.0",
     "load-grunt-config": "^0.16.0",
     "time-grunt": "^1.0.0"
   },
