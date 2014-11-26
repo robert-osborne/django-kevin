@@ -154,7 +154,7 @@ The environment variables for production must contain a separate `SECRET_KEY` fo
     echo WEB_CONCURRENCY=3 >> .env
     echo PYTHONUNBUFFERED=True >> .env
     echo PYTHONWARNINGS=ignore:RemovedInDjango18Warning >> .env
-    echo BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git >> .env
+    echo BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-multi.git >> .env
 
 Deploy to Heroku
 ----------------
