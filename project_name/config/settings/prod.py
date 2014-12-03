@@ -117,7 +117,7 @@ if 'REDISCLOUD_URL' in os.environ:
 
     CACHES = {
         'default': {
-            'BACKEND': 'redis_cache.cache.RedisCache',
+            'BACKEND': 'django_redis.cache.RedisCache',
             'LOCATION': '%s:%s:%s' % (redis_url.hostname, redis_url.port, 0),
             'OPTIONS': {
                 'PASSWORD': redis_url.password
