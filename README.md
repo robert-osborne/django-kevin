@@ -436,7 +436,7 @@ Locally using node and grunt to watch and compile frontend files
 - [grunt-newer ^0.8.0](https://github.com/tschaub/grunt-newer) - Configure Grunt tasks to run with changed files only
 - [grunt-notify ^0.4.1](https://github.com/dylang/grunt-notify) - Automatic desktop notifications for Grunt
 - [grunt-open ^0.2.3](https://github.com/jsoverson/grunt-open) - Open urls and files from a grunt task
-- [grunt-sass ^0.16.0](https://github.com/sindresorhus/grunt-sass) - Compile Sass to CSS
+- [grunt-sass ^0.17.0](https://github.com/sindresorhus/grunt-sass) - Compile Sass to CSS
 - [grunt-scss-lint ^0.3.3](https://github.com/ahmednuaman/grunt-scss-lint) - Lint your SCSS
 - [grunt-shell ^1.1.1](https://github.com/sindresorhus/grunt-shell) - Run shell commands
 - [grunt-template-jasmine-istanbul ^0.3.0](https://github.com/maenu/grunt-template-jasmine-istanbul) - Code coverage template mix-in for grunt-contrib-jasmine, using istanbul
