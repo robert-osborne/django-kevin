@@ -351,7 +351,7 @@ Utilities
 Libraries
 =========
 
-Python 2.7.8
+Python 2.7.9
 ============
 
 Currently using [Django 1.7.1](https://docs.djangoproject.com/en/1.7/) for the app framework
