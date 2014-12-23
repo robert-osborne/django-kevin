@@ -74,7 +74,7 @@ pytz==2014.10
 
 # HTTP request API
 # http://docs.python-requests.org/en/latest/
-requests==2.5.0
+requests==2.5.1
 
 # Job scheduling capabilities to RQ
 # https://github.com/ui/rq-scheduler

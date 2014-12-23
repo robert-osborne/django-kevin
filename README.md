@@ -375,7 +375,7 @@ base.txt
 - [psycopg2 2.5.4](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
 - [python-magic 0.4.6](https://github.com/ahupp/python-magic) - Library to identify uploaded files' headers
 - [pytz 2014.10](http://pytz.sourceforge.net/) - World timezone definitions
-- [requests 2.5.0](http://docs.python-requests.org/en/latest/) - HTTP request API
+- [requests 2.5.1](http://docs.python-requests.org/en/latest/) - HTTP request API
 - [rq-scheduler 0.5.0](https://github.com/ui/rq-scheduler) - Job scheduling capabilities to RQ
 - [six 1.8.0](http://pythonhosted.org/six/) - Python 2 and 3 compatibility utilities
 - [static 1.1.1](https://github.com/lukearno/static) - Serves static and dynamic content
