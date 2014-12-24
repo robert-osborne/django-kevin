@@ -9,8 +9,7 @@
     "url": "https://github.com/imkevinxu/django-kevin"
   },
   "main": "Gruntfile.coffee",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "coffee-script": "^1.8.0",
     "grunt": "~0.4.5",
     "grunt-autoprefixer": "^2.0.0",
@@ -34,8 +33,10 @@
     "load-grunt-config": "^0.16.0",
     "time-grunt": "^1.0.0"
   },
+  "devDependencies": {},
   "engines": {
-    "node": "0.10.x"
+    "node": "0.10.x",
+    "npm": "2.x"
   },
   "private": true,
   "scripts": {}

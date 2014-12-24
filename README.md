@@ -4,7 +4,7 @@ django-kevin
 ![Django 1.7.1](http://img.shields.io/badge/Django-1.7.1-brightgreen.svg)
 ![Stablility Status](http://img.shields.io/badge/Stability-Stable-brightgreen.svg)
 [![Requirements Status](https://requires.io/github/imkevinxu/django-kevin/requirements.svg?branch=master)](https://requires.io/github/imkevinxu/django-kevin/requirements/?branch=master)
-[![devDependency Status](https://david-dm.org/imkevinxu/django-kevin/dev-status.svg)](https://david-dm.org/imkevinxu/django-kevin#info=devDependencies)
+[![Dependencies Status](https://david-dm.org/imkevinxu/django-kevin.svg)](https://david-dm.org/imkevinxu/django-kevin)
 [![MIT License](https://img.shields.io/cocoapods/l/AFNetworking.svg)](http://opensource.org/licenses/MIT)
 
 A heavily personalized project template for Django 1.7.1 using Postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
