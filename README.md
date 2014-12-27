@@ -73,7 +73,7 @@ One-time system installs
 
 In order to use the grunt task runner you need to install it globally:
 
-    npm install -g grunt-cli
+    sudo npm install -g grunt-cli
 
 In order to be able to lint SCSS files locally you need `ruby` on your local system and a certain gem. See [https://github.com/ahmednuaman/grunt-scss-lint#scss-lint-task](https://github.com/ahmednuaman/grunt-scss-lint#scss-lint-task)
 
