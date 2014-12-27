@@ -81,7 +81,7 @@ In order to be able to lint SCSS files locally you need `ruby` on your local sys
 
 In order to use django-pipeline for post-processing, you need `yuglify` installed on your local system:
 
-    npm install -g yuglify
+    sudo npm install -g yuglify
 
 In order for grunt to notify you of warnings and when the build is finished, you need a [notification system](https://github.com/dylang/grunt-notify#notification-systems) installed. Below is the Mac OSX notification command-line tool:
 
