@@ -14,7 +14,7 @@ TEST = DEBUG = True
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 NOSE_ARGS = [
-    '--where=%s' % basename(PROJECT_ROOT),
+    '--where=%s' % PROJECT_FOLDER,
     '--exclude-dir=%s' % join(CONFIG_ROOT, 'settings'),
 ]
 ########## END TEST RUNNER CONFIGURATION

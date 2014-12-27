@@ -23,7 +23,7 @@ class DjangoRQExtensionsTestCase(TestCase):
         self.recipient_list = ["test@example.com"]
 
         self.queue = get_queue(async=True)
-        for i in range(2):
+        for i in range(3):
             self.queue.enqueue(send_mail, self.subject, self.message, self.from_email, self.recipient_list)
 
     def tearDown(self):

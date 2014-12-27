@@ -25,6 +25,9 @@ DJANGO_ROOT = dirname(PROJECT_ROOT)
 # Project name:
 PROJECT_NAME = basename(PROJECT_ROOT).capitalize()
 
+# Project folder:
+PROJECT_FOLDER = basename(PROJECT_ROOT)
+
 # Project domain:
 PROJECT_DOMAIN = '%s.com' % PROJECT_NAME.lower()
 
