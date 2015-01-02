@@ -112,15 +112,14 @@ LOGGING['loggers'].update(LOGGERS)
 RQ_QUEUES = {}
 
 if 'REDISCLOUD_URL' in os.environ:
-    import urlparse
-    redis_url = urlparse.urlparse(os.environ['REDISCLOUD_URL'])
+    redis_url = os.environ['REDISCLOUD_URL']
 
     CACHES = {
         'default': {
             'BACKEND': 'django_redis.cache.RedisCache',
-            'LOCATION': '%s:%s:%s' % (redis_url.hostname, redis_url.port, 0),
+            'LOCATION': '%s/%s' % (redis_url, 0),
             'OPTIONS': {
-                'PASSWORD': redis_url.password
+                'CLIENT_CLASS': 'django_redis.client.DefaultClient',
             }
         }
     }
