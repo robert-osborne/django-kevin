@@ -1,7 +1,7 @@
 Welcome to {{ project_name }}'s documentation!
 ==============================================
 
-[Installation](installation.md)
+[Setup](setup.md)
 -------------------------------
 Instructions to get your environment set up and to start coding!
 
@@ -29,6 +29,6 @@ List of what third-party plugins/libraries are used and what they do.
 -----------------------
 List of cloud services used.
 
-[Changelog](changelog.md)
+[Change Log](changelog.md)
 -------------------------
 List of changes in each version update.
