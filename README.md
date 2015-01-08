@@ -376,7 +376,7 @@ base.txt
 - [django-floppyforms 1.3.0](http://django-floppyforms.readthedocs.org/en/latest/) - Control of output of form rendering
 - [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 - [django-pipeline 1.4.2](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
-- [django-redis 3.8.0](https://django-redis.readthedocs.org/en/latest/) - Enables redis caching
+- [django-redis 3.8.1](https://django-redis.readthedocs.org/en/latest/) - Enables redis caching
 - [django-rq 0.7.0](https://github.com/ui/django-rq) - Django integration for RQ
 - [invoke 0.9.0](https://github.com/pyinvoke/invoke) - Python task execution in `tasks.py`
 - [logutils 0.3.3](https://pythonhosted.org/logutils/) - Nifty handlers for the Python standard library’s logging package
@@ -443,7 +443,7 @@ Locally using node and grunt to watch and compile frontend files
 - [grunt-contrib-imagemin ^0.9.1](https://github.com/gruntjs/grunt-contrib-imagemin) - Minify PNG, JPEG, GIF, and SVG images
 - [grunt-contrib-jasmine ^0.8.0](https://github.com/gruntjs/grunt-contrib-jasmine) - Run jasmine specs headlessly through PhantomJS
 - [grunt-contrib-watch ^0.6.1](https://github.com/gruntjs/grunt-contrib-watch) - Run tasks whenever watched files change
-- [grunt-newer ^0.8.0](https://github.com/tschaub/grunt-newer) - Configure Grunt tasks to run with changed files only
+- [grunt-newer ^1.0.0](https://github.com/tschaub/grunt-newer) - Configure Grunt tasks to run with changed files only
 - [grunt-notify ^0.4.1](https://github.com/dylang/grunt-notify) - Automatic desktop notifications for Grunt
 - [grunt-open ^0.2.3](https://github.com/jsoverson/grunt-open) - Open urls and files from a grunt task
 - [grunt-sass ^0.17.0](https://github.com/sindresorhus/grunt-sass) - Compile Sass to CSS
