@@ -9,7 +9,7 @@ Collectfast==0.2.1
 
 # Python interface to AWS
 # https://boto.readthedocs.org/en/latest/
-boto==2.34.0
+boto==2.35.0
 
 # Allows Django to use database URLs for Heroku
 # https://github.com/kennethreitz/dj-database-url
