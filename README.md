@@ -1,13 +1,13 @@
 django-kevin
 ============
 
-![Django 1.7.2](http://img.shields.io/badge/Django-1.7.2-brightgreen.svg)
+![Django 1.7.3](http://img.shields.io/badge/Django-1.7.3-brightgreen.svg)
 ![Stablility Status](http://img.shields.io/badge/Stability-Stable-brightgreen.svg)
 [![Requirements Status](https://requires.io/github/imkevinxu/django-kevin/requirements.svg?branch=master)](https://requires.io/github/imkevinxu/django-kevin/requirements/?branch=master)
 [![Dependencies Status](https://david-dm.org/imkevinxu/django-kevin.svg)](https://david-dm.org/imkevinxu/django-kevin)
 [![MIT License](https://img.shields.io/cocoapods/l/AFNetworking.svg)](http://opensource.org/licenses/MIT)
 
-A heavily personalized project template for Django 1.7.2 using Postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
+A heavily personalized project template for Django 1.7.3 using Postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
 
 Forked from the original [django-two-scoops-project](https://github.com/twoscoops/django-twoscoops-project)
 
@@ -363,7 +363,7 @@ Libraries
 Python 2.7.9
 ============
 
-Currently using [Django 1.7.2](https://docs.djangoproject.com/en/1.7/) for the app framework
+Currently using [Django 1.7.3](https://docs.djangoproject.com/en/1.7/) for the app framework
 
 base.txt
 --------
@@ -388,7 +388,7 @@ base.txt
 - [rq-scheduler 0.5.0](https://github.com/ui/rq-scheduler) - Job scheduling capabilities to RQ
 - [six 1.9.0](http://pythonhosted.org/six/) - Python 2 and 3 compatibility utilities
 - [static 1.1.1](https://github.com/lukearno/static) - Serves static and dynamic content
-- [unicode-slugify 0.1.1](https://github.com/mozilla/unicode-slugify) - A slugifier that works in unicode
+- [unicode-slugify 0.1.3](https://github.com/mozilla/unicode-slugify) - A slugifier that works in unicode
 
 dev.txt
 -------
