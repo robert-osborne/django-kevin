@@ -399,7 +399,7 @@ dev.txt
 prod.txt
 --------
 - [Collectfast 0.2.1](https://github.com/antonagestam/collectfast) - Faster collectstatic
-- [boto 2.35.2](https://boto.readthedocs.org/en/latest/) - Python interface to AWS
+- [boto 2.36.0](https://boto.readthedocs.org/en/latest/) - Python interface to AWS
 - [dj-database-url 0.3.0](https://github.com/kennethreitz/dj-database-url) - Allows Django to use database URLs for Heroku
 - [django-secure 1.0.1](http://django-secure.readthedocs.org/en/v0.1.2/) - Django security best practices
 - [django-storages 1.1.8](http://django-storages.readthedocs.org/en/latest/index.html) - Custom storage backends; using S3
