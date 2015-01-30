@@ -26,7 +26,7 @@ django-braces==1.4.0
 
 # Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 # http://django-extensions.readthedocs.org/en/latest/
-django-extensions==1.4.9
+django-extensions==1.5.0
 
 # Control of output of form rendering
 # http://django-floppyforms.readthedocs.org/en/latest/
@@ -38,7 +38,7 @@ django-model-utils==2.2
 
 # CSS and JS compressor and compiler. Also minifies HTML
 # http://django-pipeline.readthedocs.org/en/latest/
-django-pipeline==1.4.3
+django-pipeline==1.4.4.1
 
 # Enables redis cacheing
 # https://django-redis.readthedocs.org/en/latest/

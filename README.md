@@ -372,10 +372,10 @@ base.txt
 - [dj-static 0.0.6](https://github.com/kennethreitz/dj-static) - Serve production static files with Django
 - [django-authtools 1.0.0](http://django-authtools.readthedocs.org/en/latest/) - Custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
 - [django-braces 1.4.0](http://django-braces.readthedocs.org/en/v1.4.0/) - Lots of custom mixins
-- [django-extensions 1.4.9](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
+- [django-extensions 1.5.0](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 - [django-floppyforms 1.3.0](http://django-floppyforms.readthedocs.org/en/latest/) - Control of output of form rendering
 - [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
-- [django-pipeline 1.4.3](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
+- [django-pipeline 1.4.4.1](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
 - [django-redis 3.8.2](https://django-redis.readthedocs.org/en/latest/) - Enables redis caching
 - [django-rq 0.7.0](https://github.com/ui/django-rq) - Django integration for RQ
 - [invoke 0.9.0](https://github.com/pyinvoke/invoke) - Python task execution in `tasks.py`
@@ -403,7 +403,7 @@ prod.txt
 - [dj-database-url 0.3.0](https://github.com/kennethreitz/dj-database-url) - Allows Django to use database URLs for Heroku
 - [django-secure 1.0.1](http://django-secure.readthedocs.org/en/v0.1.2/) - Django security best practices
 - [django-storages 1.1.8](http://django-storages.readthedocs.org/en/latest/index.html) - Custom storage backends; using S3
-- [gunicorn 19.1.0](https://github.com/benoitc/gunicorn) - Production WSGI server with workers
+- [gunicorn 19.2.0](https://github.com/benoitc/gunicorn) - Production WSGI server with workers
 
 test.txt
 --------
