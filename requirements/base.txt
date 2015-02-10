@@ -38,7 +38,7 @@ django-model-utils==2.2
 
 # CSS and JS compressor and compiler. Also minifies HTML
 # http://django-pipeline.readthedocs.org/en/latest/
-django-pipeline==1.4.4.1
+django-pipeline==1.4.5
 
 # Enables redis cacheing
 # https://django-redis.readthedocs.org/en/latest/
@@ -62,7 +62,7 @@ project-runpy==0.3.1
 
 # PostgreSQL adapter
 # http://pythonhosted.org/psycopg2/
-psycopg2==2.5.4
+psycopg2==2.6
 
 # Library to identify uploaded file's headers
 # https://github.com/ahupp/python-magic
