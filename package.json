@@ -25,7 +25,7 @@
     "grunt-newer": "^1.0.0",
     "grunt-notify": "^0.4.1",
     "grunt-open": "^0.2.3",
-    "grunt-sass": "^0.17.0",
+    "grunt-sass": "^0.18.0",
     "grunt-scss-lint": "^0.3.3",
     "grunt-shell": "^1.1.1",
     "grunt-template-jasmine-istanbul": "^0.3.0",
