@@ -78,7 +78,7 @@ requests==2.5.1
 
 # Job scheduling capabilities to RQ
 # https://github.com/ui/rq-scheduler
-rq-scheduler==0.5.0
+rq-scheduler==0.5.1
 
 # Python 2 and 3 compatibility utilities
 # http://pythonhosted.org/six/
