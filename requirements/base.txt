@@ -18,7 +18,7 @@ dj-static==0.0.6
 
 # Custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
 # http://django-authtools.readthedocs.org/en/latest/
-django-authtools==1.0.0
+django-authtools==1.1.0
 
 # Lots of custom mixins
 # http://django-braces.readthedocs.org/en/v1.4.0/
@@ -74,7 +74,7 @@ pytz==2014.10
 
 # HTTP request API
 # http://docs.python-requests.org/en/latest/
-requests==2.5.1
+requests==2.5.3
 
 # Job scheduling capabilities to RQ
 # https://github.com/ui/rq-scheduler

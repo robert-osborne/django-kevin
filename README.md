@@ -370,7 +370,7 @@ base.txt
 - [bpython 0.14](http://docs.bpython-interpreter.org/) - Advanced python interpreter/REPL
 - [defusedxml 0.4.1](https://bitbucket.org/tiran/defusedxml) - Secure XML parser protected against XML bombs
 - [dj-static 0.0.6](https://github.com/kennethreitz/dj-static) - Serve production static files with Django
-- [django-authtools 1.0.0](http://django-authtools.readthedocs.org/en/latest/) - Custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
+- [django-authtools 1.1.0](http://django-authtools.readthedocs.org/en/latest/) - Custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
 - [django-braces 1.4.0](http://django-braces.readthedocs.org/en/v1.4.0/) - Lots of custom mixins
 - [django-extensions 1.5.0](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 - [django-floppyforms 1.3.0](http://django-floppyforms.readthedocs.org/en/latest/) - Control of output of form rendering
@@ -384,7 +384,7 @@ base.txt
 - [psycopg2 2.6](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
 - [python-magic 0.4.6](https://github.com/ahupp/python-magic) - Library to identify uploaded files' headers
 - [pytz 2014.10](http://pytz.sourceforge.net/) - World timezone definitions
-- [requests 2.5.1](http://docs.python-requests.org/en/latest/) - HTTP request API
+- [requests 2.5.3](http://docs.python-requests.org/en/latest/) - HTTP request API
 - [rq-scheduler 0.5.1](https://github.com/ui/rq-scheduler) - Job scheduling capabilities to RQ
 - [six 1.9.0](http://pythonhosted.org/six/) - Python 2 and 3 compatibility utilities
 - [static 1.1.1](https://github.com/lukearno/static) - Serves static and dynamic content
