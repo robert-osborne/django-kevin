@@ -11,6 +11,12 @@ A heavily personalized project template for Django 1.7.5 using Postgres for deve
 
 Forked from the original [django-two-scoops-project](https://github.com/twoscoops/django-twoscoops-project)
 
+Notes Upgrading to Django 1.8
+=============================
+- Template configuration has been redesigned to use different settings and functions to take into account multiple engines
+- Security enhancements have been integrated from `django-secure`, do they work together? 
+- `UUIDField` data type has been added naturally, how does it migrate from the same `UUIDField` from `django_extensions`?
+
 Creating Your Project
 =====================
 
