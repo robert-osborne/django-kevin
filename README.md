@@ -378,7 +378,7 @@ base.txt
 - [dj-static 0.0.6](https://github.com/kennethreitz/dj-static) - Serve production static files with Django
 - [django-authtools 1.1.0](http://django-authtools.readthedocs.org/en/latest/) - Custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
 - [django-braces 1.4.0](http://django-braces.readthedocs.org/en/v1.4.0/) - Lots of custom mixins
-- [django-extensions 1.5.0](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
+- [django-extensions 1.5.1](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 - [django-floppyforms 1.3.0](http://django-floppyforms.readthedocs.org/en/latest/) - Control of output of form rendering
 - [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 - [django-pipeline 1.4.6](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
