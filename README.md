@@ -384,7 +384,7 @@ base.txt
 - [django-pipeline 1.4.7](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
 - [django-redis 3.8.3](https://django-redis.readthedocs.org/en/latest/) - Enables redis caching
 - [django-rq 0.7.0](https://github.com/ui/django-rq) - Django integration for RQ
-- [invoke 0.9.0](https://github.com/pyinvoke/invoke) - Python task execution in `tasks.py`
+- [invoke 0.10.1](https://github.com/pyinvoke/invoke) - Python task execution in `tasks.py`
 - [logutils 0.3.3](https://pythonhosted.org/logutils/) - Nifty handlers for the Python standard library’s logging package
 - [project-runpy 0.3.1](https://github.com/crccheck/project_runpy) - Helpers for Python projects like ReadableSqlFilter
 - [psycopg2 2.6](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter

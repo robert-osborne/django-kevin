@@ -50,7 +50,7 @@ django-rq==0.7.0
 
 # Python task execution in `tasks.py`
 # http://docs.pyinvoke.org/en/latest/
-invoke==0.9.0
+invoke==0.10.1
 
 # Nifty handlers for the Python standard library’s logging package
 # https://pythonhosted.org/logutils/
