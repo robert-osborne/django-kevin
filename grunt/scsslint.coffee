@@ -5,5 +5,5 @@ module.exports =
 
   options:
     colorizeOutput: true
-    config: 'node_modules/grunt-scss-lint/.scss-lint.yml'
+    config: '.scss-lint.yml'
   stylesheets: ['<%= paths.css %>/scss/*.scss']
