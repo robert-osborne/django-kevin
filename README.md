@@ -378,7 +378,7 @@ base.txt
 - [dj-static 0.0.6](https://github.com/kennethreitz/dj-static) - Serve production static files with Django
 - [django-authtools 1.1.0](http://django-authtools.readthedocs.org/en/latest/) - Custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
 - [django-braces 1.4.0](http://django-braces.readthedocs.org/en/v1.4.0/) - Lots of custom mixins
-- [django-extensions 1.5.1](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
+- [django-extensions 1.5.2](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 - [django-floppyforms 1.3.0](http://django-floppyforms.readthedocs.org/en/latest/) - Control of output of form rendering
 - [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 - [django-pipeline 1.4.7](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
@@ -389,7 +389,7 @@ base.txt
 - [project-runpy 0.3.1](https://github.com/crccheck/project_runpy) - Helpers for Python projects like ReadableSqlFilter
 - [psycopg2 2.6](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
 - [python-magic 0.4.6](https://github.com/ahupp/python-magic) - Library to identify uploaded files' headers
-- [pytz 2014.10](http://pytz.sourceforge.net/) - World timezone definitions
+- [pytz 2015.2](http://pytz.sourceforge.net/) - World timezone definitions
 - [requests 2.6.0](http://docs.python-requests.org/en/latest/) - HTTP request API
 - [rq-scheduler 0.5.1](https://github.com/ui/rq-scheduler) - Job scheduling capabilities to RQ
 - [six 1.9.0](http://pythonhosted.org/six/) - Python 2 and 3 compatibility utilities
