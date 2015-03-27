@@ -416,7 +416,7 @@ test.txt
 - [coverage 3.7.1](http://nedbatchelder.com/code/coverage/) - Measures code coverage
 - [nose-exclude 0.2.0](https://bitbucket.org/kgrandis/nose-exclude) - Easily specify directories to be excluded from testing
 - [django-nose 1.3](https://github.com/django-nose/django-nose) - Django test runner using nose
-- [factory-boy 2.4.1](https://github.com/rbarrois/factory_boy) - Test fixtures replacement for Python
+- [factory-boy 2.5.1](https://github.com/rbarrois/factory_boy) - Test fixtures replacement for Python
 - [flake8 2.4.0](http://flake8.readthedocs.org/en/latest/) - Python style checker
 
 config/lib
