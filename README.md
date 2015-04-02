@@ -473,9 +473,9 @@ CSS
 
 JS
 --
-- [jQuery 1.11.1](https://api.jquery.com/) - Useful JS functions
-- [Bootstrap 3.3.0](http://getbootstrap.com) - CSS/JS starting framework
-- [Underscore.js 1.7.0](http://underscorejs.org) - Very useful functional programming helpers
+- [jQuery 1.11.2](https://api.jquery.com/) - Useful JS functions
+- [Bootstrap 3.3.4](http://getbootstrap.com) - CSS/JS starting framework
+- [Underscore.js 1.8.3](http://underscorejs.org) - Very useful functional programming helpers
 - [CSRF.js](https://docs.djangoproject.com/en/dev/ref/contrib/csrf/#ajax) - Django Cross Site Request Forgery protection via AJAX
 
 Jasmine
