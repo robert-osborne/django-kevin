@@ -118,6 +118,7 @@ if 'REDISCLOUD_URL' in os.environ:
         'default': {
             'BACKEND': 'django_redis.cache.RedisCache',
             'LOCATION': '%s/%s' % (redis_url, 0),
+            'TIMEOUT': 60 * 60 * 24,
             'OPTIONS': {
                 'CLIENT_CLASS': 'django_redis.client.DefaultClient',
             }
