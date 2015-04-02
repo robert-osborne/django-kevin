@@ -18,7 +18,7 @@ dj-static==0.0.6
 
 # Custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
 # http://django-authtools.readthedocs.org/en/latest/
-django-authtools==1.1.0
+django-authtools==1.2.0
 
 # Lots of custom mixins
 # http://django-braces.readthedocs.org/en/v1.4.0/
