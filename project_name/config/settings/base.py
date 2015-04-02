@@ -85,7 +85,7 @@ PROJECT_APPS = (
 EXTENSION_APPS = (
     'extensions.authtools',
     'extensions.django_rq',
-    'extensions.rq_scheduler'
+    'extensions.rq_scheduler',
 )
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
