@@ -44,26 +44,26 @@ Install python packages
 For development:
 
     workon {{ project_name }}-dev
-    pip install --upgrade pip
-    pip install --upgrade setuptools
+    sudo pip install --upgrade pip
+    sudo pip install --upgrade setuptools
     sudo env ARCHFLAGS="-arch i386 -arch x86_64" pip install psycopg2
-    pip install -r requirements/dev.txt
+    sudo pip install -r requirements/dev.txt
 
 For production:
 
     workon {{ project_name }}-prod
-    pip install --upgrade pip
-    pip install --upgrade setuptools
+    sudo pip install --upgrade pip
+    sudo pip install --upgrade setuptools
     sudo env ARCHFLAGS="-arch i386 -arch x86_64" pip install psycopg2
-    pip install -r requirements.txt
+    sudo pip install -r requirements.txt
 
 For testing:
 
     workon {{ project_name }}-test
-    pip install --upgrade pip
-    pip install --upgrade setuptools
+    sudo pip install --upgrade pip
+    sudo pip install --upgrade setuptools
     sudo env ARCHFLAGS="-arch i386 -arch x86_64" pip install psycopg2
-    pip install -r requirements/test.txt
+    sudo pip install -r requirements/test.txt
 
 Install node packages
 ---------------------
