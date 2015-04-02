@@ -1,8 +1,8 @@
 # See more documentation in /docs/libraries.md
 
 # Current framework
-# https://docs.djangoproject.com/en/1.8/
-Django==1.8
+# https://docs.djangoproject.com/en/1.7/
+Django==1.7
 
 # Advanced python interpreter/REPL
 # http://docs.bpython-interpreter.org/

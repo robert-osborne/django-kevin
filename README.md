@@ -1,21 +1,15 @@
 django-kevin
 ============
 
-![Django 1.8](http://img.shields.io/badge/Django-1.8-brightgreen.svg)
-![Stablility Status](http://img.shields.io/badge/Stability-Stable-brightgreen.svg)
+![Django 1.7](http://img.shields.io/badge/Django-1.7-brightgreen.svg)
+![Stablility Status](http://img.shields.io/badge/Stability-Unstable-red.svg)
 [![Requirements Status](https://requires.io/github/imkevinxu/django-kevin/requirements.svg?branch=master)](https://requires.io/github/imkevinxu/django-kevin/requirements/?branch=master)
 [![Dependencies Status](https://david-dm.org/imkevinxu/django-kevin.svg)](https://david-dm.org/imkevinxu/django-kevin)
 [![MIT License](https://img.shields.io/cocoapods/l/AFNetworking.svg)](http://opensource.org/licenses/MIT)
 
-A heavily personalized project template for Django 1.8 using Postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
+A heavily personalized project template for Django 1.7 using Postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
 
 Forked from the original [django-two-scoops-project](https://github.com/twoscoops/django-twoscoops-project)
-
-Notes Upgrading to Django 1.8
-=============================
-- Template configuration has been redesigned to use different settings and functions to take into account multiple engines
-- Security enhancements have been integrated from `django-secure`, do they work together? 
-- `UUIDField` data type has been added naturally, how does it migrate from the same `UUIDField` from `django_extensions`?
 
 Creating Your Project
 =====================
@@ -369,7 +363,7 @@ Libraries
 Python 2.7.9
 ============
 
-Currently using [Django 1.8](https://docs.djangoproject.com/en/1.8/) for the app framework
+Currently using [Django 1.7](https://docs.djangoproject.com/en/1.7/) for the app framework
 
 base.txt
 --------
