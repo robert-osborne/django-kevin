@@ -24,10 +24,10 @@ module.exports =
     ]
 
   stylesheets:
-    files: ['<%= paths.css %>/scss/*.scss']
+    files: ['<%= paths.css %>/scss/**/*.scss']
     tasks: [
       'newer:scsslint'
-      'newer:sass'
+      'sass'
       'newer:autoprefixer'
       'replace:stylesheets'
     ]

@@ -8,7 +8,7 @@ module.exports =
       sourceMap: true
     files: [
       expand: true
-      cwd: '<%= paths.css %>/scss/'
+      cwd: '<%= paths.css %>/scss'
       src: ['*.scss']
       dest: '<%= paths.css %>/build'
       ext: '.css'

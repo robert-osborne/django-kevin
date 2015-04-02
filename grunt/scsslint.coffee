@@ -6,4 +6,7 @@ module.exports =
   options:
     colorizeOutput: true
     config: '.scss-lint.yml'
-  stylesheets: ['<%= paths.css %>/scss/*.scss']
+  stylesheets: [
+    '<%= paths.css %>/scss/**/*.scss'
+    '!<%= paths.css %>/scss/lib/**/*.scss'
+  ]

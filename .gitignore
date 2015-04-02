@@ -5,6 +5,7 @@
 assets
 tmp
 tests/*
+ssl/*
 _SpecRunner.html
 
 # Python and Django #
