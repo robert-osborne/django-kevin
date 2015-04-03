@@ -14,7 +14,7 @@ Forked from the original [django-two-scoops-project](https://github.com/twoscoop
 Creating Your Project
 =====================
 
-*Prerequisites: django*
+*Prerequisites: Django 1.7.7*
 
 To create a new Django project, run the following command replacing PROJECT_NAME with your actual project name:
 
