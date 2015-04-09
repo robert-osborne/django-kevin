@@ -11,8 +11,8 @@ module.exports =
       specs: '<%= paths.js %>/tests/build/*Spec.js'
       helpers: '<%= paths.js %>/tests/build/*Helper.js'
       vendor: [
-        'https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'
-        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'
+        'http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'
+        'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'
         '<%= paths.js %>/lib/*.js'
       ]
       keepRunner: true
