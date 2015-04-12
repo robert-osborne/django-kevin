@@ -457,7 +457,7 @@ Locally using node and grunt to watch and compile frontend files
 - [grunt-shell ^1.1.1](https://github.com/sindresorhus/grunt-shell) - Run shell commands
 - [grunt-template-jasmine-istanbul ^0.3.3](https://github.com/maenu/grunt-template-jasmine-istanbul) - Code coverage template mix-in for grunt-contrib-jasmine, using istanbul
 - [grunt-text-replace ^0.4.0](https://github.com/yoniholmes/grunt-text-replace) - General purpose text replacement for grunt
-- [load-grunt-config ^0.16.0](https://github.com/firstandthird/load-grunt-config) - Grunt plugin that lets you break up your Gruntfile config by task
+- [load-grunt-config ^0.17.0](https://github.com/firstandthird/load-grunt-config) - Grunt plugin that lets you break up your Gruntfile config by task
 - [time-grunt ^1.0.0](https://github.com/sindresorhus/time-grunt) - Display the elapsed execution time of grunt tasks
 - [yuglify 0.1.4](https://github.com/yui/yuglify) - UglifyJS and cssmin compressor
 
