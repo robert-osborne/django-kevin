@@ -466,7 +466,7 @@ Static Assets
 
 Fonts
 -----
-- [SS-Standard 1.005](https://symbolset.com/icons/standard) - Standard icon library as a font. Documentation located locally at `/{{ project_name }}/static/css/fonts/ss-standard/documentation.html`
+- [SS-Standard 1.005](https://symbolset.com/icons/standard) - Standard icon library as a font. [Documentation](https://rawgit.com/imkevinxu/django-kevin/master/project_name/static/fonts/ss-standard/documentation.html)
 
 CSS
 ---
