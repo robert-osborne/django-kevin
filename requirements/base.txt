@@ -21,8 +21,8 @@ dj-static==0.0.6
 django-authtools==1.2.0
 
 # Lots of custom mixins
-# http://django-braces.readthedocs.org/en/v1.4.0/
-django-braces==1.4.0
+# http://django-braces.readthedocs.org/en/latest/
+django-braces==1.8.0
 
 # Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 # http://django-extensions.readthedocs.org/en/latest/
@@ -46,7 +46,7 @@ django-redis==3.8.3
 
 # Django integration for RQ
 # https://github.com/ui/django-rq
-django-rq==0.7.0
+django-rq==0.8.0
 
 # Python task execution in `tasks.py`
 # http://docs.pyinvoke.org/en/latest/

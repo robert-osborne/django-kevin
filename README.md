@@ -378,13 +378,13 @@ base.txt
 - [defusedxml 0.4.1](https://bitbucket.org/tiran/defusedxml) - Secure XML parser protected against XML bombs
 - [dj-static 0.0.6](https://github.com/kennethreitz/dj-static) - Serve production static files with Django
 - [django-authtools 1.2.0](http://django-authtools.readthedocs.org/en/latest/) - Custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
-- [django-braces 1.4.0](http://django-braces.readthedocs.org/en/v1.4.0/) - Lots of custom mixins
+- [django-braces 1.8.0](http://django-braces.readthedocs.org/en/latest/) - Lots of custom mixins
 - [django-extensions 1.5.2](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 - [django-floppyforms 1.3.0](http://django-floppyforms.readthedocs.org/en/latest/) - Control of output of form rendering
 - [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 - [django-pipeline 1.4.7](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
 - [django-redis 3.8.3](https://django-redis.readthedocs.org/en/latest/) - Enables redis caching
-- [django-rq 0.7.0](https://github.com/ui/django-rq) - Django integration for RQ
+- [django-rq 0.8.0](https://github.com/ui/django-rq) - Django integration for RQ
 - [invoke 0.10.1](https://github.com/pyinvoke/invoke) - Python task execution in `tasks.py`
 - [logutils 0.3.3](https://pythonhosted.org/logutils/) - Nifty handlers for the Python standard library’s logging package
 - [project-runpy 0.3.1](https://github.com/crccheck/project_runpy) - Helpers for Python projects like ReadableSqlFilter
