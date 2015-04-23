@@ -31,7 +31,7 @@
   </div>
   {% templatetag openblock %} endblock {% templatetag closeblock %}
 
-{% templatetag openblock %} block content_title {% templatetag closeblock %}<h1>Jobs in {% templatetag openvariable %} queue.name {% templatetag closevariable %}</h1>{% templatetag openblock %} endblock {% templatetag closeblock %}
+{% templatetag openblock %} block content_title {% templatetag closeblock %}<h1>{% templatetag openblock %} if job_status {% templatetag closeblock %}{% templatetag openvariable %} job_status {% templatetag closevariable %} jobs{% templatetag openblock %} else {% templatetag closeblock %}Jobs{% templatetag openblock %} endif {% templatetag closeblock %} in {% templatetag openvariable %} queue.name {% templatetag closevariable %}</h1>{% templatetag openblock %} endblock {% templatetag closeblock %}
 
 {% templatetag openblock %} block content {% templatetag closeblock %}
 
