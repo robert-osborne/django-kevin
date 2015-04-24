@@ -13,7 +13,6 @@ Forked from the original [django-two-scoops-project](https://github.com/twoscoop
 
 Notes Before Upgrading to Django 1.8
 ====================================
-- `django-nose` for coverage and unit testing is broken pending release 1.4 on issue [#202](https://github.com/django-nose/django-nose/issues/202)
 - Template configuration has been redesigned to use different settings variables and functions, update accordingly
 - Security enhancements have been integrated from `django-secure`, do they work together?
 - `UUIDField` data type has been added naturally, how does it migrate from the same `UUIDField` from `django_extensions`?
@@ -416,7 +415,7 @@ test.txt
 --------
 - [coverage 3.7.1](http://nedbatchelder.com/code/coverage/) - Measures code coverage
 - [nose-exclude 0.2.0](https://bitbucket.org/kgrandis/nose-exclude) - Easily specify directories to be excluded from testing
-- [django-nose 1.3](https://github.com/django-nose/django-nose) - Django test runner using nose
+- [django-nose 1.4](https://github.com/django-nose/django-nose) - Django test runner using nose
 - [factory-boy 2.5.2](https://github.com/rbarrois/factory_boy) - Test fixtures replacement for Python
 - [flake8 2.4.0](http://flake8.readthedocs.org/en/latest/) - Python style checker
 
