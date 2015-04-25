@@ -10,9 +10,6 @@ import os
 ########## DEBUG CONFIGURATION
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = True
-
-# https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
-TEMPLATE_DEBUG = DEBUG
 ########## END DEBUG CONFIGURATION
 
 

@@ -13,7 +13,6 @@ Forked from the original [django-two-scoops-project](https://github.com/twoscoop
 
 Notes Before Upgrading to Django 1.8
 ====================================
-- Template configuration has been redesigned to use different settings variables and functions, update accordingly
 - Security enhancements have been integrated from `django-secure`, do they work together?
 - `UUIDField` data type has been added naturally, how does it migrate from the same `UUIDField` from `django_extensions`?
 

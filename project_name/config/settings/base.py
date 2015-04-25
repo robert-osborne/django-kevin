@@ -119,9 +119,6 @@ MIGRATION_MODULES = {
 ########## DEBUG CONFIGURATION
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = False
-
-# https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
-TEMPLATE_DEBUG = DEBUG
 ########## END DEBUG CONFIGURATION
 
 
@@ -162,29 +159,33 @@ USE_TZ = True
 
 
 ########## TEMPLATE CONFIGURATION
-# https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.media',
-    'django.core.context_processors.static',
-    'django.core.context_processors.tz',
-    'django.contrib.messages.context_processors.messages',
-    'django.core.context_processors.request',
-)
-
-# https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-)
-
-# https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-TEMPLATE_DIRS = (
-    normpath(join(PROJECT_ROOT, 'templates')),
-    normpath(join(PROJECT_ROOT, 'extensions')),
-)
+# https://docs.djangoproject.com/en/dev/ref/templates/
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            normpath(join(PROJECT_ROOT, 'templates')),
+            normpath(join(PROJECT_ROOT, 'extensions')),
+        ],
+        'OPTIONS': {
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
+            ],
+            'loaders': [
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader',
+            ],
+            'string_if_invalid': 'NULL',
+        },
+    },
+]
 ########## END TEMPLATE CONFIGURATION
 
 

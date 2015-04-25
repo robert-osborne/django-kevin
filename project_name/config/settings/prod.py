@@ -52,13 +52,13 @@ DATABASES['default'] = dj_database_url.config()
 
 
 ########## TEMPLATE CONFIGURATION
-# https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-TEMPLATE_LOADERS = (
-    ('django.template.loaders.cached.Loader', (
+# https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
+TEMPLATES[0]['OPTIONS']['loaders'] = [
+    ('django.template.loaders.cached.Loader', [
         'django.template.loaders.filesystem.Loader',
         'django.template.loaders.app_directories.Loader',
-    )),
-)
+    ]),
+]
 ########## END TEMPLATE CONFIGURATION
 
 
