@@ -113,7 +113,7 @@ The environment variables for development sets the appropriate `DJANGO_SETTINGS_
     echo DJANGO_SETTINGS_MODULE=config.settings.dev >> .env.dev
     echo PYTHONPATH={{ project_name }} >> .env.dev
     echo PYTHONUNBUFFERED=True >> .env.dev
-    echo PYTHONWARNINGS=ignore:RemovedInDjango18Warning >> .env.dev
+    echo PYTHONWARNINGS=ignore:RemovedInDjango19Warning >> .env.dev
     echo CACHE=dummy >> .env.dev
 
 Recommended to use foreman to use development environment variables and processes:
@@ -169,7 +169,7 @@ The environment variables for production must contain a separate `SECRET_KEY` fo
     echo PYTHONPATH={{ project_name }} >> .env
     echo WEB_CONCURRENCY=3 >> .env
     echo PYTHONUNBUFFERED=True >> .env
-    echo PYTHONWARNINGS=ignore:RemovedInDjango18Warning >> .env
+    echo PYTHONWARNINGS=ignore:RemovedInDjango19Warning >> .env
     echo BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-multi.git >> .env
 
 Deploy to Heroku
@@ -232,7 +232,7 @@ The environment variables for testing sets the appropriate `DJANGO_SETTINGS_MODU
     echo DJANGO_SETTINGS_MODULE=config.settings.test >> .env.test
     echo PYTHONPATH={{ project_name }} >> .env.test
     echo PYTHONUNBUFFERED=True >> .env.test
-    echo PYTHONWARNINGS=ignore:RemovedInDjango18Warning >> .env.test
+    echo PYTHONWARNINGS=ignore:RemovedInDjango19Warning >> .env.test
 
 Run tests locally in test environment
 -------------------------------------
