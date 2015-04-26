@@ -11,10 +11,6 @@ A heavily personalized project template for Django 1.8 using Postgres for develo
 
 Forked from the original [django-two-scoops-project](https://github.com/twoscoops/django-twoscoops-project)
 
-Notes Before Upgrading to Django 1.8
-====================================
-- `UUIDField` data type has been added naturally, how does it migrate from the same `UUIDField` from `django_extensions`?
-
 Creating Your Project
 =====================
 
