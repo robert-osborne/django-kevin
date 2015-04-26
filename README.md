@@ -66,6 +66,8 @@ Install node packages
 
     sudo npm install
 
+Sometimes the install may stall or not install everything. Try running `npm list` and then manually installing anything that may be missing.
+
 One-time system installs
 ------------------------
 
