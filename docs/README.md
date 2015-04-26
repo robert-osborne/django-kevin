@@ -7,19 +7,23 @@ Instructions to get your environment set up and to start coding!
 
 [Development](development.md)
 -----------------------------
-Instructions to start your dev server.
+Instructions to start developing.
 
 [Deployment](deployment.md)
 ---------------------------
-Instructions to deploy to production.
+Instructions to deploy.
 
-[Architecture](architecture.md)
--------------------------------
-High-level overview of how this app is structured.
+[Production](production.md)
+---------------------------
+Instructions to test production.
 
 [Testing](testing.md)
 ---------------------
 Instructions to run unit and functional tests.
+
+[Architecture](architecture.md)
+-------------------------------
+High-level overview of how this app is structured.
 
 [Libraries](libraries.md)
 -------------------------
