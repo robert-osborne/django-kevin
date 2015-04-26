@@ -430,35 +430,35 @@ Currently using NPM engine 2.X. Purpose is to watch and compile frontend files
 
 [dependencies]
 --------------
-- [browserify ^9.0.8](https://github.com/substack/node-browserify) - Browser-side require() the node.js way
-- [coffee-script ^1.9.2](http://coffeescript.org/) - Cleaner JavaScript
-- [grunt ~0.4.5](http://gruntjs.com/) - Automatic Task Runner
-- [grunt-cli ~0.1.13](https://github.com/gruntjs/grunt-cli) - Grunt's command line interface
-- [grunt-autoprefixer ^3.0.0](https://github.com/nDmitry/grunt-autoprefixer) - Parse CSS and add vendor-prefixed CSS properties
-- [grunt-contrib-clean ^0.6.0](https://github.com/gruntjs/grunt-contrib-clean) - Clear files and folders
-- [grunt-contrib-coffee ^0.13.0](https://github.com/gruntjs/grunt-contrib-coffee) - Compile CoffeeScript files to JavaScript
-- [grunt-contrib-imagemin ^0.9.4](https://github.com/gruntjs/grunt-contrib-imagemin) - Minify PNG, JPEG, GIF, and SVG images
-- [grunt-contrib-jasmine ^0.8.2](https://github.com/gruntjs/grunt-contrib-jasmine) - Run jasmine specs headlessly through PhantomJS
-- [grunt-sass ^0.18.1](https://github.com/sindresorhus/grunt-sass) - Compile Sass to CSS
-- [grunt-template-jasmine-istanbul ^0.3.3](https://github.com/maenu/grunt-template-jasmine-istanbul) - Code coverage template mix-in for grunt-contrib-jasmine, using istanbul
-- [grunt-text-replace ^0.4.0](https://github.com/yoniholmes/grunt-text-replace) - General purpose text replacement for grunt
-- [load-grunt-config ^0.17.1](https://github.com/firstandthird/load-grunt-config) - Grunt plugin that lets you break up your Gruntfile config by task
-- [time-grunt ^1.1.1](https://github.com/sindresorhus/time-grunt) - Display the elapsed execution time of grunt tasks
+- [browserify 9.0.8](https://github.com/substack/node-browserify) - Browser-side require() the node.js way
+- [coffee-script 1.9.2](http://coffeescript.org/) - Cleaner JavaScript
+- [grunt 0.4.5](http://gruntjs.com/) - Automatic Task Runner
+- [grunt-cli 0.1.13](https://github.com/gruntjs/grunt-cli) - Grunt's command line interface
+- [grunt-autoprefixer 3.0.0](https://github.com/nDmitry/grunt-autoprefixer) - Parse CSS and add vendor-prefixed CSS properties
+- [grunt-contrib-clean 0.6.0](https://github.com/gruntjs/grunt-contrib-clean) - Clear files and folders
+- [grunt-contrib-coffee 0.13.0](https://github.com/gruntjs/grunt-contrib-coffee) - Compile CoffeeScript files to JavaScript
+- [grunt-contrib-imagemin 0.9.4](https://github.com/gruntjs/grunt-contrib-imagemin) - Minify PNG, JPEG, GIF, and SVG images
+- [grunt-contrib-jasmine 0.8.2](https://github.com/gruntjs/grunt-contrib-jasmine) - Run jasmine specs headlessly through PhantomJS
+- [grunt-sass 0.18.1](https://github.com/sindresorhus/grunt-sass) - Compile Sass to CSS
+- [grunt-template-jasmine-istanbul 0.3.3](https://github.com/maenu/grunt-template-jasmine-istanbul) - Code coverage template mix-in for grunt-contrib-jasmine, using istanbul
+- [grunt-text-replace 0.4.0](https://github.com/yoniholmes/grunt-text-replace) - General purpose text replacement for grunt
+- [load-grunt-config 0.17.1](https://github.com/firstandthird/load-grunt-config) - Grunt plugin that lets you break up your Gruntfile config by task
+- [time-grunt 1.1.1](https://github.com/sindresorhus/time-grunt) - Display the elapsed execution time of grunt tasks
 - [yuglify 0.1.4](https://github.com/yui/yuglify) - UglifyJS and cssmin compressor
 
 [devDependencies]
 -----------------
-- [coffeelint ^1.9.4](http://www.coffeelint.org/) - Lint your CoffeeScript
+- [coffeelint 1.9.4](http://www.coffeelint.org/) - Lint your CoffeeScript
 - [grunt-coffeelint 0.0.13](https://github.com/vojtajina/grunt-coffeelint) - Lint your CoffeeScript
-- [grunt-concurrent ^1.0.0](https://github.com/sindresorhus/grunt-concurrent) - Run grunt tasks concurrently
-- [grunt-contrib-connect ^0.10.1](https://github.com/gruntjs/grunt-contrib-connect) - Start a static web server
-- [grunt-contrib-copy ^0.8.0](https://github.com/gruntjs/grunt-contrib-copy) - Copy files and folders
-- [grunt-contrib-watch ^0.6.1](https://github.com/gruntjs/grunt-contrib-watch) - Run tasks whenever watched files change
-- [grunt-newer ^1.1.0](https://github.com/tschaub/grunt-newer) - Configure Grunt tasks to run with changed files only
-- [grunt-notify ^0.4.1](https://github.com/dylang/grunt-notify) - Automatic desktop notifications for Grunt
-- [grunt-open ^0.2.3](https://github.com/jsoverson/grunt-open) - Open urls and files from a grunt task
-- [grunt-scss-lint ^0.3.6](https://github.com/ahmednuaman/grunt-scss-lint) - Lint your SCSS
-- [grunt-shell ^1.1.1](https://github.com/sindresorhus/grunt-shell) - Run shell commands
+- [grunt-concurrent 1.0.0](https://github.com/sindresorhus/grunt-concurrent) - Run grunt tasks concurrently
+- [grunt-contrib-connect 0.10.1](https://github.com/gruntjs/grunt-contrib-connect) - Start a static web server
+- [grunt-contrib-copy 0.8.0](https://github.com/gruntjs/grunt-contrib-copy) - Copy files and folders
+- [grunt-contrib-watch 0.6.1](https://github.com/gruntjs/grunt-contrib-watch) - Run tasks whenever watched files change
+- [grunt-newer 1.1.0](https://github.com/tschaub/grunt-newer) - Configure Grunt tasks to run with changed files only
+- [grunt-notify 0.4.1](https://github.com/dylang/grunt-notify) - Automatic desktop notifications for Grunt
+- [grunt-open 0.2.3](https://github.com/jsoverson/grunt-open) - Open urls and files from a grunt task
+- [grunt-scss-lint 0.3.6](https://github.com/ahmednuaman/grunt-scss-lint) - Lint your SCSS
+- [grunt-shell 1.1.1](https://github.com/sindresorhus/grunt-shell) - Run shell commands
 
 Static Assets
 =============
