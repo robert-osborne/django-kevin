@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 from os.path import abspath, basename, dirname, join, normpath
+from os import listdir
 from sys import path
 
 
@@ -210,10 +211,20 @@ STATICFILES_DIRS = (
     normpath(join(PROJECT_ROOT, 'static')),
 )
 
+STATICFILES_FINDERS_IGNORE = [
+    '*.scss',
+    '*.coffee',
+    '*.map',
+    '*.html',
+    '*.txt',
+    '*tests*',
+    '*uncompressed*',
+]
+
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'config.lib.finders.FileSystemFinderIgnore',
+    'config.lib.finders.AppDirectoriesFinderIgnore',
     'pipeline.finders.PipelineFinder',
     'pipeline.finders.CachedFileFinder',
 )
@@ -224,33 +235,31 @@ STATICFILES_FINDERS = (
 
 ########## PIPELINE CONFIGURATION
 # https://django-pipeline.readthedocs.org/en/latest/configuration.html
+def pipeline_source_filenames(filetype):
+    source_filenames = []
+    staticfiles_path = normpath(join(PROJECT_ROOT, 'static'))
+    for folder in ('lib', 'build'):
+        path = '%s/%s/%s' % (staticfiles_path, filetype, folder)
+        source_filenames += ['%s/%s/%s' % (filetype, folder, filename) for filename in listdir(path) if filename.endswith('.%s' % filetype)]
+    return tuple(source_filenames)
+
 PIPELINE_CSS = {
     'master': {
-        'source_filenames': (
-            'css/lib/*.css',
-            'css/build/*.css',
-        ),
+        'source_filenames': pipeline_source_filenames('css'),
         'output_filename': 'css/master.css',
         'variant': 'datauri',
     },
 }
 
-PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
-
 PIPELINE_JS = {
     'master': {
-        'source_filenames': (
-            'js/lib/*.js',
-            'js/build/*.js',
-        ),
+        'source_filenames': pipeline_source_filenames('js'),
         'output_filename': 'js/master.js',
         'extra_context': {
             'async': True,
         },
     }
 }
-
-PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 ########## END PIPELINE CONFIGURATION
 
 

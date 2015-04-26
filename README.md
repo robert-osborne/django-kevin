@@ -246,6 +246,7 @@ Use the right virtual environment:
 
 And have static assets prepared (for coverage tests):
     
+    grunt build
     foreman run django-admin.py collectstatic --noinput
 
 Automatically run all tests and linters and watch files to continuously run tests:
@@ -419,6 +420,7 @@ Currently using [Django 1.8](https://docs.djangoproject.com/en/1.8/) for the app
 [config/lib]
 ------------
 - [colorstreamhandler.py](http://stackoverflow.com/questions/384076/how-can-i-color-python-logging-output/1336640#1336640) - Colored stream handler for python logging framework
+- [finders.py](https://stackoverflow.com/questions/12082902/how-do-i-ignore-static-files-of-a-particular-app-only-with-collectstatic) - Custom Django finders with ignore setting
 - [tdaemon.py](https://github.com/brunobord/tdaemon) - Test daemon in Python modified to work with django-admin.py, django-nose, and coverage
 
 Node 0.12.X
