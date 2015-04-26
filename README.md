@@ -20,7 +20,7 @@ To create a new Django project, run the following command replacing PROJECT_NAME
 
     django-admin.py startproject --template=https://github.com/imkevinxu/django-kevin/archive/master.zip --extension=py,md,html,json,coveragerc PROJECT_NAME
 
-Afterwards please reference the actual `README.md` you just created in your new project folder, all the references to {{ project_name }} will be changed accordingly.
+Afterwards please reference the actual `README.md` you just created in your new project folder, all the references to "{{ project_name }}" will be changed accordingly.
 
 Make virtual environments
 -------------------------
@@ -369,8 +369,8 @@ Python 2.7.9
 
 Currently using [Django 1.8](https://docs.djangoproject.com/en/1.8/) for the app framework
 
-base.txt
---------
+[base.txt]
+----------
 - [bpython 0.14.1](http://docs.bpython-interpreter.org/) - Advanced python interpreter/REPL
 - [defusedxml 0.4.1](https://bitbucket.org/tiran/defusedxml) - Secure XML parser protected against XML bombs
 - [dj-static 0.0.6](https://github.com/kennethreitz/dj-static) - Serve production static files with Django
@@ -394,30 +394,30 @@ base.txt
 - [static 1.1.1](https://github.com/lukearno/static) - Serves static and dynamic content
 - [unicode-slugify 0.1.3](https://github.com/mozilla/unicode-slugify) - A slugifier that works in unicode
 
-dev.txt
--------
+[dev.txt]
+---------
 - [Werkzeug 0.10.4](http://werkzeug.pocoo.org/) - WSGI utility library with powerful debugger
 - [django-debug-toolbar 1.3.0](http://django-debug-toolbar.readthedocs.org/) - Debug information in a toolbar
 - [django-sslserver 0.15](https://github.com/teddziuba/django-sslserver) - SSL localhost server
 
-prod.txt
---------
+[prod.txt]
+----------
 - [Collectfast 0.2.3](https://github.com/antonagestam/collectfast) - Faster collectstatic
 - [boto 2.38.0](https://boto.readthedocs.org/en/latest/) - Python interface to AWS
 - [dj-database-url 0.3.0](https://github.com/kennethreitz/dj-database-url) - Allows Django to use database URLs for Heroku
 - [django-storages 1.1.8](http://django-storages.readthedocs.org/en/latest/index.html) - Custom storage backends; using S3
 - [gunicorn 19.3.0](https://github.com/benoitc/gunicorn) - Production WSGI server with workers
 
-test.txt
---------
+[test.txt]
+----------
 - [coverage 3.7.1](http://nedbatchelder.com/code/coverage/) - Measures code coverage
 - [nose-exclude 0.2.0](https://bitbucket.org/kgrandis/nose-exclude) - Easily specify directories to be excluded from testing
 - [django-nose 1.4](https://github.com/django-nose/django-nose) - Django test runner using nose
 - [factory-boy 2.5.2](https://github.com/rbarrois/factory_boy) - Test fixtures replacement for Python
 - [flake8 2.4.0](http://flake8.readthedocs.org/en/latest/) - Python style checker
 
-config/lib
-----------
+[config/lib]
+------------
 - [colorstreamhandler.py](http://stackoverflow.com/questions/384076/how-can-i-color-python-logging-output/1336640#1336640) - Colored stream handler for python logging framework
 - [tdaemon.py](https://github.com/brunobord/tdaemon) - Test daemon in Python modified to work with django-admin.py, django-nose, and coverage
 
@@ -461,23 +461,23 @@ Currently using NPM engine 2.X. Purpose is to watch and compile frontend files
 Static Assets
 =============
 
-Fonts
------
+[Fonts]
+-------
 - [SS-Standard 1.005](https://symbolset.com/icons/standard) - Standard icon library as a font. [Documentation](https://rawgit.com/imkevinxu/django-kevin/master/project_name/static/fonts/ss-standard/documentation.html)
 
-CSS
----
+[CSS]
+-----
 - [Bootstrap 3.3.0](http://getbootstrap.com) - CSS/JS starting framework
 
-JS
---
+[JS]
+----
 - [jQuery 1.11.2](https://api.jquery.com/) - Useful JS functions
 - [Bootstrap 3.3.4](http://getbootstrap.com) - CSS/JS starting framework
 - [Underscore.js 1.8.3](http://underscorejs.org) - Very useful functional programming helpers
 - [CSRF.js](https://docs.djangoproject.com/en/dev/ref/contrib/csrf/#ajax) - Django Cross Site Request Forgery protection via AJAX
 
-Jasmine
--------
+[Jasmine]
+---------
 - [Jasmine-Ajax 2.0.1](http://github.com/pivotal/jasmine-ajax) - Set of helpers for testing AJAX requests with Jasmine
 - [Jasmine-jQuery 2.0.5](https://github.com/velesin/jasmine-jquery) - Set of jQuery helpers for Jasmine
 
@@ -493,3 +493,15 @@ Many thanks to:
 
 - [Daniel Greenfield](https://twitter.com/pydanny) and [Audrey Roy](https://twitter.com/audreyr) for writing the book
 - All of the [contributors](https://github.com/twoscoops/django-twoscoops-project/blob/master/CONTRIBUTORS.txt) to the original fork
+
+[base.txt]: requirements/base.txt
+[dev.txt]: requirements/dev.txt
+[prod.txt]: requirements/prod.txt
+[test.txt]: requirements/test.txt
+[config/lib]: project_name/config/lib
+[dependencies]: package.json
+[devDependencies]: package.json
+[Fonts]: project_name/static/fonts
+[CSS]: project_name/static/css/lib
+[JS]: project_name/static/js/lib
+[Jasmine]: project_name/static/js/tests/lib
