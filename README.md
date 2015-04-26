@@ -13,7 +13,6 @@ Forked from the original [django-two-scoops-project](https://github.com/twoscoop
 
 Notes Before Upgrading to Django 1.8
 ====================================
-- Security enhancements have been integrated from `django-secure`, do they work together?
 - `UUIDField` data type has been added naturally, how does it migrate from the same `UUIDField` from `django_extensions`?
 
 Creating Your Project
@@ -163,7 +162,9 @@ The environment variables for production must contain a separate `SECRET_KEY` fo
 
 *`.env` is not version controlled so the first person to create this project needs to create a `.env` file for Foreman and Heroku to read into the environment. Future collaboraters need to email the creator for it.*
 
-    echo SECRET_KEY=`date | md5` >> .env
+    echo -n SECRET_KEY=`date | md5` >> .env
+    sleep 1
+    echo `date | md5` >> .env
     echo DJANGO_SETTINGS_MODULE=config.settings.prod >> .env
     echo PYTHONPATH={{ project_name }} >> .env
     echo WEB_CONCURRENCY=3 >> .env
@@ -271,7 +272,7 @@ Add-ons & Services
 
 SSL
 ---
-Enable SSL via Heroku, Cloudflare, or your DNS provider and then uncomment the SECURITY CONFIGURATION section in `/{{ project_name }}/config/settings/prod.py` to enable django-secure and other security best practices for production.
+Enable SSL via Heroku, Cloudflare, or your DNS provider and then uncomment the SECURITY CONFIGURATION section in `/{{ project_name }}/config/settings/prod.py` to enable security best practices for production.
 
 Invoke
 ------
@@ -406,7 +407,6 @@ prod.txt
 - [Collectfast 0.2.3](https://github.com/antonagestam/collectfast) - Faster collectstatic
 - [boto 2.38.0](https://boto.readthedocs.org/en/latest/) - Python interface to AWS
 - [dj-database-url 0.3.0](https://github.com/kennethreitz/dj-database-url) - Allows Django to use database URLs for Heroku
-- [django-secure 1.0.1](http://django-secure.readthedocs.org/en/v0.1.2/) - Django security best practices
 - [django-storages 1.1.8](http://django-storages.readthedocs.org/en/latest/index.html) - Custom storage backends; using S3
 - [gunicorn 19.3.0](https://github.com/benoitc/gunicorn) - Production WSGI server with workers
 

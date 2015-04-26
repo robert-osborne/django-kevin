@@ -78,32 +78,29 @@ LOGGING['loggers'].update(LOGGERS)
 
 
 ########## SECURITY CONFIGURATION
-# http://django-secure.readthedocs.org/en/v0.1.2/settings.html
-# INSTALLED_APPS += (
-#     'djangosecure',
-# )
-#
+# https://docs.djangoproject.com/en/dev/ref/middleware/#django.middleware.security.SecurityMiddleware
 # MIDDLEWARE_CLASSES += (
-#     'djangosecure.middleware.SecurityMiddleware',
+#     'django.middleware.security.SecurityMiddleware',
 # )
-#
+
 # # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 # # https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-SECURE_PROXY_SSL_HEADER
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#
+
 # # Use this setting if SSL is being served through CloudFlare proxy
 # SECURE_PROXY_SSL_HEADER = ('HTTP_CF_VISITOR', '{"scheme":"https"}',)
-#
-# # Set this to 30 seconds and then to 518400 when you can prove it works
+
+# # Set this to 30 seconds and then to 31536000 when you can prove it works
 # SECURE_HSTS_SECONDS = 30
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_FRAME_DENY = True
 # SECURE_CONTENT_TYPE_NOSNIFF = True
 # SECURE_BROWSER_XSS_FILTER = True
 # SESSION_COOKIE_SECURE = True
 # SESSION_COOKIE_HTTPONLY = True
+# CSRF_COOKIE_HTTPONLY = True
 # CSRF_COOKIE_SECURE = True
 # SECURE_SSL_REDIRECT = True
+# X_FRAME_OPTIONS = 'DENY'
 ########## END SECURITY CONFIGURATION
 
 
