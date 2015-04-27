@@ -169,13 +169,13 @@ if 'AWS_ACCESS_KEY_ID' in os.environ:
     # Using django-pipeline along with S3 storage for staticfiles
     # https://django-pipeline.readthedocs.org/en/latest/storages.html#using-with-other-storages
     from django.contrib.staticfiles.storage import CachedFilesMixin
-    from pipeline.storage import PipelineMixin
+    from pipeline.storage import PipelineMixin, GZIPMixin
     from storages.backends.s3boto import S3BotoStorage
 
-    class S3PipelineCachedStorage(PipelineMixin, CachedFilesMixin, S3BotoStorage):
+    class S3PipelineGZIPCachedStorage(PipelineMixin, GZIPMixin, CachedFilesMixin, S3BotoStorage):
         pass
 
-    StaticRootS3BotoStorage = lambda: S3PipelineCachedStorage(bucket=AWS_STATIC_STORAGE_BUCKET_NAME)
+    StaticRootS3BotoStorage = lambda: S3PipelineGZIPCachedStorage(bucket=AWS_STATIC_STORAGE_BUCKET_NAME)
     STATICFILES_STORAGE = 'config.settings.prod.StaticRootS3BotoStorage'
     STATIC_URL = S3_STATIC_URL
 

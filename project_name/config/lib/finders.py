@@ -3,7 +3,7 @@ Custom Django finders with ignore setting
 https://stackoverflow.com/questions/12082902/how-do-i-ignore-static-files-of-a-particular-app-only-with-collectstatic
 """
 
-from django.contrib.staticfiles.finders import FileSystemFinder, AppDirectoriesFinder
+from pipeline.finders import FileSystemFinder, AppDirectoriesFinder
 from django.conf import settings
 
 

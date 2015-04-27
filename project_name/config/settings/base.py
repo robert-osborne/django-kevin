@@ -119,7 +119,7 @@ MIGRATION_MODULES = {
 
 ########## DEBUG CONFIGURATION
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = False
+DEBUG = STAGING = False
 ########## END DEBUG CONFIGURATION
 
 
