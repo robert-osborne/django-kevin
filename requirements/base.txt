@@ -24,6 +24,10 @@ django-authtools==1.2.0
 # http://django-braces.readthedocs.org/en/latest/
 django-braces==1.8.0
 
+# Simple Django management command that clears your cache
+# https://github.com/rdegges/django-clear-cache
+django-clear-cache==0.3
+
 # Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 # http://django-extensions.readthedocs.org/en/latest/
 django-extensions==1.5.2

@@ -195,6 +195,10 @@ To run one-off commands like `createsuperuser` use:
 
     heroku run django-admin.py COMMAND
 
+Debugging tip: sometimes purging the cache can help fix a random error. Just run:
+
+    heroku run django-admin.py clear_cache
+
 Run project locally in prod environment
 ---------------------------------------
 
@@ -377,6 +381,7 @@ Currently using [Django 1.8](https://docs.djangoproject.com/en/1.8/) for the app
 - [dj-static 0.0.6](https://github.com/kennethreitz/dj-static) - Serve production static files with Django
 - [django-authtools 1.2.0](http://django-authtools.readthedocs.org/en/latest/) - Custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
 - [django-braces 1.8.0](http://django-braces.readthedocs.org/en/latest/) - Lots of custom mixins
+- [django-clear-cache 0.3](https://github.com/rdegges/django-clear-cache) - Simple Django management command that clears your cache
 - [django-extensions 1.5.2](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 - [django-floppyforms 1.4.0](http://django-floppyforms.readthedocs.org/en/latest/) - Control of output of form rendering
 - [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
