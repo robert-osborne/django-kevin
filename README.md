@@ -347,7 +347,7 @@ Monitoring
 
 Testing
 -------
-- [Rainforest RQ](https://devcenter.heroku.com/articles/rainforest) for simple integration testing
+- [Rainforest QA](https://devcenter.heroku.com/articles/rainforest) for simple integration testing
 - [Tinfoil Security](https://devcenter.heroku.com/articles/tinfoilsecurity) for regularly scanning your app for security vulnerabilities
 - [Loader.io](https://devcenter.heroku.com/articles/loaderio) for load testing
 
