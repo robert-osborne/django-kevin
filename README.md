@@ -435,7 +435,7 @@ Currently using NPM engine 2.X. Purpose is to watch and compile frontend files
 
 [dependencies]
 --------------
-- [browserify 9.0.8](https://github.com/substack/node-browserify) - Browser-side require() the node.js way
+- [browserify 10.0.0](https://github.com/substack/node-browserify) - Browser-side require() the node.js way
 - [coffee-script 1.9.2](http://coffeescript.org/) - Cleaner JavaScript
 - [grunt 0.4.5](http://gruntjs.com/) - Automatic Task Runner
 - [grunt-cli 0.1.13](https://github.com/gruntjs/grunt-cli) - Grunt's command line interface
