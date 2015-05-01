@@ -330,12 +330,6 @@ Add the following config variables to Heroku:
     heroku config:set AWS_STATIC_STORAGE_BUCKET_NAME={{ project_name }}-static
     heroku config:set AWS_MEDIA_STORAGE_BUCKET_NAME={{ project_name }}-media
 
-PG Backups
-----------
-[PG Backups](https://devcenter.heroku.com/articles/pgbackups) is a Heroku add-on for automatic Postgres database backups. Enable with the following one-liner:
-
-    heroku addons:add pgbackups:auto-month
-
 Monitoring
 ----------
 - [Librato](https://devcenter.heroku.com/articles/librato) for Heroku performance monitoring
