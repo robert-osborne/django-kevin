@@ -223,8 +223,8 @@ STATICFILES_FINDERS_IGNORE = [
 
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
-    'config.lib.finders.FileSystemFinderIgnore',
-    'config.lib.finders.AppDirectoriesFinderIgnore',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'pipeline.finders.PipelineFinder',
     'pipeline.finders.CachedFileFinder',
 )
