@@ -376,8 +376,8 @@ Currently using [Django 1.8](https://docs.djangoproject.com/en/1.8/) for the app
 - [django-authtools 1.2.0](http://django-authtools.readthedocs.org/en/latest/) - Custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
 - [django-braces 1.8.0](http://django-braces.readthedocs.org/en/latest/) - Lots of custom mixins
 - [django-clear-cache 0.3](https://github.com/rdegges/django-clear-cache) - Simple Django management command that clears your cache
-- [django-extensions 1.5.2](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
-- [django-floppyforms 1.4.0](http://django-floppyforms.readthedocs.org/en/latest/) - Control of output of form rendering
+- [django-extensions 1.5.5](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
+- [django-floppyforms 1.4.1](http://django-floppyforms.readthedocs.org/en/latest/) - Control of output of form rendering
 - [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 - [django-pipeline 1.5.0](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
 - [django-redis 4.0.0](https://django-redis.readthedocs.org/en/latest/) - Enables redis caching
@@ -387,8 +387,8 @@ Currently using [Django 1.8](https://docs.djangoproject.com/en/1.8/) for the app
 - [project-runpy 0.3.1](https://github.com/crccheck/project_runpy) - Helpers for Python projects like ReadableSqlFilter
 - [psycopg2 2.6](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
 - [python-magic 0.4.6](https://github.com/ahupp/python-magic) - Library to identify uploaded files' headers
-- [pytz 2015.2](http://pytz.sourceforge.net/) - World timezone definitions
-- [requests 2.6.2](http://docs.python-requests.org/en/latest/) - HTTP request API
+- [pytz 2015.4](http://pytz.sourceforge.net/) - World timezone definitions
+- [requests 2.7.0](http://docs.python-requests.org/en/latest/) - HTTP request API
 - [rq-scheduler 0.5.1](https://github.com/ui/rq-scheduler) - Job scheduling capabilities to RQ
 - [six 1.9.0](http://pythonhosted.org/six/) - Python 2 and 3 compatibility utilities
 - [static 1.1.1](https://github.com/lukearno/static) - Serves static and dynamic content

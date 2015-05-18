@@ -30,11 +30,11 @@ django-clear-cache==0.3
 
 # Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 # http://django-extensions.readthedocs.org/en/latest/
-django-extensions==1.5.2
+django-extensions==1.5.5
 
 # Control of output of form rendering
 # http://django-floppyforms.readthedocs.org/en/latest/
-django-floppyforms==1.4.0
+django-floppyforms==1.4.1
 
 # Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 # https://django-model-utils.readthedocs.org/en/latest/
@@ -74,11 +74,11 @@ python-magic==0.4.6
 
 # World timezone definitions
 # http://pytz.sourceforge.net/
-pytz==2015.2
+pytz==2015.4
 
 # HTTP request API
 # http://docs.python-requests.org/en/latest/
-requests==2.6.2
+requests==2.7.0
 
 # Job scheduling capabilities to RQ
 # https://github.com/ui/rq-scheduler
