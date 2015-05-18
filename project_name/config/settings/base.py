@@ -229,7 +229,7 @@ STATICFILES_FINDERS = (
     'pipeline.finders.CachedFileFinder',
 )
 
-# STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+# STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
 ########## END STATIC FILE CONFIGURATION
 
 
