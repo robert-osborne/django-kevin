@@ -1,20 +1,20 @@
 django-kevin
 ============
 
-![Django 1.8](http://img.shields.io/badge/Django-1.8-brightgreen.svg)
+![Django 1.8.1](http://img.shields.io/badge/Django-1.8.1-brightgreen.svg)
 [![Requirements Status](https://requires.io/github/imkevinxu/django-kevin/requirements.svg?branch=master)](https://requires.io/github/imkevinxu/django-kevin/requirements/?branch=master)
 [![Dependencies Status](https://david-dm.org/imkevinxu/django-kevin.svg)](https://david-dm.org/imkevinxu/django-kevin)
 [![devDependencies Status](https://david-dm.org/imkevinxu/django-kevin/dev-status.svg)](https://david-dm.org/imkevinxu/django-kevin#info=devDependencies)
 [![MIT License](https://img.shields.io/cocoapods/l/AFNetworking.svg)](http://opensource.org/licenses/MIT)
 
-A heavily personalized project template for Django 1.8 using Postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
+A heavily personalized project template for Django 1.8.1 using Postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
 
 Forked from the original [django-two-scoops-project](https://github.com/twoscoops/django-twoscoops-project)
 
 Creating Your Project
 =====================
 
-*Prerequisites: Django 1.8*
+*Prerequisites: Django*
 
 To create a new Django project, run the following command replacing PROJECT_NAME with your actual project name:
 
@@ -366,7 +366,7 @@ Libraries
 Python 2.7.9
 ============
 
-Currently using [Django 1.8](https://docs.djangoproject.com/en/1.8/) for the app framework
+Currently using [Django 1.8.1](https://docs.djangoproject.com/en/1.8/) for the app framework
 
 [base.txt]
 ----------
