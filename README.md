@@ -414,7 +414,7 @@ Currently using [Django 1.8.1](https://docs.djangoproject.com/en/1.8/) for the a
 - [nose-exclude 0.2.0](https://bitbucket.org/kgrandis/nose-exclude) - Easily specify directories to be excluded from testing
 - [django-nose 1.4](https://github.com/django-nose/django-nose) - Django test runner using nose
 - [factory-boy 2.5.2](https://github.com/rbarrois/factory_boy) - Test fixtures replacement for Python
-- [flake8 2.4.0](http://flake8.readthedocs.org/en/latest/) - Python style checker
+- [flake8 2.4.1](http://flake8.readthedocs.org/en/latest/) - Python style checker
 
 [config/lib]
 ------------
