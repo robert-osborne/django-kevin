@@ -6,7 +6,7 @@ Django==1.8.2
 
 # Advanced python interpreter/REPL
 # http://docs.bpython-interpreter.org/
-bpython==0.14.1
+bpython==0.14.2
 
 # Secure XML parser protected against XML bombs
 # https://bitbucket.org/tiran/defusedxml

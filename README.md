@@ -370,7 +370,7 @@ Currently using [Django 1.8.2](https://docs.djangoproject.com/en/1.8/) for the a
 
 [base.txt]
 ----------
-- [bpython 0.14.1](http://docs.bpython-interpreter.org/) - Advanced python interpreter/REPL
+- [bpython 0.14.2](http://docs.bpython-interpreter.org/) - Advanced python interpreter/REPL
 - [defusedxml 0.4.1](https://bitbucket.org/tiran/defusedxml) - Secure XML parser protected against XML bombs
 - [dj-static 0.0.6](https://github.com/kennethreitz/dj-static) - Serve production static files with Django
 - [django-authtools 1.2.0](http://django-authtools.readthedocs.org/en/latest/) - Custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
