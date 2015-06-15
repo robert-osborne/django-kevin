@@ -380,12 +380,12 @@ Currently using [Django 1.8.2](https://docs.djangoproject.com/en/1.8/) for the a
 - [django-floppyforms 1.4.1](http://django-floppyforms.readthedocs.org/en/latest/) - Control of output of form rendering
 - [django-model-utils 2.2](https://django-model-utils.readthedocs.org/en/latest/) - Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 - [django-pipeline 1.5.1](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
-- [django-redis 4.0.0](https://django-redis.readthedocs.org/en/latest/) - Enables redis caching
+- [django-redis 4.1.0](https://django-redis.readthedocs.org/en/latest/) - Enables redis caching
 - [django-rq 0.8.0](https://github.com/ui/django-rq) - Django integration for RQ
 - [invoke 0.10.1](https://github.com/pyinvoke/invoke) - Python task execution in `tasks.py`
 - [logutils 0.3.3](https://pythonhosted.org/logutils/) - Nifty handlers for the Python standard library’s logging package
 - [project-runpy 0.3.1](https://github.com/crccheck/project_runpy) - Helpers for Python projects like ReadableSqlFilter
-- [psycopg2 2.6](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
+- [psycopg2 2.6.1](http://pythonhosted.org/psycopg2/) - PostgreSQL adapter
 - [python-magic 0.4.6](https://github.com/ahupp/python-magic) - Library to identify uploaded files' headers
 - [pytz 2015.4](http://pytz.sourceforge.net/) - World timezone definitions
 - [requests 2.7.0](http://docs.python-requests.org/en/latest/) - HTTP request API

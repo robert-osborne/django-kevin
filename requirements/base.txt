@@ -46,7 +46,7 @@ django-pipeline==1.5.1
 
 # Enables redis cacheing
 # https://django-redis.readthedocs.org/en/latest/
-django-redis==4.0.0
+django-redis==4.1.0
 
 # Django integration for RQ
 # https://github.com/ui/django-rq
@@ -66,7 +66,7 @@ project-runpy==0.3.1
 
 # PostgreSQL adapter
 # http://pythonhosted.org/psycopg2/
-psycopg2==2.6
+psycopg2==2.6.1
 
 # Library to identify uploaded file's headers
 # https://github.com/ahupp/python-magic
