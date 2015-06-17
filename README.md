@@ -475,12 +475,12 @@ Static Assets
 
 [CSS]
 -----
-- [Bootstrap 3.3.4](http://getbootstrap.com) - CSS/JS starting framework
+- [Bootstrap 3.3.5](http://getbootstrap.com) - CSS/JS starting framework
 
 [JS]
 ----
 - [jQuery 1.11.3](https://api.jquery.com/) - Useful JS functions
-- [Bootstrap 3.3.4](http://getbootstrap.com) - CSS/JS starting framework
+- [Bootstrap 3.3.5](http://getbootstrap.com) - CSS/JS starting framework
 - [Underscore.js 1.8.3](http://underscorejs.org) - Very useful functional programming helpers
 - [CSRF.js](https://docs.djangoproject.com/en/dev/ref/contrib/csrf/#ajax) - Django Cross Site Request Forgery protection via AJAX
 

@@ -12,7 +12,7 @@ module.exports =
       helpers: '<%= paths.js %>/tests/build/*Helper.js'
       vendor: [
         'http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'
-        'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'
+        'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'
         '<%= paths.js %>/lib/*.js'
       ]
       keepRunner: true
