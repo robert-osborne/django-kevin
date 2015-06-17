@@ -117,6 +117,13 @@ Recommended to use foreman to use development environment variables and processe
     echo "env: .env.dev" > .foreman
     echo "procfile: Procfile.dev" >> .foreman
 
+Compile initial static assets
+-----------------------------
+
+This will compile all the files in `/{{ project_name }}/static` for the first run.
+
+    grunt build
+
 Create local postgres database for dev
 --------------------------------------
 
