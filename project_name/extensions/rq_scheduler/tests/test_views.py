@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 
 from django_rq import get_scheduler
 
-from accounts.factories import AdminUserFactory
+from apps.accounts.factories import AdminUserFactory
 
 from datetime import datetime
 from pytz import timezone

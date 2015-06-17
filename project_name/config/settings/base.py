@@ -80,7 +80,7 @@ THIRD_PARTY_APPS = (
 )
 
 PROJECT_APPS = (
-    'accounts',
+    'apps.accounts',
 )
 
 EXTENSION_APPS = (

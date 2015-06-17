@@ -6,7 +6,7 @@ from django.template.defaultfilters import date, time
 
 from django_rq import get_queue
 
-from accounts.factories import AdminUserFactory
+from apps.accounts.factories import AdminUserFactory
 
 from datetime import datetime
 
