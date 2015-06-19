@@ -456,7 +456,7 @@ Currently using NPM engine 2.X. Purpose is to watch and compile frontend files
 -----------------
 - [coffeelint 1.10.1](http://www.coffeelint.org/) - Lint your CoffeeScript
 - [grunt-coffeelint 0.0.13](https://github.com/vojtajina/grunt-coffeelint) - Lint your CoffeeScript
-- [grunt-concurrent 1.0.0](https://github.com/sindresorhus/grunt-concurrent) - Run grunt tasks concurrently
+- [grunt-concurrent 2.0.0](https://github.com/sindresorhus/grunt-concurrent) - Run grunt tasks concurrently
 - [grunt-contrib-connect 0.10.1](https://github.com/gruntjs/grunt-contrib-connect) - Start a static web server
 - [grunt-contrib-copy 0.8.0](https://github.com/gruntjs/grunt-contrib-copy) - Copy files and folders
 - [grunt-contrib-watch 0.6.1](https://github.com/gruntjs/grunt-contrib-watch) - Run tasks whenever watched files change
