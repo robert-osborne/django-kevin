@@ -404,7 +404,7 @@ Currently using [Django 1.8.2](https://docs.djangoproject.com/en/1.8/) for the a
 [dev.txt]
 ---------
 - [Werkzeug 0.10.4](http://werkzeug.pocoo.org/) - WSGI utility library with powerful debugger
-- [django-debug-toolbar 1.3.0](http://django-debug-toolbar.readthedocs.org/) - Debug information in a toolbar
+- [django-debug-toolbar 1.3.2](http://django-debug-toolbar.readthedocs.org/) - Debug information in a toolbar
 - [django-sslserver 0.15](https://github.com/teddziuba/django-sslserver) - SSL localhost server
 
 [prod.txt]
