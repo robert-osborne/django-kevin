@@ -13,7 +13,7 @@ nose-exclude==0.3.0
 
 # Django test runner using nose
 # https://github.com/django-nose/django-nose
-django-nose==1.4
+django-nose==1.4.1
 
 # Test fixtures replacement for Python
 # https://github.com/rbarrois/factory_boy
