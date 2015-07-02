@@ -42,7 +42,7 @@ django-model-utils==2.2
 
 # CSS and JS compressor and compiler. Also minifies HTML
 # http://django-pipeline.readthedocs.org/en/latest/
-django-pipeline==1.5.1
+django-pipeline==1.5.2
 
 # Enables redis cacheing
 # https://django-redis.readthedocs.org/en/latest/
