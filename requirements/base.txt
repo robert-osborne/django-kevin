@@ -46,7 +46,7 @@ django-pipeline==1.5.2
 
 # Enables redis cacheing
 # https://django-redis.readthedocs.org/en/latest/
-django-redis==4.1.0
+django-redis==4.2.0
 
 # Django integration for RQ
 # https://github.com/ui/django-rq
