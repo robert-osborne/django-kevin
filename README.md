@@ -446,9 +446,9 @@ Currently using NPM engine 2.X. Purpose is to watch and compile frontend files
 - [grunt-contrib-imagemin 0.9.4](https://github.com/gruntjs/grunt-contrib-imagemin) - Minify PNG, JPEG, GIF, and SVG images
 - [grunt-contrib-jasmine 0.8.2](https://github.com/gruntjs/grunt-contrib-jasmine) - Run jasmine specs headlessly through PhantomJS
 - [grunt-sass 1.0.0](https://github.com/sindresorhus/grunt-sass) - Compile Sass to CSS
-- [grunt-template-jasmine-istanbul 0.3.3](https://github.com/maenu/grunt-template-jasmine-istanbul) - Code coverage template mix-in for grunt-contrib-jasmine, using istanbul
+- [grunt-template-jasmine-istanbul 0.3.4](https://github.com/maenu/grunt-template-jasmine-istanbul) - Code coverage template mix-in for grunt-contrib-jasmine, using istanbul
 - [grunt-text-replace 0.4.0](https://github.com/yoniholmes/grunt-text-replace) - General purpose text replacement for grunt
-- [load-grunt-config 0.17.1](https://github.com/firstandthird/load-grunt-config) - Grunt plugin that lets you break up your Gruntfile config by task
+- [load-grunt-config 0.17.2](https://github.com/firstandthird/load-grunt-config) - Grunt plugin that lets you break up your Gruntfile config by task
 - [time-grunt 1.2.1](https://github.com/sindresorhus/time-grunt) - Display the elapsed execution time of grunt tasks
 - [yuglify 0.1.4](https://github.com/yui/yuglify) - UglifyJS and cssmin compressor
 
