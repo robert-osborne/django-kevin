@@ -22,7 +22,7 @@ django-authtools==1.2.0
 
 # Lots of custom mixins
 # http://django-braces.readthedocs.org/en/latest/
-django-braces==1.8.0
+django-braces==1.8.1
 
 # Simple Django management command that clears your cache
 # https://github.com/rdegges/django-clear-cache

@@ -381,7 +381,7 @@ Currently using [Django 1.8.3](https://docs.djangoproject.com/en/1.8/) for the a
 - [defusedxml 0.4.1](https://bitbucket.org/tiran/defusedxml) - Secure XML parser protected against XML bombs
 - [dj-static 0.0.6](https://github.com/kennethreitz/dj-static) - Serve production static files with Django
 - [django-authtools 1.2.0](http://django-authtools.readthedocs.org/en/latest/) - Custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
-- [django-braces 1.8.0](http://django-braces.readthedocs.org/en/latest/) - Lots of custom mixins
+- [django-braces 1.8.1](http://django-braces.readthedocs.org/en/latest/) - Lots of custom mixins
 - [django-clear-cache 0.3](https://github.com/rdegges/django-clear-cache) - Simple Django management command that clears your cache
 - [django-extensions 1.5.5](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 - [django-floppyforms 1.4.1](http://django-floppyforms.readthedocs.org/en/latest/) - Control of output of form rendering
