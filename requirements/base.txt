@@ -38,7 +38,7 @@ django-floppyforms==1.5.0
 
 # Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 # https://django-model-utils.readthedocs.org/en/latest/
-django-model-utils==2.2
+django-model-utils==2.3
 
 # CSS and JS compressor and compiler. Also minifies HTML
 # http://django-pipeline.readthedocs.org/en/latest/
