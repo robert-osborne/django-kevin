@@ -34,7 +34,7 @@ django-extensions==1.5.5
 
 # Control of output of form rendering
 # http://django-floppyforms.readthedocs.org/en/latest/
-django-floppyforms==1.4.1
+django-floppyforms==1.5.0
 
 # Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 # https://django-model-utils.readthedocs.org/en/latest/
