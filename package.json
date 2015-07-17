@@ -10,7 +10,7 @@
   },
   "main": "Gruntfile.coffee",
   "dependencies": {
-    "browserify": "^10.2.6",
+    "browserify": "^11.0.0",
     "coffee-script": "^1.9.3",
     "grunt": "~0.4.5",
     "grunt-cli": "~0.1.13",
