@@ -436,7 +436,7 @@ Currently using NPM engine 2.X. Purpose is to watch and compile frontend files
 
 [dependencies]
 --------------
-- [browserify 11.0.0](https://github.com/substack/node-browserify) - Browser-side require() the node.js way
+- [browserify 11.0.1](https://github.com/substack/node-browserify) - Browser-side require() the node.js way
 - [coffee-script 1.9.3](http://coffeescript.org/) - Cleaner JavaScript
 - [grunt 0.4.5](http://gruntjs.com/) - Automatic Task Runner
 - [grunt-cli 0.1.13](https://github.com/gruntjs/grunt-cli) - Grunt's command line interface
@@ -456,14 +456,14 @@ Currently using NPM engine 2.X. Purpose is to watch and compile frontend files
 -----------------
 - [coffeelint 1.10.1](http://www.coffeelint.org/) - Lint your CoffeeScript
 - [grunt-coffeelint 0.0.13](https://github.com/vojtajina/grunt-coffeelint) - Lint your CoffeeScript
-- [grunt-concurrent 2.0.0](https://github.com/sindresorhus/grunt-concurrent) - Run grunt tasks concurrently
+- [grunt-concurrent 2.0.1](https://github.com/sindresorhus/grunt-concurrent) - Run grunt tasks concurrently
 - [grunt-contrib-connect 0.11.0](https://github.com/gruntjs/grunt-contrib-connect) - Start a static web server
 - [grunt-contrib-copy 0.8.0](https://github.com/gruntjs/grunt-contrib-copy) - Copy files and folders
 - [grunt-contrib-watch 0.6.1](https://github.com/gruntjs/grunt-contrib-watch) - Run tasks whenever watched files change
 - [grunt-newer 1.1.1](https://github.com/tschaub/grunt-newer) - Configure Grunt tasks to run with changed files only
 - [grunt-notify 0.4.1](https://github.com/dylang/grunt-notify) - Automatic desktop notifications for Grunt
 - [grunt-open 0.2.3](https://github.com/jsoverson/grunt-open) - Open urls and files from a grunt task
-- [grunt-scss-lint 0.3.6](https://github.com/ahmednuaman/grunt-scss-lint) - Lint your SCSS
+- [grunt-scss-lint 0.3.8](https://github.com/ahmednuaman/grunt-scss-lint) - Lint your SCSS
 - [grunt-shell 1.1.2](https://github.com/sindresorhus/grunt-shell) - Run shell commands
 
 Static Assets
