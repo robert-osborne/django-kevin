@@ -444,7 +444,7 @@ Currently using NPM engine 2.X. Purpose is to watch and compile frontend files
 - [grunt-contrib-clean 0.6.0](https://github.com/gruntjs/grunt-contrib-clean) - Clear files and folders
 - [grunt-contrib-coffee 0.13.0](https://github.com/gruntjs/grunt-contrib-coffee) - Compile CoffeeScript files to JavaScript
 - [grunt-contrib-imagemin 0.9.4](https://github.com/gruntjs/grunt-contrib-imagemin) - Minify PNG, JPEG, GIF, and SVG images
-- [grunt-contrib-jasmine 0.9.0](https://github.com/gruntjs/grunt-contrib-jasmine) - Run jasmine specs headlessly through PhantomJS
+- [grunt-contrib-jasmine 0.9.1](https://github.com/gruntjs/grunt-contrib-jasmine) - Run jasmine specs headlessly through PhantomJS
 - [grunt-sass 1.0.0](https://github.com/sindresorhus/grunt-sass) - Compile Sass to CSS
 - [grunt-template-jasmine-istanbul 0.3.4](https://github.com/maenu/grunt-template-jasmine-istanbul) - Code coverage template mix-in for grunt-contrib-jasmine, using istanbul
 - [grunt-text-replace 0.4.0](https://github.com/yoniholmes/grunt-text-replace) - General purpose text replacement for grunt
