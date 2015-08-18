@@ -1,13 +1,13 @@
 django-kevin
 ============
 
-![Django 1.8.3](http://img.shields.io/badge/Django-1.8.3-brightgreen.svg)
+![Django 1.8.4](http://img.shields.io/badge/Django-1.8.4-brightgreen.svg)
 [![Requirements Status](https://requires.io/github/imkevinxu/django-kevin/requirements.svg?branch=master)](https://requires.io/github/imkevinxu/django-kevin/requirements/?branch=master)
 [![Dependencies Status](https://david-dm.org/imkevinxu/django-kevin.svg)](https://david-dm.org/imkevinxu/django-kevin)
 [![devDependencies Status](https://david-dm.org/imkevinxu/django-kevin/dev-status.svg)](https://david-dm.org/imkevinxu/django-kevin#info=devDependencies)
 [![MIT License](https://img.shields.io/cocoapods/l/AFNetworking.svg)](http://opensource.org/licenses/MIT)
 
-A heavily personalized project template for Django 1.8.3 using Postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
+A heavily personalized project template for Django 1.8.4 using Postgres for development and production. Ready to deploy on Heroku with a bunch of other goodies.
 
 Forked from the original [django-two-scoops-project](https://github.com/twoscoops/django-twoscoops-project)
 
@@ -373,7 +373,7 @@ Libraries
 Python 2.7.9
 ============
 
-Currently using [Django 1.8.3](https://docs.djangoproject.com/en/1.8/) for the app framework
+Currently using [Django 1.8.4](https://docs.djangoproject.com/en/1.8/) for the app framework
 
 [base.txt]
 ----------
