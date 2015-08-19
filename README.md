@@ -1,7 +1,7 @@
 django-kevin
 ============
 
-![Django 1.8.4](http://img.shields.io/badge/Django-1.8.4-brightgreen.svg)
+![Django 1.8.4](http://img.shields.io/badge/Django-1.8.4-0C4B33.svg)
 [![Requirements Status](https://requires.io/github/imkevinxu/django-kevin/requirements.svg?branch=master)](https://requires.io/github/imkevinxu/django-kevin/requirements/?branch=master)
 [![Dependencies Status](https://david-dm.org/imkevinxu/django-kevin.svg)](https://david-dm.org/imkevinxu/django-kevin)
 [![devDependencies Status](https://david-dm.org/imkevinxu/django-kevin/dev-status.svg)](https://david-dm.org/imkevinxu/django-kevin#info=devDependencies)
