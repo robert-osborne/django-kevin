@@ -9,7 +9,7 @@ coverage==3.7.1
 
 # Easily specify directories to be excluded from testing
 # https://github.com/kgrandis/nose-exclude/
-nose-exclude==0.3.0
+nose-exclude==0.4.0
 
 # Django test runner using nose
 # https://github.com/django-nose/django-nose
