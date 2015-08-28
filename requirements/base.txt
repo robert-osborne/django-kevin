@@ -30,7 +30,7 @@ django-clear-cache==0.3
 
 # Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 # http://django-extensions.readthedocs.org/en/latest/
-django-extensions==1.5.5
+django-extensions==1.5.6
 
 # Control of output of form rendering
 # http://django-floppyforms.readthedocs.org/en/latest/

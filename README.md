@@ -383,7 +383,7 @@ Currently using [Django 1.8.4](https://docs.djangoproject.com/en/1.8/) for the a
 - [django-authtools 1.2.0](http://django-authtools.readthedocs.org/en/latest/) - Custom User model classes such as `AbstractEmailUser` and `AbstractNamedUser`
 - [django-braces 1.8.1](http://django-braces.readthedocs.org/en/latest/) - Lots of custom mixins
 - [django-clear-cache 0.3](https://github.com/rdegges/django-clear-cache) - Simple Django management command that clears your cache
-- [django-extensions 1.5.5](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
+- [django-extensions 1.5.6](http://django-extensions.readthedocs.org/en/latest/) - Useful command line extensions (`shell_plus`, `create_command`, `export_emails`)
 - [django-floppyforms 1.5.2](http://django-floppyforms.readthedocs.org/en/latest/) - Control of output of form rendering
 - [django-model-utils 2.3.1](https://django-model-utils.readthedocs.org/en/latest/) - Useful model mixins and utilities such as `TimeStampedModel` and `Choices`
 - [django-pipeline 1.5.3](http://django-pipeline.readthedocs.org/en/latest/) - CSS and JS compressor and compiler. Also minifies HTML
