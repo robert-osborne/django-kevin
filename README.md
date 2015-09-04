@@ -437,7 +437,7 @@ Currently using NPM engine 2.X. Purpose is to watch and compile frontend files
 [dependencies]
 --------------
 - [browserify 11.0.1](https://github.com/substack/node-browserify) - Browser-side require() the node.js way
-- [coffee-script 1.9.3](http://coffeescript.org/) - Cleaner JavaScript
+- [coffee-script 1.10.0](http://coffeescript.org/) - Cleaner JavaScript
 - [grunt 0.4.5](http://gruntjs.com/) - Automatic Task Runner
 - [grunt-cli 0.1.13](https://github.com/gruntjs/grunt-cli) - Grunt's command line interface
 - [grunt-autoprefixer 3.0.3](https://github.com/nDmitry/grunt-autoprefixer) - Parse CSS and add vendor-prefixed CSS properties
@@ -454,11 +454,11 @@ Currently using NPM engine 2.X. Purpose is to watch and compile frontend files
 
 [devDependencies]
 -----------------
-- [coffeelint 1.10.1](http://www.coffeelint.org/) - Lint your CoffeeScript
+- [coffeelint 1.11.1](http://www.coffeelint.org/) - Lint your CoffeeScript
 - [grunt-coffeelint 0.0.13](https://github.com/vojtajina/grunt-coffeelint) - Lint your CoffeeScript
-- [grunt-concurrent 2.0.1](https://github.com/sindresorhus/grunt-concurrent) - Run grunt tasks concurrently
+- [grunt-concurrent 2.0.3](https://github.com/sindresorhus/grunt-concurrent) - Run grunt tasks concurrently
 - [grunt-contrib-connect 0.11.2](https://github.com/gruntjs/grunt-contrib-connect) - Start a static web server
-- [grunt-contrib-copy 0.8.0](https://github.com/gruntjs/grunt-contrib-copy) - Copy files and folders
+- [grunt-contrib-copy 0.8.1](https://github.com/gruntjs/grunt-contrib-copy) - Copy files and folders
 - [grunt-contrib-watch 0.6.1](https://github.com/gruntjs/grunt-contrib-watch) - Run tasks whenever watched files change
 - [grunt-newer 1.1.1](https://github.com/tschaub/grunt-newer) - Configure Grunt tasks to run with changed files only
 - [grunt-notify 0.4.1](https://github.com/dylang/grunt-notify) - Automatic desktop notifications for Grunt
