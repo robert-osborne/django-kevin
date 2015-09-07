@@ -153,32 +153,32 @@ if 'AWS_ACCESS_KEY_ID' in os.environ:
     AWS_S3_SECURE_URLS = True
     AWS_QUERYSTRING_AUTH = False
     AWS_PRELOAD_METADATA = True
+    AWS_IS_GZIPPED = True
 
     AWS_EXPIREY = 60 * 60 * 24 * 7
     AWS_HEADERS = {
         'Cache-Control': 'max-age=%d, s-maxage=%d, must-revalidate' % (AWS_EXPIREY, AWS_EXPIREY)
     }
 
-    # Separate buckets for static files and media files
-    AWS_STATIC_STORAGE_BUCKET_NAME = '%s-static' % PROJECT_NAME.lower()
-    AWS_MEDIA_STORAGE_BUCKET_NAME = '%s-media' % PROJECT_NAME.lower()
-    S3_STATIC_URL = '//%s.s3.amazonaws.com/' % AWS_STATIC_STORAGE_BUCKET_NAME
-    S3_MEDIA_URL = '//%s.s3.amazonaws.com/' % AWS_MEDIA_STORAGE_BUCKET_NAME
-
     # Using django-pipeline along with S3 storage for staticfiles
     # https://django-pipeline.readthedocs.org/en/latest/storages.html#using-with-other-storages
     from django.contrib.staticfiles.storage import CachedFilesMixin
-    from pipeline.storage import PipelineMixin, GZIPMixin
+    from pipeline.storage import PipelineMixin
     from storages.backends.s3boto import S3BotoStorage
 
-    class S3PipelineGZIPCachedStorage(PipelineMixin, GZIPMixin, CachedFilesMixin, S3BotoStorage):
+    class S3PipelineCachedStorage(PipelineMixin, CachedFilesMixin, S3BotoStorage):
         pass
 
-    StaticRootS3BotoStorage = lambda: S3PipelineGZIPCachedStorage(bucket=AWS_STATIC_STORAGE_BUCKET_NAME)
-    STATICFILES_STORAGE = 'config.settings.prod.StaticRootS3BotoStorage'
-    STATIC_URL = S3_STATIC_URL
+    # Separate buckets for static files and media files
+    AWS_STATIC_STORAGE_BUCKET_NAME = '%s-static' % PROJECT_NAME.lower()
+    AWS_MEDIA_STORAGE_BUCKET_NAME = '%s-media' % PROJECT_NAME.lower()
 
+    STATIC_URL = '//%s.s3.amazonaws.com/' % AWS_STATIC_STORAGE_BUCKET_NAME
+    MEDIA_URL = '//%s.s3.amazonaws.com/' % AWS_MEDIA_STORAGE_BUCKET_NAME
+
+    StaticRootS3BotoStorage = lambda: S3PipelineGZIPCachedStorage(bucket=AWS_STATIC_STORAGE_BUCKET_NAME)
     MediaRootS3BotoStorage = lambda: S3BotoStorage(bucket=AWS_MEDIA_STORAGE_BUCKET_NAME)
+
+    STATICFILES_STORAGE = 'config.settings.prod.StaticRootS3BotoStorage'
     DEFAULT_FILE_STORAGE = 'config.settings.prod.MediaRootS3BotoStorage'
-    MEDIA_URL = S3_MEDIA_URL
 ########## END AMAZON S3 CONFIGURATION
